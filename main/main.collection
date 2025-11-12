@@ -1,0 +1,55 @@
+name: "main"
+instances {
+  id: "road-crossing"
+  prototype: "/assets/models/gen/roads/road-crossing.go"
+  position {
+    x: 4.5
+    y: -0.5
+  }
+}
+scale_along_z: 1
+embedded_instances {
+  id: "main"
+  children: "road-crossing"
+  data: "components {\n"
+  "  id: \"cube\"\n"
+  "  component: \"/assets/images/models/cube.model\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"main\"\n"
+  "  component: \"/main/main.script\"\n"
+  "}\n"
+  "components {\n"
+  "  id: \"building-type-u\"\n"
+  "  component: \"/assets/images/models/building-type-u.model\"\n"
+  "  position {\n"
+  "    x: 3.0\n"
+  "    y: -0.5\n"
+  "  }\n"
+  "}\n"
+  "components {\n"
+  "  id: \"sphere\"\n"
+  "  component: \"/assets/images/models/sphere.model\"\n"
+  "  position {\n"
+  "    x: 1.5\n"
+  "  }\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "camera"
+  data: "embedded_components {\n"
+  "  id: \"camera\"\n"
+  "  type: \"camera\"\n"
+  "  data: \"aspect_ratio: 1.0\\n"
+  "fov: 0.7854\\n"
+  "near_z: 0.1\\n"
+  "far_z: 1000.0\\n"
+  "auto_aspect_ratio: 1\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    z: 10.0
+  }
+}

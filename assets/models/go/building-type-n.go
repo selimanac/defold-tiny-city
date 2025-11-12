@@ -1,0 +1,15 @@
+embedded_components {
+    id: "model"
+    type: "model"
+    data: "mesh: \"/assets/models/suburban/building-type-n.glb\"\n"
+    "name: \"\"\n"
+    "materials {\n"
+    "  name: \"colormap\"\n"
+    "  material: \"/builtins/materials/model_instanced.material\"\n"
+    "  textures {\n"
+    "    sampler: \"tex0\"\n"
+    "    texture: \"/assets/models/suburban/Textures/colormap.png\"\n"
+    "  }\n"
+    "}\n"
+    ""
+}

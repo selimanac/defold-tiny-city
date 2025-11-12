@@ -1,0 +1,77 @@
+local M = {}
+
+local template = [[embedded_components {
+    id: "model"
+    type: "model"
+    data: "mesh: \"/assets/models/%s/%s.glb\"\n"
+    "name: \"\"\n"
+    "materials {\n"
+    "  name: \"colormap\"\n"
+    "  material: \"/builtins/materials/model_instanced.material\"\n"
+    "  textures {\n"
+    "    sampler: \"tex0\"\n"
+    "    texture: \"/assets/models/%s/Textures/colormap.png\"\n"
+    "  }\n"
+    "}\n"
+    ""
+}
+]]
+
+function M.get_language_servers()
+    -- Define new language servers here
+    -- Learn more: https://defold.com/manuals/editor-scripts/#language-servers
+    -- Remove this function if not needed
+    return {}
+end
+
+function M.get_commands()
+    -- Add editor commands
+    -- Learn more: https://defold.com/manuals/editor-scripts/#commands
+    -- Remove this function if not needed
+    return {
+        editor.command({
+            label = "Generate models",
+            locations = {"Assets"},
+            id = "app.edit.generate-models",
+            query = {
+                selection = {type = "resource", cardinality = "one"}
+            },
+            run = function(opts)
+                local path = editor.get(opts.selection, "path")
+                local folder = path:match("([^/]+)/?$")
+                -- select and clear the directory for generated assets
+                local root_dir = "/assets/models/gen/" .. folder
+                editor.delete_directory(root_dir)
+                -- list all assets from the asset pack
+                local assets = editor.get(path, "children")
+                -- this is the argument to `editor.create_resources()`:
+                local resources = {}
+                for i = 1, #assets do
+                    local glb_path = assets[i]
+                    local base_name = glb_path:match("([^/]+)%.glb$")
+                    if base_name then
+                        local go = root_dir .. "/" .. base_name .. ".go"
+                        resources[#resources+1] = {go, template:format(folder, base_name, folder)}
+                    end
+                end
+                editor.create_resources(resources)
+            end
+        })
+    }
+end
+
+function M.get_prefs_schema()
+    -- Define preferences that may be used by the editor script
+    -- Learn more: https://defold.com/manuals/editor-scripts/#prefs
+    -- Remove this function if not needed
+    return {}
+end
+
+function M.get_http_server_routes()
+    -- Define HTTP server routes for the editor HTTP server
+    -- Learn more: https://defold.com/manuals/editor-scripts/#http-server
+    -- Remove this function if not needed
+    return {}
+end
+
+return M

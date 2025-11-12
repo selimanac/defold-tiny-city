@@ -1,0 +1,23 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "Roads.tsx": {
+            "dynamicWrapping": true
+        }
+    },
+    "last.imagePath": "/home/paul/Downloads/kenney_city-kit-roads/Previews",
+    "map.orientation": "3",
+    "openFiles": [
+    ],
+    "project": "MiniCity.tiled-project",
+    "recentFiles": [
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.type": 1
+}
