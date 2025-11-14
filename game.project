@@ -1,5 +1,5 @@
 [bootstrap]
-main_collection = /main/main.collectionc
+main_collection = /main/city.collectionc
 
 [script]
 shared_state = 1

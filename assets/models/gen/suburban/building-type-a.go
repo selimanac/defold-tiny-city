@@ -11,5 +11,6 @@ embedded_components {
     "    texture: \"/assets/models/suburban/Textures/colormap.png\"\n"
     "  }\n"
     "}\n"
+    "create_go_bones: false\n"
     ""
 }
