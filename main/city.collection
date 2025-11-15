@@ -572,6 +572,53 @@ instances {
     w: 0.09575277
   }
 }
+instances {
+  id: "building-type-u"
+  prototype: "/assets/models/gen/suburban/building-type-u.go"
+  position {
+    x: 4.6
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "driveway-long"
+  prototype: "/assets/models/gen/suburban/driveway-long.go"
+  position {
+    x: 5.3
+    z: 0.45
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "path-stones-long"
+  prototype: "/assets/models/gen/suburban/path-stones-long.go"
+  position {
+    x: 5.3
+    z: 0.05
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "path-stones-short"
+  prototype: "/assets/models/gen/suburban/path-stones-short.go"
+  position {
+    x: 5.0
+    z: 0.05
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
+  }
+}
 scale_along_z: 0
 embedded_instances {
   id: "camera"
@@ -606,10 +653,12 @@ embedded_instances {
   children: "building-type-f2"
   children: "building-type-p"
   children: "building-type-q"
+  children: "building-type-u"
   data: ""
 }
 embedded_instances {
   id: "roads"
+  children: "driveway-long"
   children: "road-curve"
   children: "road-curve1"
   children: "road-end-round"
@@ -688,6 +737,8 @@ embedded_instances {
 }
 embedded_instances {
   id: "foliage"
+  children: "path-stones-long"
+  children: "path-stones-short"
   children: "tree-large"
   children: "tree-large1"
   children: "tree-small"
