@@ -1,28 +1,5 @@
 name: "city"
 instances {
-  id: "building-type-f"
-  prototype: "/assets/models/gen/suburban/building-type-f.go"
-  position {
-    z: 4.4
-  }
-}
-instances {
-  id: "building-type-f1"
-  prototype: "/assets/models/gen/suburban/building-type-f.go"
-  position {
-    x: -2.0
-    z: 4.4
-  }
-}
-instances {
-  id: "building-type-f2"
-  prototype: "/assets/models/gen/suburban/building-type-f.go"
-  position {
-    x: 2.0
-    z: 4.4
-  }
-}
-instances {
   id: "road-straight"
   prototype: "/assets/models/gen/roads/road-straight.go"
   position {
@@ -130,30 +107,6 @@ instances {
   position {
     x: 9.0
     z: 1.0
-  }
-  rotation {
-    y: -0.70710677
-    w: 0.70710677
-  }
-}
-instances {
-  id: "building-type-p"
-  prototype: "/assets/models/gen/suburban/building-type-p.go"
-  position {
-    x: 7.9
-    z: 1.0
-  }
-  rotation {
-    y: -0.70710677
-    w: 0.70710677
-  }
-}
-instances {
-  id: "building-type-q"
-  prototype: "/assets/models/gen/suburban/building-type-q.go"
-  position {
-    x: 7.9
-    z: -1.0
   }
   rotation {
     y: -0.70710677
@@ -573,17 +526,6 @@ instances {
   }
 }
 instances {
-  id: "building-type-u"
-  prototype: "/assets/models/gen/suburban/building-type-u.go"
-  position {
-    x: 4.6
-  }
-  rotation {
-    y: -0.70710677
-    w: 0.70710677
-  }
-}
-instances {
   id: "driveway-long"
   prototype: "/assets/models/gen/suburban/driveway-long.go"
   position {
@@ -620,6 +562,37 @@ instances {
   }
 }
 instances {
+  id: "car"
+  prototype: "/assets/test/car.go"
+  position {
+    x: -3.807543
+  }
+}
+instances {
+  id: "car1"
+  prototype: "/assets/test/car.go"
+  position {
+    x: 5.414888
+    z: 0.451481
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "building-type-p"
+  prototype: "/assets/models/gen/suburban/building-type-p.go"
+  position {
+    x: 7.9
+    z: 1.0
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
+  }
+}
+instances {
   id: "fence-3x3"
   prototype: "/assets/models/gen/suburban/fence-3x3.go"
   position {
@@ -632,27 +605,26 @@ instances {
   }
 }
 instances {
-  id: "building-type-j"
-  prototype: "/assets/models/gen/suburban/building-type-j.go"
+  id: "building-type-f2"
+  prototype: "/assets/models/gen/suburban/building-type-f.go"
   position {
-    x: 4.5
-    z: -1.4
+    x: 2.0
+    z: 4.4
   }
 }
 instances {
-  id: "path-stones-short1"
-  prototype: "/assets/models/gen/suburban/path-stones-short.go"
+  id: "building-type-f1"
+  prototype: "/assets/models/gen/suburban/building-type-f.go"
   position {
-    x: 4.465
-    z: -1.88
+    x: -2.0
+    z: 4.4
   }
 }
 instances {
-  id: "path-stones-short2"
-  prototype: "/assets/models/gen/suburban/path-stones-short.go"
+  id: "building-type-f"
+  prototype: "/assets/models/gen/suburban/building-type-f.go"
   position {
-    x: 2.965
-    z: -1.88
+    z: 4.4
   }
 }
 instances {
@@ -664,57 +636,49 @@ instances {
   }
 }
 instances {
-  id: "driveway-long1"
-  prototype: "/assets/models/gen/suburban/driveway-long.go"
+  id: "building-type-j"
+  prototype: "/assets/models/gen/suburban/building-type-j.go"
   position {
-    x: 1.65
-    z: 4.05
+    x: 4.5
+    z: -1.4
   }
 }
 instances {
-  id: "driveway-long2"
-  prototype: "/assets/models/gen/suburban/driveway-long.go"
+  id: "building-type-u"
+  prototype: "/assets/models/gen/suburban/building-type-u.go"
   position {
-    x: 1.65
-    z: 3.7
+    x: 4.6
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
   }
 }
 instances {
-  id: "driveway-long3"
-  prototype: "/assets/models/gen/suburban/driveway-long.go"
+  id: "building-type-q"
+  prototype: "/assets/models/gen/suburban/building-type-q.go"
   position {
-    x: -0.35
-    z: 4.05
+    x: 7.9
+    z: -1.0
   }
-}
-instances {
-  id: "driveway-long4"
-  prototype: "/assets/models/gen/suburban/driveway-long.go"
-  position {
-    x: -0.35
-    z: 3.7
-  }
-}
-instances {
-  id: "driveway-long5"
-  prototype: "/assets/models/gen/suburban/driveway-long.go"
-  position {
-    x: -2.35
-    z: 4.05
-  }
-}
-instances {
-  id: "driveway-long6"
-  prototype: "/assets/models/gen/suburban/driveway-long.go"
-  position {
-    x: -2.35
-    z: 3.7
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
   }
 }
 scale_along_z: 0
 embedded_instances {
   id: "camera"
-  data: "embedded_components {\n"
+  data: "components {\n"
+  "  id: \"orbit\"\n"
+  "  component: \"/main/orbit.script\"\n"
+  "  properties {\n"
+  "    id: \"zoom\"\n"
+  "    value: \"20.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
   "  id: \"camera\"\n"
   "  type: \"camera\"\n"
   "  data: \"aspect_ratio: 1.0\\n"
@@ -726,40 +690,16 @@ embedded_instances {
   "\"\n"
   "}\n"
   ""
-  position {
-    x: 3.0
-    y: 8.0
-    z: -17.0
-  }
   rotation {
-    x: -5.5874285E-4
-    y: 0.9745661
-    z: 0.22408628
-    w: -0.002425632
+    x: -0.23911762
+    y: 0.3696438
+    z: 0.09904576
+    w: 0.8923991
   }
-}
-embedded_instances {
-  id: "buildings"
-  children: "building-type-f"
-  children: "building-type-f1"
-  children: "building-type-f2"
-  children: "building-type-j"
-  children: "building-type-j1"
-  children: "building-type-p"
-  children: "building-type-q"
-  children: "building-type-u"
-  children: "fence-3x3"
-  data: ""
 }
 embedded_instances {
   id: "roads"
   children: "driveway-long"
-  children: "driveway-long1"
-  children: "driveway-long2"
-  children: "driveway-long3"
-  children: "driveway-long4"
-  children: "driveway-long5"
-  children: "driveway-long6"
   children: "road-curve"
   children: "road-curve1"
   children: "road-end-round"
@@ -818,7 +758,7 @@ embedded_instances {
   "name: \\\"{{NAME}}\\\"\\n"
   "materials {\\n"
   "  name: \\\"default\\\"\\n"
-  "  material: \\\"/builtins/materials/model.material\\\"\\n"
+  "  material: \\\"/materials/model_unlit_instanced.material\\\"\\n"
   "  textures {\\n"
   "    sampler: \\\"tex0\\\"\\n"
   "    texture: \\\"/assets/images/green.png\\\"\\n"
@@ -840,8 +780,6 @@ embedded_instances {
   id: "foliage"
   children: "path-stones-long"
   children: "path-stones-short"
-  children: "path-stones-short1"
-  children: "path-stones-short2"
   children: "tree-large"
   children: "tree-large1"
   children: "tree-small"
@@ -858,4 +796,17 @@ embedded_instances {
     x: -4.0
     z: -3.0
   }
+}
+embedded_instances {
+  id: "buildings"
+  children: "building-type-f"
+  children: "building-type-f1"
+  children: "building-type-f2"
+  children: "building-type-j"
+  children: "building-type-j1"
+  children: "building-type-p"
+  children: "building-type-q"
+  children: "building-type-u"
+  children: "fence-3x3"
+  data: ""
 }
