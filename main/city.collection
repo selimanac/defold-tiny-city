@@ -619,10 +619,38 @@ instances {
     w: 0.70710677
   }
 }
+instances {
+  id: "car"
+  prototype: "/assets/test/car.go"
+  position {
+    x: -3.807543
+  }
+}
+instances {
+  id: "car1"
+  prototype: "/assets/test/car.go"
+  position {
+    x: 5.414888
+    z: 0.451481
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
 scale_along_z: 0
 embedded_instances {
   id: "camera"
-  data: "embedded_components {\n"
+  data: "components {\n"
+  "  id: \"orbit\"\n"
+  "  component: \"/main/orbit.script\"\n"
+  "  properties {\n"
+  "    id: \"zoom\"\n"
+  "    value: \"20.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
   "  id: \"camera\"\n"
   "  type: \"camera\"\n"
   "  data: \"aspect_ratio: 1.0\\n"
@@ -634,16 +662,11 @@ embedded_instances {
   "\"\n"
   "}\n"
   ""
-  position {
-    x: 3.0
-    y: 8.0
-    z: -17.0
-  }
   rotation {
-    x: -5.5874285E-4
-    y: 0.9745661
-    z: 0.22408628
-    w: -0.002425632
+    x: -0.23911762
+    y: 0.3696438
+    z: 0.09904576
+    w: 0.8923991
   }
 }
 embedded_instances {
@@ -717,7 +740,7 @@ embedded_instances {
   "name: \\\"{{NAME}}\\\"\\n"
   "materials {\\n"
   "  name: \\\"default\\\"\\n"
-  "  material: \\\"/builtins/materials/model.material\\\"\\n"
+  "  material: \\\"/materials/model_unlit_instanced.material\\\"\\n"
   "  textures {\\n"
   "    sampler: \\\"tex0\\\"\\n"
   "    texture: \\\"/assets/images/green.png\\\"\\n"
