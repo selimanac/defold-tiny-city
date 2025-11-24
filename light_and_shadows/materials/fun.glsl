@@ -48,27 +48,25 @@ float rgba_to_float(vec4 rgba)
 //
 float shadow_calculation(vec4 depth_data)
 {
-    float depth_bias = v4.w; // 0.0008;
+    float depth_bias = v4.w;
     float shadow = 0.0;
-    float texel_size = 1.0 / 2048.0; // textureSize(tex1, 0);
-    int   y = 0;
+    float texel_size = 2.0 / 4096.0;
+
+    // Full 3x3 grid sampling (9 samples)
     for (int x = -1; x <= 1; ++x)
     {
-        vec2  uv = depth_data.xy + vec2(x, y) * texel_size;
-        vec4  rgba = texture(tex1, uv + rand(uv));
-        float depth = rgba_to_float(rgba);
-        shadow += depth_data.z - depth_bias > depth ? 1.0 : 0.0;
+        for (int y = -1; y <= 1; ++y)
+        {
+            vec2  uv = depth_data.xy + vec2(x, y) * texel_size;
+            vec4  rgba = texture(tex1, uv + rand(uv));
+            float depth = rgba_to_float(rgba);
+            shadow += depth_data.z - depth_bias > depth ? 1.0 : 0.0;
+        }
     }
-    shadow /= 3.0;
+    shadow /= 9.0;
 
     highp vec2 uv = depth_data.xy;
-    if (uv.x < 0.0)
-        shadow = 0.0;
-    if (uv.x > 1.0)
-        shadow = 0.0;
-    if (uv.y < 0.0)
-        shadow = 0.0;
-    if (uv.y > 1.0)
+    if (uv.x < 0.0 || uv.x > 1.0 || uv.y < 0.0 || uv.y > 1.0)
         shadow = 0.0;
 
     return shadow;
