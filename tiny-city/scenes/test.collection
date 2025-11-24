@@ -1,9 +1,5 @@
 name: "test"
 instances {
-  id: "render_target_quad"
-  prototype: "/light_and_shadows/props/render_target_quad.go"
-}
-instances {
   id: "game_camera"
   prototype: "/tiny-city/components/gameobjects/game_camera.go"
   rotation {
@@ -43,6 +39,16 @@ instances {
   component_properties {
     id: "sun"
     properties {
+      id: "color"
+      value: "0.6, 0.6, 0.7, 0.0"
+      type: PROPERTY_TYPE_VECTOR4
+    }
+    properties {
+      id: "shadow"
+      value: "0.5, 0.5, 0.5, 0.0"
+      type: PROPERTY_TYPE_VECTOR4
+    }
+    properties {
       id: "near"
       value: "0.1"
       type: PROPERTY_TYPE_NUMBER
@@ -54,7 +60,7 @@ instances {
     }
     properties {
       id: "PROJECTION_RESOLUTION"
-      value: "100.0"
+      value: "10.0"
       type: PROPERTY_TYPE_NUMBER
     }
     properties {
@@ -64,7 +70,7 @@ instances {
     }
     properties {
       id: "fov"
-      value: "2.0"
+      value: "1.0"
       type: PROPERTY_TYPE_NUMBER
     }
     properties {
@@ -147,9 +153,52 @@ instances {
   id: "skybox"
   prototype: "/tiny-city/components/gameobjects/skybox.go"
   scale3 {
-    x: 100.0
-    y: 100.0
-    z: 100.0
+    x: 150.0
+    y: 150.0
+    z: 150.0
+  }
+}
+instances {
+  id: "render_target_quad"
+  prototype: "/light_and_shadows/props/render_target_quad.go"
+}
+instances {
+  id: "island"
+  prototype: "/tiny-city/components/gameobjects/island.go"
+  position {
+    x: -2.0
+    y: 0.21
+  }
+  scale3 {
+    x: 3.0
+    y: 3.0
+    z: 3.0
+  }
+}
+instances {
+  id: "bulb"
+  prototype: "/light_and_shadows/props/bulb.go"
+  position {
+    x: -26.0
+    y: 1.0
+  }
+  component_properties {
+    id: "bulb"
+    properties {
+      id: "color"
+      value: "0.3, 0.3, 0.7, 1.0"
+      type: PROPERTY_TYPE_VECTOR4
+    }
+    properties {
+      id: "power"
+      value: "200.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "light_on"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
   }
 }
 collection_instances {
@@ -167,10 +216,34 @@ embedded_instances {
   "  id: \"light_setting\"\n"
   "  component: \"/light_and_shadows/light_setting.script\"\n"
   "  properties {\n"
+  "    id: \"clear_color\"\n"
+  "    value: \"0.1, 0.1, 0.5, 0.0\"\n"
+  "    type: PROPERTY_TYPE_VECTOR4\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"fog_color\"\n"
+  "    value: \"1.0, 1.0, 1.0, 0.0\"\n"
+  "    type: PROPERTY_TYPE_VECTOR4\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"fog_density\"\n"
+  "    value: \"1.0\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"fog_min_max\"\n"
+  "    value: \"100.0, 200.0, 1.0, 1.0\"\n"
+  "    type: PROPERTY_TYPE_VECTOR4\n"
+  "  }\n"
+  "  properties {\n"
   "    id: \"ambient\"\n"
   "    value: \"0.5, 0.5, 0.5, 0.0\"\n"
   "    type: PROPERTY_TYPE_VECTOR4\n"
   "  }\n"
+  "}\n"
+  "components {\n"
+  "  id: \"game\"\n"
+  "  component: \"/tiny-city/scripts/game.script\"\n"
   "}\n"
   ""
 }
@@ -192,6 +265,9 @@ embedded_instances {
   "\"\n"
   "}\n"
   ""
+  position {
+    y: 38.0
+  }
   rotation {
     x: -0.70710677
     w: 0.70710677

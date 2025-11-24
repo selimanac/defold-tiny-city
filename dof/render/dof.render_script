@@ -27,6 +27,13 @@ local DEFAULT_NEAR = -1
 local DEFAULT_FAR = 1
 local DEFAULT_ZOOM = 1
 
+
+--=============================================
+-- DoF
+--=============================================
+local dof = require("dof.dof")
+--=============================================
+
 --
 -- projection that centers content with maintained aspect ratio and optional zoom
 --
@@ -169,15 +176,8 @@ local function reset_camera_world(state)
     end
 end
 
--- L_S Injection
-local light_and_shadows = require "light_and_shadows.light_and_shadows"
-local constants = require "light_and_shadows.constants"
---
-
 function init(self)
-    self.predicates = create_predicates("tile", "gui", "particle", "model", "skybox", "debug_text",
-        "model_alpha_blend", "bgtile", "shadow_instanced_billboard", "shadow_instanced_textured", "model2", "model3",
-        "atile", "shadow", "upscale", "shadow_local", "shadow_instanced", "shadow_skinned_instanced", "shadow_skinned") -- L_S Injection
+    self.predicates = create_predicates("tile", "gui", "particle", "model", "debug_text")
 
     -- default is stretch projection. copy from builtins and change for different projection
     -- or send a message to the render script to change projection:
@@ -197,10 +197,11 @@ function init(self)
     local camera_component = create_camera(state, "camera_component")
     update_state(state)
 
-    -- L_S Injection
-    light_and_shadows.init(self)
-    camera_world.options.constants = self.constants -- add our constants to the default camera options
-    --
+    --=============================================
+    -- DoF init
+    --=============================================
+    dof.init(self)
+    --=============================================
 end
 
 function update(self)
@@ -210,10 +211,6 @@ function update(self)
             return
         end
     end
-
-    -- L_S Injection
-    light_and_shadows.update(self)
-    --
 
     local predicates = self.predicates
     -- clear screen buffers
@@ -226,87 +223,35 @@ function update(self)
     -- setup camera view and projection
     --
     local draw_options_world = set_camera_world(state)
-    -- L_S Injection
-    draw_options_world.constants = self.constants    -- add our constants to the default camera options
-    draw_options_world.frustum_planes = render.FRUSTUM_PLANES_ALL
-    update_clear_color(state, constants.clear_color) -- set clear color from the constants module instead message passing
-    --
-    -- L_S Injection
-    if light_and_shadows.upscale or light_and_shadows.blur then
-        render.set_viewport(0, 0, state.window_width / light_and_shadows.zoom, state.window_height / light_and_shadows.zoom)
-    else
-        render.set_viewport(0, 0, state.window_width, state.window_height)
-    end
-    --
+    render.set_viewport(0, 0, state.window_width, state.window_height)
 
     -- set states used for all the world predicates
     render.set_blend_func(graphics.BLEND_FACTOR_SRC_ALPHA, graphics.BLEND_FACTOR_ONE_MINUS_SRC_ALPHA)
     render.enable_state(graphics.STATE_DEPTH_TEST)
 
-    -- L_S Injection
-    if light_and_shadows.upscale or light_and_shadows.blur then
-        render.set_render_target(self.upscale_rt.rt)
-        render.clear(state.clear_buffers)
-    end
-
-    -- render `skybox`
-    -- https://www.ogldev.org/www/tutorial25/tutorial25.html
-    --
-    render.enable_state(graphics.STATE_CULL_FACE)
-    render.set_cull_face(graphics.FACE_TYPE_FRONT)
-    render.set_depth_func(graphics.COMPARE_FUNC_LEQUAL)
-    render.draw(predicates.skybox, draw_options_world)
-
-    render.set_depth_func(graphics.COMPARE_FUNC_LESS)
-    render.set_cull_face(graphics.FACE_TYPE_BACK)
-    render.disable_state(graphics.STATE_CULL_FACE)
-    if light_and_shadows.shadow then
-        render.enable_texture("tex1", self.shadowmap_buffer, render.BUFFER_COLOR_BIT) -- enable shadowmap texture
-    end
-    --
-
-    -- render `model` predicate for default 3D material
-    --
-    render.enable_state(graphics.STATE_CULL_FACE)
-    render.draw(predicates.model, draw_options_world)
-    render.draw(predicates.model2, draw_options_world)
-    render.draw(predicates.model3, draw_options_world)
-    --   render.set_depth_mask(false)
-    render.enable_state(graphics.STATE_BLEND) -- Enable Alpha Blending for semi-transparent materials
-    -- render.set_blend_func(render.BLEND_ONE, render.BLEND_ONE) -- Enable this if wants to ADD blending
-    render.draw(predicates.model_alpha_blend, draw_options_world)
-    -- render.set_blend_func(graphics.BLEND_FACTOR_SRC_ALPHA, graphics.BLEND_FACTOR_ONE_MINUS_SRC_ALPHA) -- reset blend function
-    render.disable_state(graphics.STATE_CULL_FACE)
-
-
-
-
+    --=============================================
+    -- DoF Update
+    --=============================================
+    dof.render_update(self, state, predicates, draw_options_world)
+    --=============================================
 
     -- render the other components: sprites, tilemaps, particles etc
     --
     render.enable_state(graphics.STATE_BLEND)
-    render.draw(predicates.bgtile, draw_options_world)
-    render.draw(predicates.atile, draw_options_world)
     render.draw(predicates.tile, draw_options_world)
     render.draw(predicates.particle, draw_options_world)
     render.disable_state(graphics.STATE_DEPTH_TEST)
-
-    -- L_S Injection
-    if light_and_shadows.shadow then
-        render.disable_texture("tex1")
-    end
-    --
 
     render.draw_debug3d()
 
     reset_camera_world(state)
 
-    -- L_S Injection
-    if light_and_shadows.upscale or light_and_shadows.blur then
-        render.set_render_target(render.RENDER_TARGET_DEFAULT)
-        light_and_shadows.draw_upscaled(self)
-    end
-    --
+    --=============================================
+    -- DoF Render
+    --=============================================
+    dof.render(self, state, predicates)
+    --=============================================
+
     -- render GUI
     --
     local camera_gui = state.cameras.camera_gui

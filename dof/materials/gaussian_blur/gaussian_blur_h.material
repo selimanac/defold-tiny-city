@@ -1,0 +1,24 @@
+name: "gaussian_blur_h"
+tags: "dof"
+vertex_program: "/dof/materials/dof.vp"
+fragment_program: "/dof/materials/gaussian_blur/gaussian_blur_h.fp"
+vertex_space: VERTEX_SPACE_LOCAL
+vertex_constants {
+  name: "mtx_viewproj"
+  type: CONSTANT_TYPE_WORLDVIEWPROJ
+}
+fragment_constants {
+  name: "blur_params"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 2.0
+    y: 3.0
+  }
+}
+samplers {
+  name: "tex0"
+  wrap_u: WRAP_MODE_CLAMP_TO_EDGE
+  wrap_v: WRAP_MODE_CLAMP_TO_EDGE
+  filter_min: FILTER_MODE_MIN_LINEAR
+  filter_mag: FILTER_MODE_MAG_LINEAR
+}
