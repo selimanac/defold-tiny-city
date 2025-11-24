@@ -9,3 +9,12 @@ Thumbs.db
 .project
 .cproject
 builtins
+compile_commands.json
+*.der
+RELEASE-NOTES.md
+*.sublime-project
+*.sublime-workspace
+*.appmanifest
+.luarc.json
+/.cache
+_codeql_detected_source_root

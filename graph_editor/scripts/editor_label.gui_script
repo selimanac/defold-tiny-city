@@ -1,0 +1,13 @@
+function init(self)
+	self.name_node = gui.get_node("node_id")
+end
+
+function on_message(self, message_id, message, _)
+	if message_id == hash("update_data") then
+		gui.set_screen_position(self.name_node, message.screen_position)
+
+		if message.text then
+			gui.set_text(self.name_node, message.text)
+		end
+	end
+end

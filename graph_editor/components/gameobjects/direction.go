@@ -1,0 +1,15 @@
+embedded_components {
+  id: "model"
+  type: "model"
+  data: "mesh: \"/graph_editor/components/models/direction.glb\"\n"
+  "name: \"{{NAME}}\"\n"
+  "materials {\n"
+  "  name: \"default\"\n"
+  "  material: \"/tiny-city/components/materials/model_unlit_instanced.material\"\n"
+  "  textures {\n"
+  "    sampler: \"tex0\"\n"
+  "    texture: \"/graph_editor/assets/images/green.png\"\n"
+  "  }\n"
+  "}\n"
+  ""
+}

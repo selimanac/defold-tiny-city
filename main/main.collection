@@ -1,7 +1,7 @@
 name: "main"
 instances {
   id: "road-crossing"
-  prototype: "/assets/models/gen/roads/road-crossing.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-crossing.go"
   position {
     x: 4.5
     y: -0.5

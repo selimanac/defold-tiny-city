@@ -1,0 +1,4 @@
+font: "/graph_editor/assets/fonts/ffff.ttf"
+material: "/builtins/fonts/font.material"
+size: 12
+characters: " !\"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~"

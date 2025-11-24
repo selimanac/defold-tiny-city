@@ -1,0 +1,45 @@
+script: "/light_and_shadows/render/default.render_script"
+render_resources {
+  name: "shadow"
+  path: "/light_and_shadows/materials/shadow/shadow.material"
+}
+render_resources {
+  name: "shadowmap"
+  path: "/light_and_shadows/render/shadowmap.render_target"
+}
+render_resources {
+  name: "shadow_local"
+  path: "/light_and_shadows/materials/shadow/shadow_local.material"
+}
+render_resources {
+  name: "shadow_instanced"
+  path: "/light_and_shadows/materials/shadow/shadow_instanced.material"
+}
+render_resources {
+  name: "shadow_skinned_instanced"
+  path: "/light_and_shadows/materials/shadow/skinned/shadow_skinned_instanced.material"
+}
+render_resources {
+  name: "shadow_skinned"
+  path: "/light_and_shadows/materials/shadow/skinned/shadow_skinned.material"
+}
+render_resources {
+  name: "blur_horizontal"
+  path: "/light_and_shadows/materials/post/blur_horizontal/blur_horizontal.material"
+}
+render_resources {
+  name: "blur_vertical"
+  path: "/light_and_shadows/materials/post/blur_horizontal/blur_vertical.material"
+}
+render_resources {
+  name: "copy"
+  path: "/light_and_shadows/materials/copy/copy.material"
+}
+render_resources {
+  name: "shadow_instanced_billboard"
+  path: "/light_and_shadows/materials/shadow/shadow_instanced_billboard.material"
+}
+render_resources {
+  name: "shadow_instanced_textured"
+  path: "/light_and_shadows/materials/shadow/shadow_instanced_textured.material"
+}

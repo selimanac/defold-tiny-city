@@ -1,0 +1,11 @@
+mesh: "/graph_editor/components/gameobjects/node.glb"
+name: "tes"
+materials {
+  name: "default"
+  material: "/builtins/materials/model_instanced.material"
+  textures {
+    sampler: "tex0"
+    texture: "/graph_editor/assets/images/white.png"
+  }
+}
+create_go_bones: false

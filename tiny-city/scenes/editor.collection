@@ -1,0 +1,17 @@
+name: "editor"
+instances {
+  id: "editor_camera"
+  prototype: "/graph_editor/components/gameobjects/editor_camera.go"
+  position {
+    y: 23.0
+  }
+  rotation {
+    x: -0.70710677
+    w: 0.70710677
+  }
+}
+collection_instances {
+  id: "graph_editor"
+  collection: "/graph_editor/graph_editor.collection"
+}
+scale_along_z: 0

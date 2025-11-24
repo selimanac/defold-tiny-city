@@ -1,7 +1,7 @@
 name: "city"
 instances {
   id: "road-straight"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: -2.0
     z: 3.0
@@ -9,7 +9,7 @@ instances {
 }
 instances {
   id: "road-straight1"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: -1.0
     z: 3.0
@@ -17,14 +17,14 @@ instances {
 }
 instances {
   id: "road-straight2"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     z: 3.0
   }
 }
 instances {
   id: "road-straight3"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: 1.0
     z: 3.0
@@ -32,7 +32,7 @@ instances {
 }
 instances {
   id: "road-straight4"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: 2.0
     z: 3.0
@@ -40,7 +40,7 @@ instances {
 }
 instances {
   id: "road-straight5"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: 3.0
     z: 3.0
@@ -48,7 +48,7 @@ instances {
 }
 instances {
   id: "road-straight6"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: 4.0
     z: 3.0
@@ -56,7 +56,7 @@ instances {
 }
 instances {
   id: "road-straight7"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: 5.0
     z: 3.0
@@ -64,7 +64,7 @@ instances {
 }
 instances {
   id: "road-straight8"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: 6.0
     z: 3.0
@@ -72,7 +72,7 @@ instances {
 }
 instances {
   id: "road-straight9"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: 7.0
     z: 3.0
@@ -80,7 +80,7 @@ instances {
 }
 instances {
   id: "road-curve"
-  prototype: "/assets/models/gen/roads/road-curve.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-curve.go"
   position {
     x: 8.5
     z: 2.5
@@ -92,7 +92,7 @@ instances {
 }
 instances {
   id: "road-straight10"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: 9.0
   }
@@ -103,7 +103,7 @@ instances {
 }
 instances {
   id: "road-straight11"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: 9.0
     z: 1.0
@@ -115,7 +115,7 @@ instances {
 }
 instances {
   id: "road-straight12"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: 9.0
     z: -1.0
@@ -127,7 +127,7 @@ instances {
 }
 instances {
   id: "road-intersection"
-  prototype: "/assets/models/gen/roads/road-intersection.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-intersection.go"
   position {
     x: 9.0
     z: -2.5
@@ -139,7 +139,7 @@ instances {
 }
 instances {
   id: "road-straight14"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: 7.0
     z: -2.5
@@ -147,7 +147,7 @@ instances {
 }
 instances {
   id: "road-straight15"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: 8.0
     z: -2.5
@@ -155,7 +155,7 @@ instances {
 }
 instances {
   id: "road-straight-half"
-  prototype: "/assets/models/gen/roads/road-straight-half.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight-half.go"
   position {
     x: 9.0
     z: -1.75
@@ -167,7 +167,7 @@ instances {
 }
 instances {
   id: "road-straight-half1"
-  prototype: "/assets/models/gen/roads/road-straight-half.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight-half.go"
   position {
     x: 9.0
     z: -3.25
@@ -179,7 +179,7 @@ instances {
 }
 instances {
   id: "road-intersection1"
-  prototype: "/assets/models/gen/roads/road-intersection.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-intersection.go"
   position {
     x: 6.0
     z: -2.5
@@ -187,7 +187,7 @@ instances {
 }
 instances {
   id: "road-straight13"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: 5.0
     z: -2.5
@@ -195,7 +195,7 @@ instances {
 }
 instances {
   id: "road-straight-half2"
-  prototype: "/assets/models/gen/roads/road-straight-half.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight-half.go"
   position {
     x: 6.0
     z: -1.75
@@ -207,7 +207,7 @@ instances {
 }
 instances {
   id: "road-straight16"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: 6.0
     z: -1.0
@@ -219,7 +219,7 @@ instances {
 }
 instances {
   id: "road-straight17"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: 6.0
   }
@@ -230,7 +230,7 @@ instances {
 }
 instances {
   id: "road-end-round"
-  prototype: "/assets/models/gen/roads/road-end-round.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-end-round.go"
   position {
     x: 6.0
     z: 1.0
@@ -242,7 +242,7 @@ instances {
 }
 instances {
   id: "tree-small"
-  prototype: "/assets/models/gen/suburban/tree-small.go"
+  prototype: "/tiny-city/assets/models/gen/suburban/tree-small.go"
   position {
     x: 6.0
     z: 2.0
@@ -250,7 +250,7 @@ instances {
 }
 instances {
   id: "tree-large"
-  prototype: "/assets/models/gen/suburban/tree-large.go"
+  prototype: "/tiny-city/assets/models/gen/suburban/tree-large.go"
   position {
     x: 5.9
     z: 1.8
@@ -258,7 +258,7 @@ instances {
 }
 instances {
   id: "tree-large1"
-  prototype: "/assets/models/gen/suburban/tree-large.go"
+  prototype: "/tiny-city/assets/models/gen/suburban/tree-large.go"
   position {
     x: 5.4
     z: 2.2
@@ -266,7 +266,7 @@ instances {
 }
 instances {
   id: "road-straight18"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: 4.0
     z: -2.5
@@ -274,7 +274,7 @@ instances {
 }
 instances {
   id: "road-straight19"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: 3.0
     z: -2.5
@@ -282,7 +282,7 @@ instances {
 }
 instances {
   id: "road-straight20"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: 2.0
     z: -2.5
@@ -290,7 +290,7 @@ instances {
 }
 instances {
   id: "road-straight21"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: 1.0
     z: -2.5
@@ -298,14 +298,14 @@ instances {
 }
 instances {
   id: "road-straight22"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     z: -2.5
   }
 }
 instances {
   id: "road-roundabout"
-  prototype: "/assets/models/gen/roads/road-roundabout.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-roundabout.go"
   position {
     x: -4.0
     z: -2.5
@@ -313,7 +313,7 @@ instances {
 }
 instances {
   id: "road-straight-half3"
-  prototype: "/assets/models/gen/roads/road-straight-half.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight-half.go"
   position {
     x: 9.0
     z: -3.25
@@ -325,7 +325,7 @@ instances {
 }
 instances {
   id: "road-straight-half4"
-  prototype: "/assets/models/gen/roads/road-straight-half.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight-half.go"
   position {
     x: 6.0
     z: -1.75
@@ -337,7 +337,7 @@ instances {
 }
 instances {
   id: "road-straight23"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: -4.0
   }
@@ -348,7 +348,7 @@ instances {
 }
 instances {
   id: "road-curve1"
-  prototype: "/assets/models/gen/roads/road-curve.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-curve.go"
   position {
     x: -3.5
     z: 2.5
@@ -360,7 +360,7 @@ instances {
 }
 instances {
   id: "road-straight24"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: -4.0
     z: 1.0
@@ -372,7 +372,7 @@ instances {
 }
 instances {
   id: "road-straight-half5"
-  prototype: "/assets/models/gen/roads/road-straight-half.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight-half.go"
   position {
     x: -4.0
     z: -0.75
@@ -384,7 +384,7 @@ instances {
 }
 instances {
   id: "road-straight25"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: -1.0
     z: -2.5
@@ -392,7 +392,7 @@ instances {
 }
 instances {
   id: "road-straight26"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: -2.0
     z: -2.5
@@ -400,7 +400,7 @@ instances {
 }
 instances {
   id: "road-straight27"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: -6.0
     z: -2.5
@@ -408,7 +408,7 @@ instances {
 }
 instances {
   id: "road-straight28"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: -7.0
     z: -2.5
@@ -416,7 +416,7 @@ instances {
 }
 instances {
   id: "road-straight29"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: -8.0
     z: -2.5
@@ -424,7 +424,7 @@ instances {
 }
 instances {
   id: "road-straight30"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: -9.0
     z: -2.5
@@ -432,7 +432,7 @@ instances {
 }
 instances {
   id: "road-end-round1"
-  prototype: "/assets/models/gen/roads/road-end-round.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-end-round.go"
   position {
     x: -10.0
     z: -2.5
@@ -440,7 +440,7 @@ instances {
 }
 instances {
   id: "road-straight-half6"
-  prototype: "/assets/models/gen/roads/road-straight-half.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight-half.go"
   position {
     x: -4.0
     z: -4.25
@@ -452,7 +452,7 @@ instances {
 }
 instances {
   id: "road-straight31"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: -4.0
     z: -6.0
@@ -464,7 +464,7 @@ instances {
 }
 instances {
   id: "road-straight32"
-  prototype: "/assets/models/gen/roads/road-straight.go"
+  prototype: "/tiny-city/assets/models/gen/roads/road-straight.go"
   position {
     x: -4.0
     z: -5.0
@@ -476,7 +476,7 @@ instances {
 }
 instances {
   id: "construction-cone"
-  prototype: "/assets/models/gen/roads/construction-cone.go"
+  prototype: "/tiny-city/assets/models/gen/roads/construction-cone.go"
   position {
     x: 0.7
   }
@@ -489,7 +489,7 @@ instances {
 }
 instances {
   id: "construction-cone1"
-  prototype: "/assets/models/gen/roads/construction-cone.go"
+  prototype: "/tiny-city/assets/models/gen/roads/construction-cone.go"
   position {
     x: 0.55
     z: -0.15
@@ -503,7 +503,7 @@ instances {
 }
 instances {
   id: "construction-barrier"
-  prototype: "/assets/models/gen/roads/construction-barrier.go"
+  prototype: "/tiny-city/assets/models/gen/roads/construction-barrier.go"
   position {
     x: 0.9
     z: 0.1
@@ -515,7 +515,7 @@ instances {
 }
 instances {
   id: "construction-barrier1"
-  prototype: "/assets/models/gen/roads/construction-barrier.go"
+  prototype: "/tiny-city/assets/models/gen/roads/construction-barrier.go"
   position {
     x: 0.43
     z: -0.37
@@ -527,7 +527,7 @@ instances {
 }
 instances {
   id: "driveway-long"
-  prototype: "/assets/models/gen/suburban/driveway-long.go"
+  prototype: "/tiny-city/assets/models/gen/suburban/driveway-long.go"
   position {
     x: 5.3
     z: 0.45
@@ -539,7 +539,7 @@ instances {
 }
 instances {
   id: "path-stones-long"
-  prototype: "/assets/models/gen/suburban/path-stones-long.go"
+  prototype: "/tiny-city/assets/models/gen/suburban/path-stones-long.go"
   position {
     x: 5.3
     z: 0.05
@@ -551,7 +551,7 @@ instances {
 }
 instances {
   id: "path-stones-short"
-  prototype: "/assets/models/gen/suburban/path-stones-short.go"
+  prototype: "/tiny-city/assets/models/gen/suburban/path-stones-short.go"
   position {
     x: 5.0
     z: 0.05
@@ -582,7 +582,7 @@ instances {
 }
 instances {
   id: "building-type-p"
-  prototype: "/assets/models/gen/suburban/building-type-p.go"
+  prototype: "/tiny-city/assets/models/gen/suburban/building-type-p.go"
   position {
     x: 7.9
     z: 1.0
@@ -594,7 +594,7 @@ instances {
 }
 instances {
   id: "fence-3x3"
-  prototype: "/assets/models/gen/suburban/fence-3x3.go"
+  prototype: "/tiny-city/assets/models/gen/suburban/fence-3x3.go"
   position {
     x: 3.55
     z: 0.05
@@ -606,7 +606,7 @@ instances {
 }
 instances {
   id: "building-type-f2"
-  prototype: "/assets/models/gen/suburban/building-type-f.go"
+  prototype: "/tiny-city/assets/models/gen/suburban/building-type-f.go"
   position {
     x: 2.0
     z: 4.4
@@ -614,7 +614,7 @@ instances {
 }
 instances {
   id: "building-type-f1"
-  prototype: "/assets/models/gen/suburban/building-type-f.go"
+  prototype: "/tiny-city/assets/models/gen/suburban/building-type-f.go"
   position {
     x: -2.0
     z: 4.4
@@ -622,14 +622,14 @@ instances {
 }
 instances {
   id: "building-type-f"
-  prototype: "/assets/models/gen/suburban/building-type-f.go"
+  prototype: "/tiny-city/assets/models/gen/suburban/building-type-f.go"
   position {
     z: 4.4
   }
 }
 instances {
   id: "building-type-j1"
-  prototype: "/assets/models/gen/suburban/building-type-j.go"
+  prototype: "/tiny-city/assets/models/gen/suburban/building-type-j.go"
   position {
     x: 3.0
     z: -1.4
@@ -637,7 +637,7 @@ instances {
 }
 instances {
   id: "building-type-j"
-  prototype: "/assets/models/gen/suburban/building-type-j.go"
+  prototype: "/tiny-city/assets/models/gen/suburban/building-type-j.go"
   position {
     x: 4.5
     z: -1.4
@@ -645,7 +645,7 @@ instances {
 }
 instances {
   id: "building-type-u"
-  prototype: "/assets/models/gen/suburban/building-type-u.go"
+  prototype: "/tiny-city/assets/models/gen/suburban/building-type-u.go"
   position {
     x: 4.6
   }
@@ -656,7 +656,7 @@ instances {
 }
 instances {
   id: "building-type-q"
-  prototype: "/assets/models/gen/suburban/building-type-q.go"
+  prototype: "/tiny-city/assets/models/gen/suburban/building-type-q.go"
   position {
     x: 7.9
     z: -1.0
@@ -758,7 +758,7 @@ embedded_instances {
   "name: \\\"{{NAME}}\\\"\\n"
   "materials {\\n"
   "  name: \\\"default\\\"\\n"
-  "  material: \\\"/materials/model_unlit_instanced.material\\\"\\n"
+  "  material: \\\"/tiny-city/components/materials/model_unlit_instanced.material\\\"\\n"
   "  textures {\\n"
   "    sampler: \\\"tex0\\\"\\n"
   "    texture: \\\"/assets/images/green.png\\\"\\n"
