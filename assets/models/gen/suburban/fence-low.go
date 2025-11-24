@@ -5,7 +5,7 @@ embedded_components {
     "name: \"\"\n"
     "materials {\n"
     "  name: \"colormap\"\n"
-    "  material: \"/builtins/materials/model_instanced.material\"\n"
+    "  material: \"/materials/model_unlit_instanced.material\"\n"
     "  textures {\n"
     "    sampler: \"tex0\"\n"
     "    texture: \"/assets/models/suburban/Textures/colormap.png\"\n"

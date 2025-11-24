@@ -7,7 +7,7 @@ embedded_components {
   "  material: \"/materials/model_unlit_instanced.material\"\n"
   "  textures {\n"
   "    sampler: \"tex0\"\n"
-  "    texture: \"/assets/models/suburban/Textures/colormap.png\"\n"
+  "    texture: \"/assets/models/suburban/Textures/variation-b.png\"\n"
   "  }\n"
   "}\n"
   "create_go_bones: false\n"

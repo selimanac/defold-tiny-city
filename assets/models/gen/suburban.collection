@@ -5,7 +5,6 @@ instances {
   children: "go"
   position {
     x: 4.5
-    y: 0.0
     z: 4.5
   }
 }
@@ -15,7 +14,6 @@ instances {
   children: "go1"
   position {
     x: 3.0
-    y: 0.0
     z: 4.5
   }
 }
@@ -25,7 +23,6 @@ instances {
   children: "go2"
   position {
     x: 1.5
-    y: 0.0
     z: 4.5
   }
 }
@@ -34,8 +31,6 @@ instances {
   prototype: "/assets/models/gen/suburban/building-type-d.go"
   children: "go3"
   position {
-    x: 0.0
-    y: 0.0
     z: 4.5
   }
 }
@@ -45,7 +40,6 @@ instances {
   children: "go4"
   position {
     x: -1.5
-    y: 0.0
     z: 4.5
   }
 }
@@ -55,7 +49,6 @@ instances {
   children: "go5"
   position {
     x: -3.0
-    y: 0.0
     z: 3.0
   }
 }
@@ -65,7 +58,6 @@ instances {
   children: "go6"
   position {
     x: 4.5
-    y: 0.0
     z: 3.0
   }
 }
@@ -75,7 +67,6 @@ instances {
   children: "go7"
   position {
     x: 3.0
-    y: 0.0
     z: 3.0
   }
 }
@@ -85,7 +76,6 @@ instances {
   children: "go8"
   position {
     x: 1.5
-    y: 0.0
     z: 3.0
   }
 }
@@ -94,8 +84,6 @@ instances {
   prototype: "/assets/models/gen/suburban/building-type-j.go"
   children: "go9"
   position {
-    x: 0.0
-    y: 0.0
     z: 3.0
   }
 }
@@ -105,7 +93,6 @@ instances {
   children: "go10"
   position {
     x: -1.5
-    y: 0.0
     z: 3.0
   }
 }
@@ -115,7 +102,6 @@ instances {
   children: "go11"
   position {
     x: -3.0
-    y: 0.0
     z: 1.5
   }
 }
@@ -125,7 +111,6 @@ instances {
   children: "go12"
   position {
     x: 4.5
-    y: 0.0
     z: 1.5
   }
 }
@@ -134,8 +119,7 @@ instances {
   prototype: "/assets/models/gen/suburban/building-type-n.go"
   children: "go13"
   position {
-    x: 3.0
-    y: 0.0
+    x: 3.03223
     z: 1.5
   }
 }
@@ -145,7 +129,6 @@ instances {
   children: "go14"
   position {
     x: 1.5
-    y: 0.0
     z: 1.5
   }
 }
@@ -154,8 +137,6 @@ instances {
   prototype: "/assets/models/gen/suburban/building-type-p.go"
   children: "go15"
   position {
-    x: 0.0
-    y: 0.0
     z: 1.5
   }
 }
@@ -165,7 +146,6 @@ instances {
   children: "go16"
   position {
     x: -1.5
-    y: 0.0
     z: 1.5
   }
 }
@@ -175,8 +155,6 @@ instances {
   children: "go17"
   position {
     x: -3.0
-    y: 0.0
-    z: 0.0
   }
 }
 instances {
@@ -185,8 +163,6 @@ instances {
   children: "go18"
   position {
     x: 4.5
-    y: 0.0
-    z: 0.0
   }
 }
 instances {
@@ -195,8 +171,6 @@ instances {
   children: "go19"
   position {
     x: 3.0
-    y: 0.0
-    z: 0.0
   }
 }
 instances {
@@ -205,19 +179,12 @@ instances {
   children: "go20"
   position {
     x: 1.5
-    y: 0.0
-    z: 0.0
   }
 }
 instances {
   id: "driveway-long"
   prototype: "/assets/models/gen/suburban/driveway-long.go"
   children: "go21"
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
 }
 instances {
   id: "driveway-short"
@@ -225,8 +192,6 @@ instances {
   children: "go22"
   position {
     x: -1.5
-    y: 0.0
-    z: 0.0
   }
 }
 instances {
@@ -235,7 +200,6 @@ instances {
   children: "go23"
   position {
     x: -3.0
-    y: 0.0
     z: -1.5
   }
 }
@@ -245,7 +209,6 @@ instances {
   children: "go24"
   position {
     x: 4.5
-    y: 0.0
     z: -1.5
   }
 }
@@ -255,7 +218,6 @@ instances {
   children: "go25"
   position {
     x: 3.0
-    y: 0.0
     z: -1.5
   }
 }
@@ -265,7 +227,6 @@ instances {
   children: "go26"
   position {
     x: 1.5
-    y: 0.0
     z: -1.5
   }
 }
@@ -274,8 +235,6 @@ instances {
   prototype: "/assets/models/gen/suburban/fence-2x3.go"
   children: "go27"
   position {
-    x: 0.0
-    y: 0.0
     z: -1.5
   }
 }
@@ -285,7 +244,6 @@ instances {
   children: "go28"
   position {
     x: -1.5
-    y: 0.0
     z: -1.5
   }
 }
@@ -295,7 +253,6 @@ instances {
   children: "go29"
   position {
     x: -3.0
-    y: 0.0
     z: -3.0
   }
 }
@@ -305,7 +262,6 @@ instances {
   children: "go30"
   position {
     x: 4.5
-    y: 0.0
     z: -3.0
   }
 }
@@ -315,7 +271,6 @@ instances {
   children: "go31"
   position {
     x: 3.0
-    y: 0.0
     z: -3.0
   }
 }
@@ -325,7 +280,6 @@ instances {
   children: "go32"
   position {
     x: 1.5
-    y: 0.0
     z: -3.0
   }
 }
@@ -334,8 +288,6 @@ instances {
   prototype: "/assets/models/gen/suburban/path-short.go"
   children: "go33"
   position {
-    x: 0.0
-    y: 0.0
     z: -3.0
   }
 }
@@ -345,7 +297,6 @@ instances {
   children: "go34"
   position {
     x: -1.5
-    y: 0.0
     z: -3.0
   }
 }
@@ -355,7 +306,6 @@ instances {
   children: "go35"
   position {
     x: -3.0
-    y: 0.0
     z: -4.5
   }
 }
@@ -365,7 +315,6 @@ instances {
   children: "go36"
   position {
     x: 4.5
-    y: 0.0
     z: -4.5
   }
 }
@@ -375,7 +324,6 @@ instances {
   children: "go37"
   position {
     x: 3.0
-    y: 0.0
     z: -4.5
   }
 }
@@ -385,7 +333,6 @@ instances {
   children: "go38"
   position {
     x: 1.5
-    y: 0.0
     z: -4.5
   }
 }
@@ -394,8 +341,6 @@ instances {
   prototype: "/assets/models/gen/suburban/tree-small.go"
   children: "go39"
   position {
-    x: 0.0
-    y: 0.0
     z: -4.5
   }
 }
@@ -416,7 +361,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -442,7 +386,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -468,7 +411,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -494,7 +436,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -520,7 +461,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -546,7 +486,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -572,7 +511,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -598,7 +536,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -624,7 +561,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -650,7 +586,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -676,7 +611,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -702,7 +636,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -728,7 +661,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -754,7 +686,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -780,7 +711,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -806,7 +736,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -832,7 +761,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -858,7 +786,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -884,7 +811,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -910,7 +836,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -936,7 +861,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -962,7 +886,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -988,7 +911,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -1014,7 +936,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -1040,7 +961,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -1066,7 +986,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -1092,7 +1011,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -1118,7 +1036,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -1144,7 +1061,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -1170,7 +1086,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -1196,7 +1111,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -1222,7 +1136,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -1248,7 +1161,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -1274,7 +1186,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -1300,7 +1211,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -1326,7 +1236,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -1352,7 +1261,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -1378,7 +1286,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -1404,7 +1311,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }
@@ -1430,7 +1336,6 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: 0.0
     y: 0.2
     z: 0.7
   }

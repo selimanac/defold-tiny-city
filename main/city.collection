@@ -1,40 +1,9 @@
 name: "city"
 instances {
-  id: "road-straight"
-  prototype: "/assets/models/gen/roads/road-straight.go"
-  position {
-    x: -2.0
-    z: 3.0
-  }
-}
-instances {
   id: "road-straight1"
   prototype: "/assets/models/gen/roads/road-straight.go"
   position {
     x: -1.0
-    z: 3.0
-  }
-}
-instances {
-  id: "road-straight2"
-  prototype: "/assets/models/gen/roads/road-straight.go"
-  position {
-    z: 3.0
-  }
-}
-instances {
-  id: "road-straight3"
-  prototype: "/assets/models/gen/roads/road-straight.go"
-  position {
-    x: 1.0
-    z: 3.0
-  }
-}
-instances {
-  id: "road-straight4"
-  prototype: "/assets/models/gen/roads/road-straight.go"
-  position {
-    x: 2.0
     z: 3.0
   }
 }
@@ -126,18 +95,6 @@ instances {
   }
 }
 instances {
-  id: "road-intersection"
-  prototype: "/assets/models/gen/roads/road-intersection.go"
-  position {
-    x: 9.0
-    z: -2.5
-  }
-  rotation {
-    y: -0.70710677
-    w: 0.70710677
-  }
-}
-instances {
   id: "road-straight14"
   prototype: "/assets/models/gen/roads/road-straight.go"
   position {
@@ -194,49 +151,14 @@ instances {
   }
 }
 instances {
-  id: "road-straight-half2"
-  prototype: "/assets/models/gen/roads/road-straight-half.go"
-  position {
-    x: 6.0
-    z: -1.75
-  }
-  rotation {
-    y: -0.70710677
-    w: 0.70710677
-  }
-}
-instances {
-  id: "road-straight16"
-  prototype: "/assets/models/gen/roads/road-straight.go"
-  position {
-    x: 6.0
-    z: -1.0
-  }
-  rotation {
-    y: -0.70710677
-    w: 0.70710677
-  }
-}
-instances {
   id: "road-straight17"
   prototype: "/assets/models/gen/roads/road-straight.go"
   position {
     x: 6.0
+    z: 0.24
   }
   rotation {
     y: -0.70710677
-    w: 0.70710677
-  }
-}
-instances {
-  id: "road-end-round"
-  prototype: "/assets/models/gen/roads/road-end-round.go"
-  position {
-    x: 6.0
-    z: 1.0
-  }
-  rotation {
-    y: 0.70710677
     w: 0.70710677
   }
 }
@@ -269,14 +191,6 @@ instances {
   prototype: "/assets/models/gen/roads/road-straight.go"
   position {
     x: 4.0
-    z: -2.5
-  }
-}
-instances {
-  id: "road-straight19"
-  prototype: "/assets/models/gen/roads/road-straight.go"
-  position {
-    x: 3.0
     z: -2.5
   }
 }
@@ -324,29 +238,6 @@ instances {
   }
 }
 instances {
-  id: "road-straight-half4"
-  prototype: "/assets/models/gen/roads/road-straight-half.go"
-  position {
-    x: 6.0
-    z: -1.75
-  }
-  rotation {
-    y: -0.70710677
-    w: 0.70710677
-  }
-}
-instances {
-  id: "road-straight23"
-  prototype: "/assets/models/gen/roads/road-straight.go"
-  position {
-    x: -4.0
-  }
-  rotation {
-    y: -0.70710677
-    w: 0.70710677
-  }
-}
-instances {
   id: "road-curve1"
   prototype: "/assets/models/gen/roads/road-curve.go"
   position {
@@ -371,18 +262,6 @@ instances {
   }
 }
 instances {
-  id: "road-straight-half5"
-  prototype: "/assets/models/gen/roads/road-straight-half.go"
-  position {
-    x: -4.0
-    z: -0.75
-  }
-  rotation {
-    y: -0.70710677
-    w: 0.70710677
-  }
-}
-instances {
   id: "road-straight25"
   prototype: "/assets/models/gen/roads/road-straight.go"
   position {
@@ -395,14 +274,6 @@ instances {
   prototype: "/assets/models/gen/roads/road-straight.go"
   position {
     x: -2.0
-    z: -2.5
-  }
-}
-instances {
-  id: "road-straight27"
-  prototype: "/assets/models/gen/roads/road-straight.go"
-  position {
-    x: -6.0
     z: -2.5
   }
 }
@@ -478,7 +349,8 @@ instances {
   id: "construction-cone"
   prototype: "/assets/models/gen/roads/construction-cone.go"
   position {
-    x: 0.7
+    x: 2.938439
+    z: 1.307322
   }
   rotation {
     x: 1.5812878E-16
@@ -491,8 +363,8 @@ instances {
   id: "construction-cone1"
   prototype: "/assets/models/gen/roads/construction-cone.go"
   position {
-    x: 0.55
-    z: -0.15
+    x: 3.077907
+    z: 1.407989
   }
   rotation {
     x: 2.0924918E-16
@@ -505,8 +377,8 @@ instances {
   id: "construction-barrier"
   prototype: "/assets/models/gen/roads/construction-barrier.go"
   position {
-    x: 0.9
-    z: 0.1
+    x: 3.001541
+    z: 1.82981
   }
   rotation {
     y: -0.76191396
@@ -517,12 +389,12 @@ instances {
   id: "construction-barrier1"
   prototype: "/assets/models/gen/roads/construction-barrier.go"
   position {
-    x: 0.43
-    z: -0.37
+    x: 3.006336
+    z: 1.141832
   }
   rotation {
-    y: -0.99540514
-    w: 0.09575277
+    y: -0.6485751
+    w: 0.7611506
   }
 }
 instances {
@@ -584,8 +456,8 @@ instances {
   id: "building-type-p"
   prototype: "/assets/models/gen/suburban/building-type-p.go"
   position {
-    x: 7.9
-    z: 1.0
+    x: 7.999222
+    z: -1.281002
   }
   rotation {
     y: -0.70710677
@@ -608,39 +480,44 @@ instances {
   id: "building-type-f2"
   prototype: "/assets/models/gen/suburban/building-type-f.go"
   position {
-    x: 2.0
-    z: 4.4
+    x: 7.216345
+    z: 0.070029
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
   }
 }
 instances {
   id: "building-type-f1"
   prototype: "/assets/models/gen/suburban/building-type-f.go"
   position {
-    x: -2.0
-    z: 4.4
+    x: -1.912497
+    z: -3.652886
+  }
+  rotation {
+    y: 1.0
+    w: 6.123234E-17
   }
 }
 instances {
   id: "building-type-f"
   prototype: "/assets/models/gen/suburban/building-type-f.go"
   position {
-    z: 4.4
+    x: 1.177854
+    z: 1.814671
   }
-}
-instances {
-  id: "building-type-j1"
-  prototype: "/assets/models/gen/suburban/building-type-j.go"
-  position {
-    x: 3.0
-    z: -1.4
+  rotation {
+    y: 0.70710677
+    w: -0.70710677
   }
 }
 instances {
   id: "building-type-j"
   prototype: "/assets/models/gen/suburban/building-type-j.go"
   position {
-    x: 4.5
-    z: -1.4
+    x: 3.504264
+    z: -1.598891
   }
 }
 instances {
@@ -655,11 +532,1869 @@ instances {
   }
 }
 instances {
-  id: "building-type-q"
+  id: "road-straight33"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    z: 2.0
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight34"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    z: 1.0
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight35"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    z: 0.43
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-intersection2"
+  prototype: "/assets/models/gen/roads/road-intersection.go"
+  position {
+    z: -0.57
+  }
+}
+instances {
+  id: "building-type-q1"
   prototype: "/assets/models/gen/suburban/building-type-q.go"
   position {
-    x: 7.9
-    z: -1.0
+    x: -0.902554
+    z: 1.857558
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "building-type-a"
+  prototype: "/assets/models/gen/suburban/building-type-a.go"
+  position {
+    x: -0.966472
+    z: 0.570039
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-intersection4"
+  prototype: "/assets/models/gen/roads/road-intersection.go"
+  position {
+    x: -2.0
+    z: -0.57
+  }
+}
+instances {
+  id: "road-straight36"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: -2.0
+    z: 0.43
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight37"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: -2.0
+    z: 0.43
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight38"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: -2.0
+    z: 1.0
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight39"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: -2.0
+    z: 2.0
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-intersection5"
+  prototype: "/assets/models/gen/roads/road-intersection.go"
+  position {
+    x: -2.0
+    z: 3.0
+  }
+  rotation {
+    y: 1.0
+    w: 6.123234E-17
+  }
+}
+instances {
+  id: "road-intersection6"
+  prototype: "/assets/models/gen/roads/road-intersection.go"
+  position {
+    x: -4.0
+    z: -0.57
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: -4.0
+    z: 0.4
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight23"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: -3.0
+    z: -0.57
+  }
+}
+instances {
+  id: "building-type-l"
+  prototype: "/assets/models/gen/suburban/building-type-l.go"
+  position {
+    x: -3.00597
+    z: 0.448551
+  }
+}
+instances {
+  id: "fence-3x2"
+  prototype: "/assets/models/gen/suburban/fence-3x2.go"
+  position {
+    x: -2.93498
+    z: 1.096011
+  }
+}
+instances {
+  id: "planter"
+  prototype: "/assets/models/gen/suburban/planter.go"
+  position {
+    x: -3.103344
+    z: 1.505838
+  }
+}
+instances {
+  id: "path-stones-messy"
+  prototype: "/assets/models/gen/suburban/path-stones-messy.go"
+  position {
+    x: -2.864169
+    z: 1.119006
+  }
+}
+instances {
+  id: "tree-large2"
+  prototype: "/assets/models/gen/suburban/tree-large.go"
+  position {
+    x: -2.643907
+    z: 2.351079
+  }
+}
+instances {
+  id: "tree-large3"
+  prototype: "/assets/models/gen/suburban/tree-large.go"
+  position {
+    x: -2.935634
+    z: 2.197818
+  }
+  rotation {
+    y: -0.34208488
+    w: 0.9396691
+  }
+}
+instances {
+  id: "tree-large4"
+  prototype: "/assets/models/gen/suburban/tree-large.go"
+  position {
+    x: -3.161765
+    z: 1.97439
+  }
+  rotation {
+    x: -2.3026565E-13
+    y: -0.6518729
+    z: 2.1607426E-14
+    w: 0.75832826
+  }
+}
+instances {
+  id: "tree-small1"
+  prototype: "/assets/models/gen/suburban/tree-small.go"
+  position {
+    x: -2.752906
+    z: 1.999863
+  }
+  rotation {
+    y: 0.12204113
+    w: 0.99252504
+  }
+}
+instances {
+  id: "light-curved"
+  prototype: "/assets/models/gen/roads/light-curved.go"
+  position {
+    x: -2.5
+    z: 2.5
+  }
+  rotation {
+    y: 1.0
+    w: 6.123234E-17
+  }
+}
+instances {
+  id: "light-curved1"
+  prototype: "/assets/models/gen/roads/light-curved.go"
+  position {
+    x: -1.5
+    z: 2.5
+  }
+  rotation {
+    y: 1.0
+    w: 6.123234E-17
+  }
+}
+instances {
+  id: "light-curved2"
+  prototype: "/assets/models/gen/roads/light-curved.go"
+  position {
+    x: -0.5
+    z: 2.5
+  }
+  rotation {
+    y: 1.0
+    w: 6.123234E-17
+  }
+}
+instances {
+  id: "tree-small2"
+  prototype: "/assets/models/gen/suburban/tree-small.go"
+  position {
+    x: -4.0
+    z: -2.5
+  }
+  rotation {
+    y: 0.12204113
+    w: 0.99252504
+  }
+}
+instances {
+  id: "road-straight40"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: 1.0
+    z: -0.57
+  }
+}
+instances {
+  id: "road-bend"
+  prototype: "/assets/models/gen/roads/road-bend.go"
+  position {
+    x: 2.0
+    z: -0.57
+  }
+}
+instances {
+  id: "road-bend1"
+  prototype: "/assets/models/gen/roads/road-bend.go"
+  position {
+    x: 2.0
+    z: 1.24
+  }
+  rotation {
+    y: 1.0
+    w: 6.123234E-17
+  }
+}
+instances {
+  id: "road-straight42"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: 3.0
+    z: 1.24
+  }
+}
+instances {
+  id: "road-bend2"
+  prototype: "/assets/models/gen/roads/road-bend.go"
+  position {
+    x: 6.0
+    z: 1.24
+  }
+  rotation {
+    y: 0.70710677
+    w: -0.70710677
+  }
+}
+instances {
+  id: "road-straight44"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: 4.0
+    z: 1.24
+  }
+}
+instances {
+  id: "road-straight45"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: 5.0
+    z: 1.24
+  }
+}
+instances {
+  id: "road-straight41"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: 6.0
+    z: -1.5
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight43"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: 6.0
+    z: 0.24
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight-half2"
+  prototype: "/assets/models/gen/roads/road-straight-half.go"
+  position {
+    x: 2.0
+    z: 0.5
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight-half4"
+  prototype: "/assets/models/gen/roads/road-straight-half.go"
+  position {
+    x: 2.0
+    z: 0.15
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "driveway-long1"
+  prototype: "/assets/models/gen/suburban/driveway-long.go"
+  position {
+    x: 1.34158
+    z: 1.471989
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "driveway-long2"
+  prototype: "/assets/models/gen/suburban/driveway-long.go"
+  position {
+    x: 1.626886
+    z: 1.461354
+  }
+  rotation {
+    y: -0.6611572
+    w: 0.75024736
+  }
+}
+instances {
+  id: "driveway-short"
+  prototype: "/assets/models/gen/suburban/driveway-short.go"
+  position {
+    x: 1.82725
+    z: 1.428751
+  }
+  rotation {
+    x: 1.8263181E-13
+    y: -0.62595886
+    z: -2.4096553E-13
+    w: 0.7798561
+  }
+}
+instances {
+  id: "path-short"
+  prototype: "/assets/models/gen/suburban/path-short.go"
+  position {
+    x: 1.83325
+    z: 1.872335
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "tree-large5"
+  prototype: "/assets/models/gen/suburban/tree-large.go"
+  position {
+    x: 2.09263
+    z: 2.382062
+  }
+}
+instances {
+  id: "tree-small3"
+  prototype: "/assets/models/gen/suburban/tree-small.go"
+  position {
+    x: 2.205477
+    z: -1.597571
+  }
+}
+instances {
+  id: "tree-large6"
+  prototype: "/assets/models/gen/suburban/tree-large.go"
+  position {
+    x: 1.951862
+    z: -1.856145
+  }
+}
+instances {
+  id: "planter1"
+  prototype: "/assets/models/gen/suburban/planter.go"
+  position {
+    x: 2.035031
+    z: 2.180122
+  }
+}
+instances {
+  id: "planter2"
+  prototype: "/assets/models/gen/suburban/planter.go"
+  position {
+    x: 2.754354
+    z: 2.141376
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "fence"
+  prototype: "/assets/models/gen/suburban/fence.go"
+  position {
+    x: 3.4
+    z: 2.25
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "fence1"
+  prototype: "/assets/models/gen/suburban/fence.go"
+  position {
+    x: 3.4
+    z: 2.0
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "tree-large7"
+  prototype: "/assets/models/gen/suburban/tree-large.go"
+  position {
+    x: 3.058488
+    z: 0.448569
+  }
+}
+instances {
+  id: "tree-small4"
+  prototype: "/assets/models/gen/suburban/tree-small.go"
+  position {
+    x: 3.059511
+    z: 0.104582
+  }
+}
+instances {
+  id: "tree-large8"
+  prototype: "/assets/models/gen/suburban/tree-large.go"
+  position {
+    x: 3.640889
+    z: -0.419119
+  }
+}
+instances {
+  id: "path-stones-messy1"
+  prototype: "/assets/models/gen/suburban/path-stones-messy.go"
+  position {
+    x: 3.890212
+    z: 0.049055
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "path-stones-messy2"
+  prototype: "/assets/models/gen/suburban/path-stones-messy.go"
+  position {
+    x: 3.520327
+    z: 0.001437
+  }
+  rotation {
+    y: 0.62407327
+    w: 0.7813659
+  }
+}
+instances {
+  id: "driveway-long3"
+  prototype: "/assets/models/gen/suburban/driveway-long.go"
+  position {
+    x: -0.995924
+    z: -1.802071
+  }
+}
+instances {
+  id: "driveway-long4"
+  prototype: "/assets/models/gen/suburban/driveway-long.go"
+  position {
+    x: -0.996771
+    z: -1.249901
+  }
+}
+instances {
+  id: "driveway-long5"
+  prototype: "/assets/models/gen/suburban/driveway-long.go"
+  position {
+    x: -0.995277
+    z: -1.504078
+  }
+}
+instances {
+  id: "fence-low"
+  prototype: "/assets/models/gen/suburban/fence-low.go"
+  position {
+    x: 4.476452
+    z: -1.377956
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "fence2"
+  prototype: "/assets/models/gen/suburban/fence.go"
+  position {
+    x: 3.285162
+    z: -0.987211
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "fence3"
+  prototype: "/assets/models/gen/suburban/fence.go"
+  position {
+    x: 3.882443
+    z: -0.786513
+  }
+}
+instances {
+  id: "fence4"
+  prototype: "/assets/models/gen/suburban/fence.go"
+  position {
+    x: 3.487964
+    z: -0.786513
+  }
+}
+instances {
+  id: "fence5"
+  prototype: "/assets/models/gen/suburban/fence.go"
+  position {
+    x: 4.873313
+    z: -0.987211
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "fence6"
+  prototype: "/assets/models/gen/suburban/fence.go"
+  position {
+    x: 4.873313
+    z: -1.388368
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "fence7"
+  prototype: "/assets/models/gen/suburban/fence.go"
+  position {
+    x: 4.873313
+    z: -1.786362
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-crossing"
+  prototype: "/assets/models/gen/roads/road-crossing.go"
+  position {
+    x: -1.0
+    z: -0.57
+  }
+}
+instances {
+  id: "road-intersection-path"
+  prototype: "/assets/models/gen/roads/road-intersection-path.go"
+  position {
+    z: 3.0
+  }
+  rotation {
+    y: 1.0
+    w: 6.123234E-17
+  }
+}
+instances {
+  id: "building-type-l1"
+  prototype: "/assets/models/gen/suburban/building-type-l.go"
+  position {
+    x: 1.161983
+    z: -1.535131
+  }
+  rotation {
+    y: 1.0
+    w: 6.123234E-17
+  }
+}
+instances {
+  id: "building-type-p1"
+  prototype: "/assets/models/gen/suburban/building-type-p.go"
+  position {
+    x: -0.08075
+    z: -1.524256
+  }
+  rotation {
+    y: 1.0
+    w: 6.123234E-17
+  }
+}
+instances {
+  id: "path-short1"
+  prototype: "/assets/models/gen/suburban/path-short.go"
+  position {
+    x: -0.479588
+    z: -1.177157
+  }
+}
+instances {
+  id: "path-short2"
+  prototype: "/assets/models/gen/suburban/path-short.go"
+  position {
+    x: 1.415443
+    z: -1.177157
+  }
+}
+instances {
+  id: "building-type-g"
+  prototype: "/assets/models/gen/suburban/building-type-g.go"
+  position {
+    x: 7.584526
+    z: 1.668294
+  }
+  rotation {
+    y: 0.9484403
+    w: -0.3169557
+  }
+}
+instances {
+  id: "path-stones-messy3"
+  prototype: "/assets/models/gen/suburban/path-stones-messy.go"
+  position {
+    x: 7.864831
+    z: 1.917843
+  }
+  rotation {
+    x: 1.8626718E-13
+    y: 0.30670774
+    z: 2.5178105E-13
+    w: 0.95180374
+  }
+}
+instances {
+  id: "path-stones-messy4"
+  prototype: "/assets/models/gen/suburban/path-stones-messy.go"
+  position {
+    x: 8.010454
+    z: 2.123684
+  }
+  rotation {
+    x: 1.8626718E-13
+    y: 0.30670774
+    z: 2.5178105E-13
+    w: 0.95180374
+  }
+}
+instances {
+  id: "building-type-r"
+  prototype: "/assets/models/gen/suburban/building-type-r.go"
+  position {
+    x: 1.022674
+    z: 0.402209
+  }
+}
+instances {
+  id: "road-bridge"
+  prototype: "/assets/models/gen/roads/road-bridge.go"
+  position {
+    x: -6.0
+    z: -2.5
+  }
+}
+instances {
+  id: "road-straight2"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: -6.0
+    y: 0.5
+    z: -1.5
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight-barrier"
+  prototype: "/assets/models/gen/roads/road-straight-barrier.go"
+  position {
+    x: -6.0
+    y: 0.5
+    z: -2.5
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight-barrier1"
+  prototype: "/assets/models/gen/roads/road-straight-barrier.go"
+  position {
+    x: -6.0
+    y: 0.5
+    z: -1.5
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight-barrier2"
+  prototype: "/assets/models/gen/roads/road-straight-barrier.go"
+  position {
+    x: -6.0
+    y: 0.5
+    z: -0.5
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight27"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: -6.0
+    y: 0.5
+    z: -0.5
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight-barrier3"
+  prototype: "/assets/models/gen/roads/road-straight-barrier.go"
+  position {
+    x: -6.0
+    y: 0.5
+    z: 0.5
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight46"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: -6.0
+    y: 0.5
+    z: 0.5
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight-barrier4"
+  prototype: "/assets/models/gen/roads/road-straight-barrier.go"
+  position {
+    x: -6.0
+    y: 0.5
+    z: 1.5
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight47"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: -6.0
+    y: 0.5
+    z: 1.5
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight-barrier5"
+  prototype: "/assets/models/gen/roads/road-straight-barrier.go"
+  position {
+    x: -6.0
+    y: 0.5
+    z: 2.5
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight48"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: -6.0
+    y: 0.5
+    z: 2.5
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight50"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: -6.0
+    y: 0.5
+    z: -3.5
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight-barrier6"
+  prototype: "/assets/models/gen/roads/road-straight-barrier.go"
+  position {
+    x: -6.0
+    y: 0.5
+    z: -3.5
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "driveway-long6"
+  prototype: "/assets/models/gen/suburban/driveway-long.go"
+  position {
+    x: 6.943316
+    z: 0.409644
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "driveway-long7"
+  prototype: "/assets/models/gen/suburban/driveway-long.go"
+  position {
+    x: 6.706542
+    z: 0.409644
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "path-short3"
+  prototype: "/assets/models/gen/suburban/path-short.go"
+  position {
+    x: 6.590958
+    z: 0.016183
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "building-type-b"
+  prototype: "/assets/models/gen/suburban/building-type-b.go"
+  position {
+    x: -0.215417
+    z: -3.572971
+  }
+  rotation {
+    y: 1.0
+    w: 6.123234E-17
+  }
+}
+instances {
+  id: "building-type-a1"
+  prototype: "/assets/models/gen/suburban/building-type-a.go"
+  position {
+    x: 1.379831
+    z: -3.526692
+  }
+  rotation {
+    y: 1.0
+    w: 6.123234E-17
+  }
+}
+instances {
+  id: "road-curve-intersection"
+  prototype: "/assets/models/gen/roads/road-curve-intersection.go"
+  position {
+    x: 1.5
+    z: 3.5
+  }
+}
+instances {
+  id: "road-curve2"
+  prototype: "/assets/models/gen/roads/road-curve.go"
+  position {
+    x: 1.5
+    z: 5.5
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-slant-curve"
+  prototype: "/assets/models/gen/roads/road-slant-curve.go"
+  position {
+    x: -0.5
+    z: 6.0
+  }
+  rotation {
+    y: 1.0
+    w: 6.123234E-17
+  }
+}
+instances {
+  id: "road-curve3"
+  prototype: "/assets/models/gen/roads/road-curve.go"
+  position {
+    x: -5.5
+    y: 0.5
+    z: 5.5
+  }
+  rotation {
+    y: 1.0
+    w: 6.123234E-17
+  }
+}
+instances {
+  id: "road-straight-barrier11"
+  prototype: "/assets/models/gen/roads/road-straight-barrier.go"
+  position {
+    x: -6.0
+    y: 0.5
+    z: 3.5
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight3"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: -6.0
+    y: 0.5
+    z: 3.5
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight-barrier12"
+  prototype: "/assets/models/gen/roads/road-straight-barrier.go"
+  position {
+    x: -4.0
+    y: 0.5
+    z: 6.0
+  }
+}
+instances {
+  id: "road-straight4"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: -4.0
+    y: 0.5
+    z: 6.0
+  }
+}
+instances {
+  id: "road-straight-barrier13"
+  prototype: "/assets/models/gen/roads/road-straight-barrier.go"
+  position {
+    x: -3.0
+    y: 0.5
+    z: 6.0
+  }
+}
+instances {
+  id: "road-straight54"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: -3.0
+    y: 0.5
+    z: 6.0
+  }
+}
+instances {
+  id: "road-straight-barrier14"
+  prototype: "/assets/models/gen/roads/road-straight-barrier.go"
+  position {
+    x: -2.0
+    y: 0.5
+    z: 6.0
+  }
+}
+instances {
+  id: "road-straight55"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: -2.0
+    y: 0.5
+    z: 6.0
+  }
+}
+instances {
+  id: "road-straight-half5"
+  prototype: "/assets/models/gen/roads/road-straight-half.go"
+  position {
+    x: -6.0
+    y: 0.5
+    z: 4.25
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight-barrier-half"
+  prototype: "/assets/models/gen/roads/road-straight-barrier-half.go"
+  position {
+    x: -6.0
+    y: 0.5
+    z: 4.25
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-curve-barrier"
+  prototype: "/assets/models/gen/roads/road-curve-barrier.go"
+  position {
+    x: -5.5
+    y: 0.5
+    z: 5.5
+  }
+  rotation {
+    y: 1.0
+    w: 6.123234E-17
+  }
+}
+instances {
+  id: "path-short4"
+  prototype: "/assets/models/gen/suburban/path-short.go"
+  position {
+    x: 1.976772
+    z: 1.842993
+  }
+  rotation {
+    x: -3.7564082E-13
+    y: 0.84357196
+    z: -1.5181724E-13
+    w: 0.53701615
+  }
+}
+instances {
+  id: "path-short5"
+  prototype: "/assets/models/gen/suburban/path-short.go"
+  position {
+    x: 2.10357
+    z: 1.745611
+  }
+  rotation {
+    x: 7.2516754E-13
+    y: 0.9429537
+    z: 2.9498282E-13
+    w: 0.33292383
+  }
+}
+instances {
+  id: "road-intersection-path1"
+  prototype: "/assets/models/gen/roads/road-intersection-path.go"
+  position {
+    x: 3.0
+    z: -2.5
+  }
+  rotation {
+    y: 1.0
+    w: 6.123234E-17
+  }
+}
+instances {
+  id: "road-straight-half7"
+  prototype: "/assets/models/gen/roads/road-straight-half.go"
+  position {
+    x: 3.0
+    z: -3.25
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight56"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: 9.0
+    z: -4.0
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-side-exit"
+  prototype: "/assets/models/gen/roads/road-side-exit.go"
+  position {
+    x: 3.0
+    z: -4.0
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-side"
+  prototype: "/assets/models/gen/roads/road-side.go"
+  position {
+    x: 3.0
+    z: -5.0
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-side-entry"
+  prototype: "/assets/models/gen/roads/road-side-entry.go"
+  position {
+    x: 3.0
+    z: -6.0
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "car2"
+  prototype: "/assets/test/car.go"
+  position {
+    x: 2.5
+    z: -4.0
+  }
+}
+instances {
+  id: "car3"
+  prototype: "/assets/test/car.go"
+  position {
+    x: 2.5
+    z: -6.107802
+  }
+  rotation {
+    y: 0.99966645
+    w: 0.025826938
+  }
+}
+instances {
+  id: "car4"
+  prototype: "/assets/test/car.go"
+  position {
+    x: 2.410729
+    z: -5.268017
+  }
+  rotation {
+    y: 0.9999291
+    w: -0.011907881
+  }
+}
+instances {
+  id: "planter3"
+  prototype: "/assets/models/gen/suburban/planter.go"
+  position {
+    x: 8.269844
+    z: 0.289932
+  }
+}
+instances {
+  id: "planter4"
+  prototype: "/assets/models/gen/suburban/planter.go"
+  position {
+    x: 8.114537
+    z: -0.256701
+  }
+  rotation {
+    y: 1.0
+    w: 6.123234E-17
+  }
+}
+instances {
+  id: "path-stones-long1"
+  prototype: "/assets/models/gen/suburban/path-stones-long.go"
+  position {
+    x: 8.297274
+    z: 0.023909
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight19"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: 9.0
+    z: -5.0
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight57"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: 9.0
+    z: -6.0
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-bend-square"
+  prototype: "/assets/models/gen/roads/road-bend-square.go"
+  position {
+    x: 9.0
+    z: -7.0
+  }
+}
+instances {
+  id: "road-bend-square1"
+  prototype: "/assets/models/gen/roads/road-bend-square.go"
+  position {
+    x: 3.0
+    z: -7.0
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight58"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: 4.0
+    z: -7.0
+  }
+}
+instances {
+  id: "road-straight61"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: 8.0
+    z: -7.0
+  }
+}
+instances {
+  id: "road-straight62"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: 6.0
+    z: -7.0
+  }
+}
+instances {
+  id: "road-slant-curve1"
+  prototype: "/assets/models/gen/roads/road-slant-curve.go"
+  position {
+    x: -6.0
+    z: -5.0
+  }
+  rotation {
+    y: 0.70710677
+    w: -0.70710677
+  }
+}
+instances {
+  id: "road-straight-half8"
+  prototype: "/assets/models/gen/roads/road-straight-half.go"
+  position {
+    x: -6.0
+    z: -6.25
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-bend3"
+  prototype: "/assets/models/gen/roads/road-bend.go"
+  position {
+    x: -4.0
+    z: -7.0
+  }
+}
+instances {
+  id: "road-bend4"
+  prototype: "/assets/models/gen/roads/road-bend.go"
+  position {
+    x: -6.0
+    z: -7.0
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight49"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: -5.0
+    z: -7.0
+  }
+}
+instances {
+  id: "fence-2x3"
+  prototype: "/assets/models/gen/suburban/fence-2x3.go"
+  position {
+    x: -2.9
+    z: -4.5
+  }
+  rotation {
+    y: 0.70710677
+    w: -0.70710677
+  }
+}
+instances {
+  id: "fence-2x"
+  prototype: "/assets/models/gen/suburban/fence-2x3.go"
+  position {
+    x: -1.800379
+    z: -4.5
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "fence8"
+  prototype: "/assets/models/gen/suburban/fence.go"
+  position {
+    x: -2.363756
+    z: -5.1
+  }
+}
+instances {
+  id: "road-crossing1"
+  prototype: "/assets/models/gen/roads/road-crossing.go"
+  position {
+    x: 6.0
+    z: -0.57
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-intersection-path2"
+  prototype: "/assets/models/gen/roads/road-intersection-path.go"
+  position {
+    x: 9.0
+    z: -2.5
+  }
+  rotation {
+    y: 0.70710677
+    w: -0.70710677
+  }
+}
+instances {
+  id: "tree-small5"
+  prototype: "/assets/models/gen/suburban/tree-small.go"
+  position {
+    x: 4.538137
+    z: -1.665624
+  }
+}
+instances {
+  id: "sign-highway-detailed"
+  prototype: "/assets/models/gen/roads/sign-highway-detailed.go"
+  position {
+    x: -1.5
+    y: 0.5
+    z: 6.0
+  }
+  rotation {
+    y: 1.0
+    w: 6.123234E-17
+  }
+}
+instances {
+  id: "sign-highway-detailed1"
+  prototype: "/assets/models/gen/roads/sign-highway-detailed.go"
+  position {
+    x: -6.0
+    y: 0.5
+    z: -4.0
+  }
+  rotation {
+    y: 0.70710677
+    w: -0.70710677
+  }
+}
+instances {
+  id: "road-intersection-path3"
+  prototype: "/assets/models/gen/roads/road-intersection-path.go"
+  position {
+    x: 5.0
+    z: -7.0
+  }
+}
+instances {
+  id: "road-intersection-path4"
+  prototype: "/assets/models/gen/roads/road-intersection-path.go"
+  position {
+    x: 7.0
+    z: -7.0
+  }
+}
+instances {
+  id: "road-straight51"
+  prototype: "/assets/models/gen/roads/road-straight.go"
+  position {
+    x: 5.0
+    z: -6.0
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-end"
+  prototype: "/assets/models/gen/roads/road-end.go"
+  position {
+    x: 5.0
+    z: -5.0
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-end1"
+  prototype: "/assets/models/gen/roads/road-end.go"
+  position {
+    x: 7.0
+    z: -4.0
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "path-stones-long2"
+  prototype: "/assets/models/gen/suburban/path-stones-long.go"
+  position {
+    x: 7.231566
+    z: -3.243325
+  }
+}
+instances {
+  id: "planter5"
+  prototype: "/assets/models/gen/suburban/planter.go"
+  position {
+    x: 6.862713
+    z: -3.256781
+  }
+}
+instances {
+  id: "building-type-n"
+  prototype: "/assets/models/gen/suburban/building-type-n.go"
+  position {
+    x: 4.541386
+    z: -3.820591
+  }
+}
+instances {
+  id: "building-type-h"
+  prototype: "/assets/models/gen/suburban/building-type-h.go"
+  position {
+    x: 3.916835
+    z: -5.887172
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "tree-large9"
+  prototype: "/assets/models/gen/suburban/tree-large.go"
+  position {
+    x: 6.773272
+    z: -1.461985
+  }
+}
+instances {
+  id: "tree-large10"
+  prototype: "/assets/models/gen/suburban/tree-large.go"
+  position {
+    x: 7.022288
+    z: -1.756998
+  }
+}
+instances {
+  id: "tree-large11"
+  prototype: "/assets/models/gen/suburban/tree-large.go"
+  position {
+    x: 7.264755
+    z: -0.98845
+  }
+}
+instances {
+  id: "tree-small6"
+  prototype: "/assets/models/gen/suburban/tree-small.go"
+  position {
+    x: 5.142411
+    z: -0.87696
+  }
+}
+instances {
+  id: "tree-small7"
+  prototype: "/assets/models/gen/suburban/tree-small.go"
+  position {
+    x: 5.142411
+    z: -1.283197
+  }
+}
+instances {
+  id: "tree-small8"
+  prototype: "/assets/models/gen/suburban/tree-small.go"
+  position {
+    x: 5.142411
+    z: -1.735258
+  }
+}
+instances {
+  id: "tree-small9"
+  prototype: "/assets/models/gen/suburban/tree-small.go"
+  position {
+    x: 6.824208
+    z: -1.071328
+  }
+}
+instances {
+  id: "building-type-c"
+  prototype: "/assets/models/gen/suburban/building-type-c.go"
+  position {
+    x: 5.977291
+    z: -5.595953
+  }
+  rotation {
+    y: 0.70710677
+    w: -0.70710677
+  }
+}
+instances {
+  id: "road-driveway-single"
+  prototype: "/assets/models/gen/roads/road-driveway-single.go"
+  position {
+    x: 7.0
+    z: -6.0
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "driveway-short1"
+  prototype: "/assets/models/gen/suburban/driveway-short.go"
+  position {
+    x: 6.414619
+    z: -6.0
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "tree-large12"
+  prototype: "/assets/models/gen/suburban/tree-large.go"
+  position {
+    x: 5.681435
+    z: -6.361981
+  }
+}
+instances {
+  id: "tree-large13"
+  prototype: "/assets/models/gen/suburban/tree-large.go"
+  position {
+    x: 6.307242
+    z: -6.361981
+  }
+}
+instances {
+  id: "path-stones-long3"
+  prototype: "/assets/models/gen/suburban/path-stones-long.go"
+  position {
+    x: 7.899732
+    z: 0.023909
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "building-type-d"
+  prototype: "/assets/models/gen/suburban/building-type-d.go"
+  position {
+    x: 8.022715
+    z: -5.638527
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-driveway-single1"
+  prototype: "/assets/models/gen/roads/road-driveway-single.go"
+  position {
+    x: 7.0
+    z: -5.0
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "driveway-short2"
+  prototype: "/assets/models/gen/suburban/driveway-short.go"
+  position {
+    x: 7.597953
+    z: -5.0
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "building-type-k"
+  prototype: "/assets/models/gen/suburban/building-type-k.go"
+  position {
+    x: 6.055632
+    z: -3.725951
+  }
+}
+instances {
+  id: "path-stones-long4"
+  prototype: "/assets/models/gen/suburban/path-stones-long.go"
+  position {
+    x: 6.327404
+    z: -4.381957
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "path-stones-long5"
+  prototype: "/assets/models/gen/suburban/path-stones-long.go"
+  position {
+    x: 5.859767
+    z: -4.252183
+  }
+}
+instances {
+  id: "path-stones-short1"
+  prototype: "/assets/models/gen/suburban/path-stones-short.go"
+  position {
+    x: 6.028457
+    z: -4.382856
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "building-type-t"
+  prototype: "/assets/models/gen/suburban/building-type-t.go"
+  position {
+    x: 1.470689
+    z: -4.767604
+  }
+  rotation {
+    y: 0.70710677
+    w: -0.70710677
+  }
+}
+instances {
+  id: "building-type-s"
+  prototype: "/assets/models/gen/suburban/building-type-s.go"
+  position {
+    x: 7.982721
+    z: -3.853805
+  }
+  rotation {
+    y: 0.70710677
+    w: -0.70710677
+  }
+}
+instances {
+  id: "driveway-long8"
+  prototype: "/assets/models/gen/suburban/driveway-long.go"
+  position {
+    x: 8.290937
+    z: -4.298364
   }
   rotation {
     y: -0.70710677
@@ -700,14 +2435,69 @@ embedded_instances {
 embedded_instances {
   id: "roads"
   children: "driveway-long"
+  children: "driveway-long1"
+  children: "driveway-long2"
+  children: "driveway-long3"
+  children: "driveway-long4"
+  children: "driveway-long5"
+  children: "driveway-long6"
+  children: "driveway-long7"
+  children: "driveway-long8"
+  children: "driveway-short"
+  children: "light-curved"
+  children: "light-curved1"
+  children: "light-curved2"
+  children: "path-short3"
+  children: "road-bend"
+  children: "road-bend-square"
+  children: "road-bend-square1"
+  children: "road-bend1"
+  children: "road-bend2"
+  children: "road-bend3"
+  children: "road-bend4"
+  children: "road-bridge"
+  children: "road-crossing"
+  children: "road-crossing1"
   children: "road-curve"
+  children: "road-curve-barrier"
+  children: "road-curve-intersection"
   children: "road-curve1"
-  children: "road-end-round"
+  children: "road-curve2"
+  children: "road-curve3"
+  children: "road-driveway-single"
+  children: "road-driveway-single1"
+  children: "road-end"
   children: "road-end-round1"
-  children: "road-intersection"
+  children: "road-end1"
+  children: "road-intersection-path"
+  children: "road-intersection-path1"
+  children: "road-intersection-path2"
+  children: "road-intersection-path3"
+  children: "road-intersection-path4"
   children: "road-intersection1"
+  children: "road-intersection2"
+  children: "road-intersection4"
+  children: "road-intersection5"
+  children: "road-intersection6"
   children: "road-roundabout"
+  children: "road-side"
+  children: "road-side-entry"
+  children: "road-side-exit"
+  children: "road-slant-curve"
+  children: "road-slant-curve1"
   children: "road-straight"
+  children: "road-straight-barrier"
+  children: "road-straight-barrier-half"
+  children: "road-straight-barrier1"
+  children: "road-straight-barrier11"
+  children: "road-straight-barrier12"
+  children: "road-straight-barrier13"
+  children: "road-straight-barrier14"
+  children: "road-straight-barrier2"
+  children: "road-straight-barrier3"
+  children: "road-straight-barrier4"
+  children: "road-straight-barrier5"
+  children: "road-straight-barrier6"
   children: "road-straight-half"
   children: "road-straight-half1"
   children: "road-straight-half2"
@@ -715,6 +2505,8 @@ embedded_instances {
   children: "road-straight-half4"
   children: "road-straight-half5"
   children: "road-straight-half6"
+  children: "road-straight-half7"
+  children: "road-straight-half8"
   children: "road-straight1"
   children: "road-straight10"
   children: "road-straight11"
@@ -722,7 +2514,6 @@ embedded_instances {
   children: "road-straight13"
   children: "road-straight14"
   children: "road-straight15"
-  children: "road-straight16"
   children: "road-straight17"
   children: "road-straight18"
   children: "road-straight19"
@@ -741,12 +2532,40 @@ embedded_instances {
   children: "road-straight30"
   children: "road-straight31"
   children: "road-straight32"
+  children: "road-straight33"
+  children: "road-straight34"
+  children: "road-straight35"
+  children: "road-straight36"
+  children: "road-straight37"
+  children: "road-straight38"
+  children: "road-straight39"
   children: "road-straight4"
+  children: "road-straight40"
+  children: "road-straight41"
+  children: "road-straight42"
+  children: "road-straight43"
+  children: "road-straight44"
+  children: "road-straight45"
+  children: "road-straight46"
+  children: "road-straight47"
+  children: "road-straight48"
+  children: "road-straight49"
   children: "road-straight5"
+  children: "road-straight50"
+  children: "road-straight51"
+  children: "road-straight54"
+  children: "road-straight55"
+  children: "road-straight56"
+  children: "road-straight57"
+  children: "road-straight58"
   children: "road-straight6"
+  children: "road-straight61"
+  children: "road-straight62"
   children: "road-straight7"
   children: "road-straight8"
   children: "road-straight9"
+  children: "sign-highway-detailed"
+  children: "sign-highway-detailed1"
   data: ""
 }
 embedded_instances {
@@ -778,11 +2597,66 @@ embedded_instances {
 }
 embedded_instances {
   id: "foliage"
+  children: "driveway-short1"
+  children: "driveway-short2"
+  children: "fence"
+  children: "fence-2x"
+  children: "fence-2x3"
+  children: "fence-low"
+  children: "fence1"
+  children: "fence2"
+  children: "fence3"
+  children: "fence4"
+  children: "fence5"
+  children: "fence6"
+  children: "fence7"
+  children: "fence8"
+  children: "path-short"
+  children: "path-short4"
+  children: "path-short5"
   children: "path-stones-long"
+  children: "path-stones-long1"
+  children: "path-stones-long2"
+  children: "path-stones-long3"
+  children: "path-stones-long4"
+  children: "path-stones-long5"
+  children: "path-stones-messy"
+  children: "path-stones-messy1"
+  children: "path-stones-messy2"
+  children: "path-stones-messy3"
+  children: "path-stones-messy4"
   children: "path-stones-short"
+  children: "path-stones-short1"
+  children: "planter"
+  children: "planter1"
+  children: "planter2"
+  children: "planter3"
+  children: "planter4"
+  children: "planter5"
   children: "tree-large"
   children: "tree-large1"
+  children: "tree-large10"
+  children: "tree-large11"
+  children: "tree-large12"
+  children: "tree-large13"
+  children: "tree-large2"
+  children: "tree-large3"
+  children: "tree-large4"
+  children: "tree-large5"
+  children: "tree-large6"
+  children: "tree-large7"
+  children: "tree-large8"
+  children: "tree-large9"
   children: "tree-small"
+  children: "tree-small1"
+  children: "tree-small2"
+  children: "tree-small3"
+  children: "tree-small4"
+  children: "tree-small5"
+  children: "tree-small6"
+  children: "tree-small7"
+  children: "tree-small8"
+  children: "tree-small9"
   data: ""
 }
 embedded_instances {
@@ -799,14 +2673,31 @@ embedded_instances {
 }
 embedded_instances {
   id: "buildings"
+  children: "building-type-a"
+  children: "building-type-a1"
+  children: "building-type-b"
+  children: "building-type-c"
+  children: "building-type-d"
   children: "building-type-f"
   children: "building-type-f1"
   children: "building-type-f2"
+  children: "building-type-g"
+  children: "building-type-h"
   children: "building-type-j"
-  children: "building-type-j1"
+  children: "building-type-k"
+  children: "building-type-l"
+  children: "building-type-l1"
+  children: "building-type-n"
   children: "building-type-p"
-  children: "building-type-q"
+  children: "building-type-p1"
+  children: "building-type-q1"
+  children: "building-type-r"
+  children: "building-type-s"
+  children: "building-type-t"
   children: "building-type-u"
+  children: "fence-3x2"
   children: "fence-3x3"
+  children: "path-short1"
+  children: "path-short2"
   data: ""
 }
