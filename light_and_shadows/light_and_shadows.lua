@@ -9,9 +9,9 @@ local v0 = vmath.vector4(0, 0, 0, 0) -- zero vector4
 -- false - off / no shadow cast
 light_and_shadows.shadow = true
 
--- Turns On | Off upscale render target. 
--- If ‘on’ all the objects are first rendered to a render target with a size no larger 
--- than specified in the project settings, then this entire render target is placed on the screen with linear scaling. 
+-- Turns On | Off upscale render target.
+-- If ‘on’ all the objects are first rendered to a render target with a size no larger
+-- than specified in the project settings, then this entire render target is placed on the screen with linear scaling.
 light_and_shadows.upscale = false
 
 light_and_shadows.blur = false
@@ -23,12 +23,12 @@ light_and_shadows.depth_bias = 0.0004
 
 light_and_shadows.max_lights = 8
 
-local BUFFER_RESOLUTION = 2048 -- Size of shadow map. Select value from: 1024/2048/4096. More is better quality.
+local BUFFER_RESOLUTION = 4096 -- Size of shadow map. Select value from: 1024/2048/4096. More is better quality.
 
 -- Projection resolution of shadow map to the game world. Smaller size is better shadow quality,
 -- but shadows will cast only around the screen center (or a point that camera looks at).
 -- This value also depends on camera zoom. Feel free to adjust it.
-local PROJECTION_RESOLUTION = 400 
+local PROJECTION_RESOLUTION = 400
 
 local rt_list = {}
 light_and_shadows.rt_list = rt_list
@@ -47,7 +47,7 @@ function light_and_shadows.render_target(name, w, h, no_depth)
         return already_rt
     end
 
-    --otherwise create a new RT 
+    --otherwise create a new RT
 
     local color_params = {
         format     = graphics.TEXTURE_FORMAT_RGBA,
@@ -56,17 +56,19 @@ function light_and_shadows.render_target(name, w, h, no_depth)
         min_filter = graphics.TEXTURE_FILTER_LINEAR,
         mag_filter = graphics.TEXTURE_FILTER_LINEAR,
         u_wrap     = graphics.TEXTURE_WRAP_CLAMP_TO_EDGE,
-        v_wrap     = graphics.TEXTURE_WRAP_CLAMP_TO_EDGE }
+        v_wrap     = graphics.TEXTURE_WRAP_CLAMP_TO_EDGE
+    }
 
-        local depth_params = { 
-            format        = graphics.TEXTURE_FORMAT_DEPTH,
-            width         = w,
-            height        = h,
-            u_wrap        = graphics.TEXTURE_WRAP_CLAMP_TO_EDGE,
-            v_wrap        = graphics.TEXTURE_WRAP_CLAMP_TO_EDGE }
+    local depth_params = {
+        format = graphics.TEXTURE_FORMAT_DEPTH,
+        width  = w,
+        height = h,
+        u_wrap = graphics.TEXTURE_WRAP_CLAMP_TO_EDGE,
+        v_wrap = graphics.TEXTURE_WRAP_CLAMP_TO_EDGE
+    }
 
-    local rt = render.render_target(name, {[graphics.BUFFER_TYPE_COLOR0_BIT] = color_params, [graphics.BUFFER_TYPE_DEPTH_BIT] = not no_depth and depth_params or nil })
-    local new_rt = {rt = rt, w = w, h = h}
+    local rt = render.render_target(name, { [graphics.BUFFER_TYPE_COLOR0_BIT] = color_params, [graphics.BUFFER_TYPE_DEPTH_BIT] = not no_depth and depth_params or nil })
+    local new_rt = { rt = rt, w = w, h = h }
     rt_list[name] = new_rt
     return new_rt
 end
@@ -78,11 +80,12 @@ local light_projection
 local is_ortho_proj = true
 
 function light_and_shadows.set_orthographic_projection(proj_w, proj_h, near_z, far_z)
-    light_projection = vmath.matrix4_orthographic(-proj_w/2, proj_w/2, -proj_h/2, proj_h/2, near_z or -500, far_z or 500)
+    light_projection = vmath.matrix4_orthographic(-proj_w / 2, proj_w / 2, -proj_h / 2, proj_h / 2, near_z or -500, far_z or 500)
     is_ortho_proj = true
 end
+
 function light_and_shadows.set_perspective_projection(fov, aspect, near_z, far_z)
-    light_projection = vmath.matrix4_perspective(fov or (3.14/1.5), aspect or 1, near_z or 50, far_z or 500)
+    light_projection = vmath.matrix4_perspective(fov or (3.14 / 1.5), aspect or 1, near_z or 50, far_z or 500)
     is_ortho_proj = false
 end
 
@@ -93,17 +96,17 @@ function light_and_shadows.init(self)
     -- Use this for directional lights
     light_and_shadows.set_orthographic_projection(PROJECTION_RESOLUTION, PROJECTION_RESOLUTION, -500, 500)
 
-    self.constants = render.constant_buffer()
-    self.constants.lights = {}
-    self.constants.colors = {}
+    self.constants            = render.constant_buffer()
+    self.constants.lights     = {}
+    self.constants.colors     = {}
     self.constants.directions = {}
-    self.constants.param = param
+    self.constants.param      = param
 
-    self.bias_matrix    = vmath.matrix4()
-    self.bias_matrix.c0 = vmath.vector4(0.5, 0.0, 0.0, 0.0)
-    self.bias_matrix.c1 = vmath.vector4(0.0, 0.5, 0.0, 0.0)
-    self.bias_matrix.c2 = vmath.vector4(0.0, 0.0, 0.5, 0.0)
-    self.bias_matrix.c3 = vmath.vector4(0.5, 0.5, 0.5, 1.0)
+    self.bias_matrix          = vmath.matrix4()
+    self.bias_matrix.c0       = vmath.vector4(0.5, 0.0, 0.0, 0.0)
+    self.bias_matrix.c1       = vmath.vector4(0.0, 0.5, 0.0, 0.0)
+    self.bias_matrix.c2       = vmath.vector4(0.0, 0.0, 0.5, 0.0)
+    self.bias_matrix.c3       = vmath.vector4(0.5, 0.5, 0.5, 1.0)
 
     -- self.upscale_rt = {rt = "upscale"}
 end
@@ -118,7 +121,7 @@ function light_and_shadows.update_light(self)
     sun.x = constants.sun_position.x
     sun.y = constants.sun_position.y
     sun.z = constants.sun_position.z
-   
+
     -- Sun position, color and shadow intensity
     if is_ortho_proj then
         self.constants.light = constants.sun_position or v0
@@ -142,7 +145,7 @@ function light_and_shadows.update_light(self)
     -- If you need to change this amount of light sources you should to change it in fragment shader as well.
     -- In fragment shader include (fun.glsl) change arrays size here:
     -- #define LIGHT_COUNT 16
-    --                     ^^ 
+    --                     ^^
     -- ...
     for i = 1, light_and_shadows.max_lights do
         local l = constants.lights[i]
@@ -174,15 +177,15 @@ function light_and_shadows.update_light(self)
         local mtx_light = self.bias_matrix * self.frustum
         self.constants.mtx_light = mtx_light
     end
-    
+
     if self.bias then self.constants.b = self.bias end
 
     -- Setup camera world position uniform constant (vector4)
     -- It's used in shader to calculate speculars by phong model.
     self.constants.cam_pos = constants.cam_position
-    
+
     -- v4 uniform uses to pass some important values to shaders program
-    self.dt = (self.dt or 0) + 1/60 -- dt
+    self.dt = (self.dt or 0) + 1 / 60 -- dt
     v4.x = math.sin(self.dt)
     v4.y = math.cos(self.dt)
     v4.z = light_and_shadows.max_lights
@@ -196,9 +199,8 @@ function light_and_shadows.update_light(self)
     self.constants.cam_look_at_position = cam_look_at_position
 end
 
-local clear_buffers = {[render.BUFFER_COLOR_BIT] = vmath.vector4(1, 1, 1, 1), [render.BUFFER_DEPTH_BIT] = 1}
+local clear_buffers = { [render.BUFFER_COLOR_BIT] = vmath.vector4(1, 1, 1, 1), [render.BUFFER_DEPTH_BIT] = 1 }
 function light_and_shadows.render_shadows(self)
-
     -- Setup our 'shadow' camera view and projection.
     render.set_projection(light_projection)
     render.set_view(self.light_transform)
@@ -211,40 +213,40 @@ function light_and_shadows.render_shadows(self)
     render.disable_state(render.STATE_CULL_FACE)
 
     -- Set render target to shadowmap
-    render.set_render_target(self.shadowmap_buffer, { transient = {render.BUFFER_DEPTH_BIT} })
+    render.set_render_target(self.shadowmap_buffer, { transient = { render.BUFFER_DEPTH_BIT } })
     render.clear(clear_buffers)
     -- Calculate frustum matrix to cut invisible objects from shadow cast
     local frustum = self.frustum or (light_projection * self.light_transform)
-    
+
     --  All objects in render list taged as "shadow" will change their material to "shadow.material"
     --  to cast shadows into shadow map texture. This texture will be enabled to all objects at the next render pass.
-    render.enable_material("shadow", {frustum = frustum, frustum_planes = render.FRUSTUM_PLANES_ALL})
-        render.draw(self.predicates.shadow)
-        render.disable_material()
+    render.enable_material("shadow", { frustum = frustum, frustum_planes = render.FRUSTUM_PLANES_ALL })
+    render.draw(self.predicates.shadow)
+    render.disable_material()
     -- Separate a world and a local material objects to different render pass.
-    render.enable_material("shadow_local", {frustum = frustum, frustum_planes = render.FRUSTUM_PLANES_ALL})
-        render.draw(self.predicates.shadow_local)
-        render.disable_material()
-    render.enable_material("shadow_instanced", {frustum = frustum, frustum_planes = render.FRUSTUM_PLANES_ALL})
-        render.draw(self.predicates.shadow_instanced)
-        render.disable_material()
-    render.enable_material("shadow_instanced_billboard", {frustum = frustum, frustum_planes = render.FRUSTUM_PLANES_ALL})
+    render.enable_material("shadow_local", { frustum = frustum, frustum_planes = render.FRUSTUM_PLANES_ALL })
+    render.draw(self.predicates.shadow_local)
+    render.disable_material()
+    render.enable_material("shadow_instanced", { frustum = frustum, frustum_planes = render.FRUSTUM_PLANES_ALL })
+    render.draw(self.predicates.shadow_instanced)
+    render.disable_material()
+    render.enable_material("shadow_instanced_billboard", { frustum = frustum, frustum_planes = render.FRUSTUM_PLANES_ALL })
     render.draw(self.predicates.shadow_instanced_billboard)
     render.disable_material()
-    render.enable_material("shadow_instanced_textured", {frustum = frustum, frustum_planes = render.FRUSTUM_PLANES_ALL})
+    render.enable_material("shadow_instanced_textured", { frustum = frustum, frustum_planes = render.FRUSTUM_PLANES_ALL })
     render.draw(self.predicates.shadow_instanced_textured)
     render.disable_material()
-    render.enable_material("shadow_skinned_instanced", {frustum = frustum, frustum_planes = render.FRUSTUM_PLANES_ALL})
-        render.draw(self.predicates.shadow_skinned_instanced)
-        render.disable_material()
-    render.enable_material("shadow_skinned", {frustum = frustum, frustum_planes = render.FRUSTUM_PLANES_ALL})
-        render.draw(self.predicates.shadow_skinned)
-        render.disable_material() 
+    render.enable_material("shadow_skinned_instanced", { frustum = frustum, frustum_planes = render.FRUSTUM_PLANES_ALL })
+    render.draw(self.predicates.shadow_skinned_instanced)
+    render.disable_material()
+    render.enable_material("shadow_skinned", { frustum = frustum, frustum_planes = render.FRUSTUM_PLANES_ALL })
+    render.draw(self.predicates.shadow_skinned)
+    render.disable_material()
     -- Reset render target
     render.set_render_target(render.RENDER_TARGET_DEFAULT)
 end
 
--- 
+--
 -- local common    = require 'helper.common'
 light_and_shadows.zoom = 1
 local resolution = vmath.vector4()
@@ -253,7 +255,7 @@ function light_and_shadows.update(self)
     if light_and_shadows.shadow then
         light_and_shadows.render_shadows(self)
     end
-    
+
     if light_and_shadows.upscale or light_and_shadows.blur then
         local window_width = render.get_window_width()
         local window_height = render.get_window_height()
@@ -276,7 +278,6 @@ function light_and_shadows.update(self)
         -- common.zoom = 1
         light_and_shadows.zoom = 1
     end
-    
 end
 
 local IDENTITY = vmath.matrix4()
@@ -285,7 +286,7 @@ function light_and_shadows.draw_upscaled(self)
     local window_width = render.get_window_width()
     local window_height = render.get_window_height()
 
-    if  light_and_shadows.blur then
+    if light_and_shadows.blur then
         -- Blur the render target in 2 passes
         render.disable_state(render.STATE_BLEND)
         render.disable_state(render.STATE_DEPTH_TEST)
@@ -297,19 +298,19 @@ function light_and_shadows.draw_upscaled(self)
         render.set_render_target(self.blur_rt.rt)
         render.enable_material("blur_horizontal")
         render.enable_texture(0, self.upscale_rt.rt, render.BUFFER_COLOR_BIT)
-        render.draw(self.predicates.upscale, {constants = self.constants})
+        render.draw(self.predicates.upscale, { constants = self.constants })
         render.disable_texture(0)
         render.disable_material()
         -- PASS 2 blur_rt -> upscale_rt
         render.set_render_target(self.upscale_rt.rt)
         render.enable_material("blur_vertical")
         render.enable_texture(0, self.blur_rt.rt, render.BUFFER_COLOR_BIT)
-        render.draw(self.predicates.upscale, {constants = self.constants})
+        render.draw(self.predicates.upscale, { constants = self.constants })
         render.disable_texture(0)
         render.disable_material()
         render.set_render_target(render.RENDER_TARGET_DEFAULT)
     end
-    
+
     -- draw `upscale_rt` to default RT
     -- render.disable_state(graphics.STATE_BLEND)
     render.set_viewport(0, 0, window_width, window_height)

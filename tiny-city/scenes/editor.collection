@@ -14,4 +14,8 @@ collection_instances {
   id: "graph_editor"
   collection: "/graph_editor/graph_editor.collection"
 }
+collection_instances {
+  id: "roads"
+  collection: "/tiny-city/components/collections/roads.collection"
+}
 scale_along_z: 0

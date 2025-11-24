@@ -1,0 +1,15 @@
+embedded_components {
+  id: "model"
+  type: "model"
+  data: "mesh: \"/tiny-city/assets/models/suburban/building-type-b.glb\"\n"
+  "materials {\n"
+  "  name: \"colormap\"\n"
+  "  material: \"/light_and_shadows/materials/model/model_instanced.material\"\n"
+  "  textures {\n"
+  "    sampler: \"tex0\"\n"
+  "    texture: \"/tiny-city/assets/textures/kenney_suburban_colormap.png\"\n"
+  "  }\n"
+  "}\n"
+  "create_go_bones: false\n"
+  ""
+}

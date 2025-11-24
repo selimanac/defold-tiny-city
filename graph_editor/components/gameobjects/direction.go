@@ -5,7 +5,7 @@ embedded_components {
   "name: \"{{NAME}}\"\n"
   "materials {\n"
   "  name: \"default\"\n"
-  "  material: \"/tiny-city/components/materials/model_unlit_instanced.material\"\n"
+  "  material: \"/tiny-city/components/materials/unlit/model_unlit_instanced.material\"\n"
   "  textures {\n"
   "    sampler: \"tex0\"\n"
   "    texture: \"/graph_editor/assets/images/green.png\"\n"

@@ -1,0 +1,219 @@
+name: "test"
+instances {
+  id: "render_target_quad"
+  prototype: "/light_and_shadows/props/render_target_quad.go"
+}
+instances {
+  id: "game_camera"
+  prototype: "/tiny-city/components/gameobjects/game_camera.go"
+  rotation {
+    x: -0.1793018
+    y: 0.33573627
+    z: 0.06526052
+    w: 0.92242783
+  }
+  component_properties {
+    id: "game_camera"
+    properties {
+      id: "zoom"
+      value: "15.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "offset"
+      value: "0.0, 0.0, 4.0"
+      type: PROPERTY_TYPE_VECTOR3
+    }
+  }
+}
+instances {
+  id: "sun"
+  prototype: "/light_and_shadows/props/sun.go"
+  position {
+    x: -11.0
+    y: 26.0
+    z: 18.0
+  }
+  rotation {
+    x: 0.27861473
+    y: -0.21780661
+    z: 0.06503389
+    w: 0.9331156
+  }
+  component_properties {
+    id: "sun"
+    properties {
+      id: "near"
+      value: "0.1"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "far"
+      value: "100.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "PROJECTION_RESOLUTION"
+      value: "100.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "perspective"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
+      id: "fov"
+      value: "2.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "depth_bias"
+      value: "4.0E-5"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "max_lights"
+      value: "2.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+}
+instances {
+  id: "building-type-a"
+  prototype: "/tiny-city/components/gameobjects/suburban/building-type-a.go"
+  position {
+    x: -2.0
+    z: 1.0
+  }
+}
+instances {
+  id: "building-type-a1"
+  prototype: "/tiny-city/components/gameobjects/suburban/building-type-a.go"
+  position {
+    x: -4.0
+    z: -2.0
+  }
+}
+instances {
+  id: "building-type-a2"
+  prototype: "/tiny-city/components/gameobjects/suburban/building-type-a.go"
+  position {
+    x: 3.0
+    z: 9.0
+  }
+}
+instances {
+  id: "building-type-a3"
+  prototype: "/tiny-city/components/gameobjects/suburban/building-type-a.go"
+  position {
+    x: -17.0
+    z: 1.0
+  }
+}
+instances {
+  id: "building-type-a4"
+  prototype: "/tiny-city/components/gameobjects/suburban/building-type-a.go"
+  position {
+    x: -16.0
+    z: 9.0
+  }
+}
+instances {
+  id: "building-type-a5"
+  prototype: "/tiny-city/components/gameobjects/suburban/building-type-a.go"
+  position {
+    x: -6.0
+    z: 2.0
+  }
+}
+instances {
+  id: "building-type-a6"
+  prototype: "/tiny-city/components/gameobjects/suburban/building-type-a.go"
+  position {
+    x: -7.0
+    z: 11.0
+  }
+}
+instances {
+  id: "building-type-a7"
+  prototype: "/tiny-city/components/gameobjects/suburban/building-type-a.go"
+  position {
+    x: 3.0
+    z: 1.0
+  }
+}
+instances {
+  id: "skybox"
+  prototype: "/tiny-city/components/gameobjects/skybox.go"
+  scale3 {
+    x: 100.0
+    y: 100.0
+    z: 100.0
+  }
+}
+collection_instances {
+  id: "roads"
+  collection: "/tiny-city/components/collections/roads.collection"
+  position {
+    x: 5.0
+    z: -4.0
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "scripts"
+  data: "components {\n"
+  "  id: \"light_setting\"\n"
+  "  component: \"/light_and_shadows/light_setting.script\"\n"
+  "  properties {\n"
+  "    id: \"ambient\"\n"
+  "    value: \"0.5, 0.5, 0.5, 0.0\"\n"
+  "    type: PROPERTY_TYPE_VECTOR4\n"
+  "  }\n"
+  "}\n"
+  ""
+}
+embedded_instances {
+  id: "ground"
+  data: "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/builtins/assets/meshes/quad_2x2.dae\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"default\\\"\\n"
+  "  material: \\\"/light_and_shadows/materials/model/model_instanced_nocast.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"tex0\\\"\\n"
+  "    texture: \\\"/graph_editor/assets/images/white.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  rotation {
+    x: -0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 20.0
+    y: 20.0
+  }
+}
+embedded_instances {
+  id: "test_buildings"
+  children: "building-type-a"
+  children: "building-type-a1"
+  children: "building-type-a2"
+  children: "building-type-a3"
+  children: "building-type-a4"
+  children: "building-type-a5"
+  children: "building-type-a6"
+  children: "building-type-a7"
+  data: ""
+  position {
+    x: 6.0
+    z: -4.0
+  }
+}

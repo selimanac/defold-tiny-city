@@ -1,0 +1,16 @@
+embedded_components {
+  id: "model"
+  type: "model"
+  data: "mesh: \"/builtins/assets/meshes/sphere.dae\"\n"
+  "name: \"{{NAME}}\"\n"
+  "materials {\n"
+  "  name: \"default\"\n"
+  "  material: \"/tiny-city/components/materials/skybox/skybox.material\"\n"
+  "  textures {\n"
+  "    sampler: \"cubemap\"\n"
+  "    texture: \"/tiny-city/assets/textures/skybox/skybox.cubemap\"\n"
+  "  }\n"
+  "}\n"
+  "create_go_bones: false\n"
+  ""
+}

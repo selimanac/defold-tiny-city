@@ -1,6 +1,6 @@
 name: "model_instanced"
 tags: "model"
-vertex_program: "/tiny-city/components/materials/model__unlit_instanced.vp"
+vertex_program: "/tiny-city/components/materials/unlit/model_unlit_instanced.vp"
 fragment_program: "/tiny-city/components/materials/repeat.fp"
 vertex_space: VERTEX_SPACE_LOCAL
 vertex_constants {

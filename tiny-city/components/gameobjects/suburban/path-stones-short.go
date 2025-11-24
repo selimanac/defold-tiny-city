@@ -1,0 +1,15 @@
+embedded_components {
+  id: "model"
+  type: "model"
+  data: "mesh: \"/tiny-city/assets/models/suburban/path-stones-short.glb\"\n"
+  "materials {\n"
+  "  name: \"colormap\"\n"
+  "  material: \"/tiny-city/components/materials/unlit/model_unlit_instanced.material\"\n"
+  "  textures {\n"
+  "    sampler: \"tex0\"\n"
+  "    texture: \"/tiny-city/assets/textures/kenney_suburban_colormap.png\"\n"
+  "  }\n"
+  "}\n"
+  "create_go_bones: false\n"
+  ""
+}

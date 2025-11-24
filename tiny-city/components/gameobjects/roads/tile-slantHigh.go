@@ -1,0 +1,15 @@
+embedded_components {
+  id: "model"
+  type: "model"
+  data: "mesh: \"/tiny-city/assets/models/roads/tile-slantHigh.glb\"\n"
+  "materials {\n"
+  "  name: \"colormap\"\n"
+  "  material: \"/light_and_shadows/materials/model/model_instanced_nocast.material\"\n"
+  "  textures {\n"
+  "    sampler: \"tex0\"\n"
+  "    texture: \"/tiny-city/assets/textures/kenney_roads_colormap.png\"\n"
+  "  }\n"
+  "}\n"
+  "create_go_bones: false\n"
+  ""
+}
