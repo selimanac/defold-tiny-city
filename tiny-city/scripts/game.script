@@ -12,7 +12,7 @@ end
 function update(self, dt)
 	game_manager.update(dt)
 
-	pathfinder_debug.draw_edges()
+	--	pathfinder_debug.draw_edges()
 end
 
 function on_input(self, action_id, action)
