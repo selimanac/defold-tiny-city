@@ -34,7 +34,7 @@ function traffic.update(dt)
 
 		if vehicle.state == const.VEHICLE_STATE.ACTIVE then
 			-- Check if agent reached current waypoint on smoothed path
-			if vehicles.check_waypoint(vehicle) or vehicle.state ~= const.VEHICLE_STATE.ARRIVED then
+			if not vehicles.check_waypoint(vehicle) or vehicle.state ~= const.VEHICLE_STATE.ARRIVED then
 				vehicles.get_current_waypoint_position(vehicle, target_waypoint_position)
 
 				-- =================================
@@ -239,6 +239,7 @@ function traffic.update(dt)
 				end
 			else
 				-- Vehicle reached destination, reset to loop the path
+				print("END")
 				vehicles.release_node_reservation(vehicle, vehicle_id)
 				vehicle.state = const.VEHICLE_STATE.ACTIVE
 				vehicle.current_waypoint_id = 1

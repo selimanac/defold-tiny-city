@@ -45,11 +45,11 @@ local function add(start_node_id, goal_node_id, vehicle_type)
 	local target_position              = vmath.vector3(path[2].x, 0, path[2].y)
 	local direction                    = target_position - vehicle_position
 	local initial_rotation             = vmath.quat_rotation_y(math.atan2(direction.x, direction.z))
-	local vehicle_instance             = factory.create(vehicle_type.FACTORY, vehicle_position, initial_rotation)
+	local vehicle_instance             = msg.url("police_camera") --factory.create(vehicle_type.FACTORY, vehicle_position, initial_rotation)
 	local aabb_id                      = collision.insert_gameobject(vehicle_instance, 0.4, 1, 0.4, collision.COLLISION_BITS.VEHICLE)
 	vehicles.count                     = vehicles.count + 1
 
-
+	pprint(vehicle_type.MAX_SPEED)
 	local vehicle_agent                  = {
 		uuid                 = uuid4.generate(),
 		position             = vehicle_position,
@@ -88,7 +88,7 @@ local function add(start_node_id, goal_node_id, vehicle_type)
 end
 
 function vehicles.init()
-	add(83, 17, const.VEHICLE_TYPE.VAN)
+	add(83, 17, const.VEHICLE_TYPE.FIRE)
 end
 
 function vehicles.remove(vehicle_id, vehicle)

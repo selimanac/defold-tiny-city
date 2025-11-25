@@ -11,8 +11,9 @@ end
 
 function update(self, dt)
 	game_manager.update(dt)
-
-	--	pathfinder_debug.draw_edges()
+	msg.post("/camera#camera", "disable")
+	msg.post("/game_camera#camera", "enable")
+	--pathfinder_debug.draw_edges()
 end
 
 function on_input(self, action_id, action)
