@@ -1,5 +1,5 @@
-local data             = require("scripts.data")
-local const            = require("scripts.const")
+local const            = require("tiny-city.scripts.lib.const")
+local data             = require("tiny-city.scripts.lib.data")
 
 -- =================================
 -- MODULE

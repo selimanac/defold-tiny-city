@@ -1,19 +1,22 @@
-local traffic_lights           = require "tiny-city.scripts.game.traffic_lights"
-local vehicles                 = require("tiny-city.scripts.game.vehicles")
-local const                    = require("tiny-city.scripts.lib.const")
-local data                     = require("tiny-city.scripts.lib.data")
-local collision                = require("tiny-city.scripts.lib.collision")
+local traffic_lights              = require "tiny-city.scripts.game.traffic_lights"
+local vehicles                    = require("tiny-city.scripts.game.vehicles")
+local const                       = require("tiny-city.scripts.lib.const")
+local data                        = require("tiny-city.scripts.lib.data")
+local collision                   = require("tiny-city.scripts.lib.collision")
 -- =================================
 -- MODULE
 -- =================================
-local traffic                  = {}
+local traffic                     = {}
 
 -- =================================
 -- VARS
 -- =================================
-local target_waypoint_position = vmath.vector3()
-local raycasts_to_perform      = {}
-local raycast                  = {
+local target_waypoint_position    = vmath.vector3()
+local traffic_light_node_position = vmath.vector3()
+local next_node_position          = vmath.vector3()
+
+local raycasts_to_perform         = {}
+local raycast                     = {
 	current = vmath.vector3(),
 	next = vmath.vector3(),
 	ahead = vmath.vector3()
@@ -163,7 +166,6 @@ function traffic.update(dt)
 					end
 				end
 
-
 				-- =================================
 				-- TRAFFIC LIGHTS
 				local check_node_id = vehicles.get_node_id_at_waypoint(vehicle, 0)
@@ -173,7 +175,7 @@ function traffic.update(dt)
 
 					if traffic_light_state == const.TRAFFIC_LIGHT_STATE.RED then
 						-- There's a red light ahead - calculate distance and treat as obstacle
-						local traffic_light_node_position = vmath.vector3()
+
 
 						vehicles.get_raycast_target_position(vehicle, 0, traffic_light_node_position)
 
@@ -200,22 +202,21 @@ function traffic.update(dt)
 				if distance >= const.EPSILON then
 					local direction = target_direction * (1.0 / distance)
 
-
 					if vehicle.speed > const.VEHICLE_CONTROL.ROTATION_SPEED_THRESHOLD then
 						local target_angle     = math.atan2(direction.x, direction.z)
 						local target_rotation  = vmath.quat_rotation_y(target_angle)
 						local current_rotation = vehicle.rotation
 						local t                = math.min(1.0, vehicle.rotation_speed * dt)
-						vehicle.rotation       = vmath.slerp(t, current_rotation, target_rotation)
 
+						vehicle.rotation       = vmath.slerp(t, current_rotation, target_rotation)
 						vehicle.rotation_angle = target_angle -- For reference
 					end
 
 					-- Calculate movement for this frame and clamp
-					local movement_distance = math.min(vehicle.speed * dt, distance)
+					local movement_distance    = math.min(vehicle.speed * dt, distance)
 
-					vehicle.position = vehicle.position + (direction * movement_distance)
-					vehicle.position.y = 0.0
+					vehicle.position           = vehicle.position + (direction * movement_distance)
+					vehicle.position.y         = 0.0
 
 					-- Store direction for crossing detection
 					vehicle.previous_direction = direction * vehicle.speed
@@ -225,9 +226,10 @@ function traffic.update(dt)
 
 					-- Check if we need to advance to next node
 					if vehicle.current_waypoint_id <= vehicle.path_size then
-						local node_pos = vmath.vector3()
-						vehicles.get_raycast_target_position(vehicle, 0, node_pos)
-						local node_distance = vmath.length(vehicle.position - node_pos)
+						vehicles.get_raycast_target_position(vehicle, 0, next_node_position)
+
+						local node_distance = vmath.length(vehicle.position - next_node_position)
+
 						if node_distance <= const.VEHICLE_CONTROL.ARRIVAL_THRESHOLD then -- Close enough to node
 							-- Release reservation for the node we just reached
 							vehicles.release_node_reservation(vehicle, vehicle_id)

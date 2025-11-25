@@ -1,16 +1,17 @@
-local const     = require("tiny-city.scripts.lib.const")
-local data      = require("tiny-city.scripts.lib.data")
-local collision = require("tiny-city.scripts.lib.collision")
-
+local const                = require("tiny-city.scripts.lib.const")
+local data                 = require("tiny-city.scripts.lib.data")
+local collision            = require("tiny-city.scripts.lib.collision")
 
 -- =================================
 -- MODULE
 -- =================================
-local vehicles = {}
+local vehicles             = {}
 
-
-vehicles.count = 0
-
+-- =================================
+-- VARS
+-- =================================
+vehicles.count             = 0
+local target_node_position = vmath.vector3()
 
 local function add(start_node_id, goal_node_id, vehicle_type)
 	local path_size = 0
@@ -88,6 +89,24 @@ end
 
 function vehicles.init()
 	add(83, 17, const.VEHICLE_TYPE.VAN)
+end
+
+function vehicles.remove(vehicle_id, vehicle)
+	-- Release any node reservations before removing
+	vehicles.release_node_reservation(vehicle, vehicle_id)
+	vehicle.state = cons.VEHICLE_STATE.INACTIVE
+	collision.remove(vehicle.aabb_id)
+	data.lookup.aabb_to_vehicle[vehicle.aabb_id] = nil
+
+	for i = 1, #data.lookup.vehicle_list do
+		if data.lookup.vehicle_list[i] == vehicle_id then
+			table.remove(data.lookup.vehicle_list, i)
+			break
+		end
+	end
+
+	go.delete(vehicle.instance)
+	table.remove(data.vehicles, vehicle_id)
 end
 
 function vehicles.set_speed(vehicle, dt)
@@ -229,11 +248,11 @@ function vehicles.is_next_node_reserved(vehicle, vehicle_id)
 	local reserving_vehicle_id = data.node_reservations[next_node_id]
 	if reserving_vehicle_id and reserving_vehicle_id ~= vehicle_id then
 		-- Calculate distance to this node
-		local node_pos = vmath.vector3()
-		vehicles.get_raycast_target_position(vehicle, 0, node_pos)
 
-		if node_pos then
-			local distance = vmath.length(vehicle.position - node_pos)
+		vehicles.get_raycast_target_position(vehicle, 0, target_node_position)
+
+		if target_node_position then
+			local distance = vmath.length(vehicle.position - target_node_position)
 			return true, distance
 		end
 		return true, nil
