@@ -4,7 +4,7 @@ embedded_components {
   data: "mesh: \"/tiny-city/assets/models/suburban/fence-3x3.glb\"\n"
   "materials {\n"
   "  name: \"colormap\"\n"
-  "  material: \"/tiny-city/components/materials/unlit/model_unlit_instanced.material\"\n"
+  "  material: \"/light_and_shadows/materials/model/model_instanced.material\"\n"
   "  textures {\n"
   "    sampler: \"tex0\"\n"
   "    texture: \"/tiny-city/assets/textures/kenney_suburban_colormap.png\"\n"

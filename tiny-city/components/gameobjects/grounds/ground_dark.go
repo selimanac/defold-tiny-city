@@ -1,0 +1,16 @@
+embedded_components {
+  id: "model"
+  type: "model"
+  data: "mesh: \"/builtins/assets/meshes/cube.dae\"\n"
+  "name: \"{{NAME}}\"\n"
+  "materials {\n"
+  "  name: \"default\"\n"
+  "  material: \"/light_and_shadows/materials/model/model_instanced_nocast.material\"\n"
+  "  textures {\n"
+  "    sampler: \"tex0\"\n"
+  "    texture: \"/tiny-city/assets/textures/ground_dark.png\"\n"
+  "  }\n"
+  "}\n"
+  "create_go_bones: false\n"
+  ""
+}

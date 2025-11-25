@@ -70,12 +70,12 @@ instances {
     }
     properties {
       id: "fov"
-      value: "1.0"
+      value: "0.5"
       type: PROPERTY_TYPE_NUMBER
     }
     properties {
       id: "depth_bias"
-      value: "1.0E-5"
+      value: "4.0E-6"
       type: PROPERTY_TYPE_NUMBER
     }
     properties {
@@ -106,7 +106,12 @@ instances {
   prototype: "/tiny-city/components/gameobjects/suburban/building-type-a.go"
   position {
     x: -0.5
-    z: 5.5
+    z: 11.5
+  }
+  scale3 {
+    x: 1.5
+    y: 1.5
+    z: 1.5
   }
 }
 instances {
@@ -136,8 +141,9 @@ instances {
   id: "building-type-a6"
   prototype: "/tiny-city/components/gameobjects/suburban/building-type-a.go"
   position {
-    x: -4.0
-    z: 5.5
+    x: -6.0
+    y: 0.02
+    z: 7.5
   }
 }
 instances {
@@ -205,7 +211,8 @@ instances {
   id: "agent"
   prototype: "/graph_editor/components/gameobjects/agent.go"
   position {
-    z: 5.0
+    x: 2.0
+    z: 6.0
   }
 }
 instances {
@@ -272,6 +279,22 @@ instances {
       value: "true"
       type: PROPERTY_TYPE_BOOLEAN
     }
+  }
+}
+instances {
+  id: "agent1"
+  prototype: "/graph_editor/components/gameobjects/agent.go"
+  position {
+    x: 5.0
+    z: 6.0
+  }
+}
+instances {
+  id: "sedan"
+  prototype: "/tiny-city/components/gameobjects/vehicles/sedan.go"
+  position {
+    x: 3.0
+    z: 6.0
   }
 }
 collection_instances {
@@ -373,11 +396,6 @@ embedded_instances {
   position {
     x: 6.0
     z: -4.0
-  }
-  scale3 {
-    x: 2.0
-    y: 2.0
-    z: 2.0
   }
 }
 embedded_instances {
@@ -492,5 +510,30 @@ embedded_instances {
     x: 0.2
     y: 0.2
     z: 0.2
+  }
+}
+embedded_instances {
+  id: "go2"
+  data: "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/builtins/assets/meshes/cube.dae\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"default\\\"\\n"
+  "  material: \\\"/light_and_shadows/materials/model/model_instanced.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"tex0\\\"\\n"
+  "    texture: \\\"/graph_editor/assets/images/green.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    z: 4.0
+  }
+  scale3 {
+    y: 0.04
   }
 }
