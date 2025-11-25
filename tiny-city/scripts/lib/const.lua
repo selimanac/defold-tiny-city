@@ -1,7 +1,9 @@
-local const = {}
+local const            = {}
 
-const.CAMERA = msg.url()
-const.COLORS = {
+const.EPSILON          = 0.0001 -- Minimum distance for movement calculations
+const.HUGE             = math.huge
+const.CAMERA           = msg.url()
+const.COLORS           = {
 	RED       = vmath.vector4(1, 0, 0, 1),
 	GREEN     = vmath.vector4(0, 1, 0, 1),
 	YELLOW    = vmath.vector4(1, 1, 0, 1),
@@ -22,13 +24,18 @@ const.SMOOTHING_CONFIG = {
 }
 
 
-const.VEHICLE_STATES = {
+const.VEHICLE_STATE = {
 	INACTIVE       = 0, -- Not in navigation system
 	ACTIVE         = 1, -- Following path
 	PAUSED         = 2, -- Paused by application
 	REPLANNING     = 3, -- Detected invalidation, finding new path
 	ARRIVED        = 4, -- Reached goal,
 	WAITTING_ORDER = 5
+}
+
+const.SPEED_LIMITS = {
+	MID  = 1.0,
+	HIGH = 1.5
 }
 
 

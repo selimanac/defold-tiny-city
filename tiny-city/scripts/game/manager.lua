@@ -31,6 +31,7 @@ function manager.init()
 end
 
 function manager.update(dt)
+	traffic.update(dt)
 end
 
 function manager.input(action_id, action)
