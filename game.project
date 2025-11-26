@@ -1,5 +1,5 @@
 [bootstrap]
-main_collection = /tiny-city/scenes/map_sinle.collectionc
+main_collection = /tiny-city/scenes/map.collectionc
 render = /light_and_shadows/render/default.renderc
 
 [script]

@@ -1,26 +1,5 @@
 name: "test"
 instances {
-  id: "game_camera"
-  prototype: "/tiny-city/components/gameobjects/game_camera.go"
-  rotation {
-    x: -0.70710677
-    w: 0.70710677
-  }
-  component_properties {
-    id: "game_camera"
-    properties {
-      id: "zoom"
-      value: "15.0"
-      type: PROPERTY_TYPE_NUMBER
-    }
-    properties {
-      id: "offset"
-      value: "-2.5, 2.0, 4.0"
-      type: PROPERTY_TYPE_VECTOR3
-    }
-  }
-}
-instances {
   id: "sun"
   prototype: "/light_and_shadows/props/sun.go"
   position {
@@ -58,7 +37,7 @@ instances {
     }
     properties {
       id: "PROJECTION_RESOLUTION"
-      value: "400.0"
+      value: "200.0"
       type: PROPERTY_TYPE_NUMBER
     }
     properties {
@@ -112,14 +91,6 @@ instances {
       value: "true"
       type: PROPERTY_TYPE_BOOLEAN
     }
-  }
-}
-instances {
-  id: "agent"
-  prototype: "/graph_editor/components/gameobjects/agent.go"
-  position {
-    x: 2.0
-    z: 6.0
   }
 }
 instances {
@@ -555,18 +526,6 @@ instances {
   rotation {
     y: 0.70710677
     w: 0.70710677
-  }
-}
-instances {
-  id: "road-intersection-line4"
-  prototype: "/tiny-city/components/gameobjects/roads/road-intersection-line.go"
-  position {
-    x: 1.5
-    z: 8.0
-  }
-  rotation {
-    y: 1.0
-    w: 6.123234E-17
   }
 }
 instances {
@@ -1127,14 +1086,6 @@ instances {
   }
 }
 instances {
-  id: "road-straight36"
-  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
-  position {
-    x: 2.5
-    z: 8.0
-  }
-}
-instances {
   id: "road-intersection-line8"
   prototype: "/tiny-city/components/gameobjects/roads/road-intersection-line.go"
   position {
@@ -1351,22 +1302,6 @@ instances {
   rotation {
     y: 0.70710677
     w: 0.70710677
-  }
-}
-instances {
-  id: "road-straight46"
-  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
-  position {
-    x: -7.0
-    z: -0.5
-  }
-}
-instances {
-  id: "road-straight47"
-  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
-  position {
-    x: -8.0
-    z: -0.5
   }
 }
 instances {
@@ -1962,12 +1897,12 @@ instances {
   id: "building-skyscraper-b"
   prototype: "/tiny-city/components/gameobjects/commercial/building-skyscraper-b.go"
   position {
-    x: -10.18034
-    z: 9.225823
+    x: -5.0
+    z: -2.5
   }
   rotation {
-    y: 0.70710677
-    w: 0.70710677
+    y: 1.0
+    w: 6.123234E-17
   }
 }
 instances {
@@ -2038,55 +1973,11 @@ instances {
   }
 }
 instances {
-  id: "building-g"
-  prototype: "/tiny-city/components/gameobjects/commercial/building-g.go"
-  position {
-    x: -0.5
-    z: -2.5
-  }
-  rotation {
-    y: 1.0
-    w: 6.123234E-17
-  }
-}
-instances {
   id: "building-j1"
   prototype: "/tiny-city/components/gameobjects/commercial/building-j.go"
   position {
-    x: -2.5
-    z: -2.5
-  }
-}
-instances {
-  id: "building-b1"
-  prototype: "/tiny-city/components/gameobjects/commercial/building-b.go"
-  position {
-    x: -4.879003
-    z: 9.176129
-  }
-}
-instances {
-  id: "building-c"
-  prototype: "/tiny-city/components/gameobjects/commercial/building-c.go"
-  position {
-    x: -2.705249
-    z: -5.958314
-  }
-  rotation {
-    y: 1.0
-    w: 6.123234E-17
-  }
-}
-instances {
-  id: "road-bend"
-  prototype: "/tiny-city/components/gameobjects/roads/road-bend.go"
-  position {
-    x: -6.0
-    z: 11.5
-  }
-  rotation {
-    y: -0.70710677
-    w: 0.70710677
+    x: -4.102743
+    z: 9.706576
   }
 }
 instances {
@@ -2187,186 +2078,15 @@ instances {
   }
 }
 instances {
-  id: "ground_light7"
-  prototype: "/tiny-city/components/gameobjects/grounds/ground_light.go"
-  position {
-    x: -10.1
-    z: 9.2
-  }
-  scale3 {
-    x: 1.4
-    y: 0.01
-    z: 1.4
-  }
-}
-instances {
   id: "building-skyscraper-c"
   prototype: "/tiny-city/components/gameobjects/commercial/building-skyscraper-c.go"
   position {
-    x: -5.0
+    x: -0.8
     z: -2.5
   }
   rotation {
     y: 1.0
     w: 6.123234E-17
-  }
-}
-instances {
-  id: "road-straight52"
-  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
-  position {
-    x: -3.0
-    y: 1.0
-    z: -0.5
-  }
-}
-instances {
-  id: "road-straight67"
-  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
-  position {
-    x: -4.0
-    y: 1.0
-    z: -0.5
-  }
-}
-instances {
-  id: "road-straight68"
-  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
-  position {
-    x: -1.0
-    y: 1.0
-    z: -0.5
-  }
-}
-instances {
-  id: "road-straight69"
-  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
-  position {
-    x: -2.0
-    y: 1.0
-    z: -0.5
-  }
-}
-instances {
-  id: "road-straight71"
-  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
-  position {
-    y: 1.0
-    z: -0.5
-  }
-}
-instances {
-  id: "road-bend2"
-  prototype: "/tiny-city/components/gameobjects/roads/road-bend.go"
-  position {
-    x: 1.0
-    y: 1.0
-    z: -0.5
-  }
-  rotation {
-    y: -0.70710677
-    w: 0.70710677
-  }
-}
-instances {
-  id: "road-straight70"
-  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
-  position {
-    x: 1.0
-    y: 1.0
-    z: -1.5
-  }
-  rotation {
-    y: 0.70710677
-    w: 0.70710677
-  }
-}
-instances {
-  id: "road-straight72"
-  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
-  position {
-    x: 1.0
-    y: 1.0
-    z: -2.5
-  }
-  rotation {
-    y: 0.70710677
-    w: 0.70710677
-  }
-}
-instances {
-  id: "road-straight73"
-  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
-  position {
-    x: 1.0
-    y: 1.0
-    z: -3.5
-  }
-  rotation {
-    y: 0.70710677
-    w: 0.70710677
-  }
-}
-instances {
-  id: "road-bend3"
-  prototype: "/tiny-city/components/gameobjects/roads/road-bend.go"
-  position {
-    x: 1.0
-    y: 1.0
-    z: -4.5
-  }
-}
-instances {
-  id: "road-straight74"
-  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
-  position {
-    y: 1.0
-    z: -4.5
-  }
-}
-instances {
-  id: "road-straight75"
-  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
-  position {
-    x: -1.0
-    y: 1.0
-    z: -4.5
-  }
-}
-instances {
-  id: "road-straight76"
-  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
-  position {
-    x: -2.0
-    y: 1.0
-    z: -4.5
-  }
-}
-instances {
-  id: "road-straight77"
-  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
-  position {
-    x: -3.0
-    y: 1.0
-    z: -4.5
-  }
-}
-instances {
-  id: "road-straight78"
-  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
-  position {
-    x: -4.0
-    y: 1.0
-    z: -4.5
-  }
-}
-instances {
-  id: "road-straight79"
-  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
-  position {
-    x: -5.0
-    y: 1.0
-    z: -4.5
   }
 }
 instances {
@@ -2397,16 +2117,7 @@ instances {
   id: "road-curve5"
   prototype: "/tiny-city/components/gameobjects/roads/road-curve.go"
   position {
-    x: 1.0
-    z: -4.0
-  }
-}
-instances {
-  id: "road-curve6"
-  prototype: "/tiny-city/components/gameobjects/roads/road-curve.go"
-  position {
-    x: -6.5
-    y: 1.0
+    x: -7.0
     z: -4.0
   }
   rotation {
@@ -2439,62 +2150,6 @@ instances {
   }
 }
 instances {
-  id: "road-end-round1"
-  prototype: "/tiny-city/components/gameobjects/roads/road-end-round.go"
-  position {
-    x: -3.5
-    z: -4.5
-  }
-}
-instances {
-  id: "road-curve7"
-  prototype: "/tiny-city/components/gameobjects/roads/road-curve.go"
-  position {
-    x: -6.5
-    y: 1.0
-    z: -1.0
-  }
-  rotation {
-    y: 1.0
-    w: 6.123234E-17
-  }
-}
-instances {
-  id: "road-straight85"
-  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
-  position {
-    x: -7.0
-    y: 1.0
-    z: -2.5
-  }
-  rotation {
-    y: 0.70710677
-    w: 0.70710677
-  }
-}
-instances {
-  id: "road-straight86"
-  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
-  position {
-    x: -5.0
-    y: 1.0
-    z: -0.5
-  }
-}
-instances {
-  id: "ground_light8"
-  prototype: "/tiny-city/components/gameobjects/grounds/ground_light.go"
-  position {
-    x: -3.0
-    z: -2.5
-  }
-  scale3 {
-    x: 8.0
-    y: 0.01
-    z: 3.0
-  }
-}
-instances {
   id: "detail-parasol-a2"
   prototype: "/tiny-city/components/gameobjects/commercial/detail-parasol-a.go"
   position {
@@ -2514,272 +2169,28 @@ instances {
   id: "detail-overhang-wide"
   prototype: "/tiny-city/components/gameobjects/commercial/detail-overhang-wide.go"
   position {
-    x: -6.488928
-    z: -3.150037
+    x: -6.31662
+    z: -2.570716
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
   }
 }
 instances {
   id: "tree-large9"
   prototype: "/tiny-city/components/gameobjects/suburban/tree-large.go"
   position {
-    x: -6.415678
-    z: -3.598957
+    x: -4.080642
+    z: -2.433017
   }
 }
 instances {
   id: "tree-small5"
   prototype: "/tiny-city/components/gameobjects/suburban/tree-small.go"
   position {
-    x: -5.896892
-    z: -3.414504
-  }
-}
-instances {
-  id: "bridge-pillar"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: -7.073144
-    z: -0.944798
-  }
-}
-instances {
-  id: "bridge-pillar1"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: -7.475438
-    z: -1.726454
-  }
-}
-instances {
-  id: "bridge-pillar2"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: -7.425197
-    z: -3.241913
-  }
-}
-instances {
-  id: "bridge-pillar3"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: -7.073144
-    z: -4.239174
-  }
-}
-instances {
-  id: "bridge-pillar4"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: -5.497735
-    z: -0.04776
-  }
-}
-instances {
-  id: "bridge-pillar5"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: -5.497735
-    z: -0.947599
-  }
-}
-instances {
-  id: "bridge-pillar6"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: -3.480173
-    z: -0.04776
-  }
-}
-instances {
-  id: "bridge-pillar7"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: -3.480173
-    z: -0.947599
-  }
-}
-instances {
-  id: "bridge-pillar8"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: -0.219092
-    z: -0.04776
-  }
-}
-instances {
-  id: "bridge-pillar9"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: -0.219092
-    z: -0.947599
-  }
-}
-instances {
-  id: "bridge-pillar10"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: 1.068811
-    z: -1.851996
-  }
-}
-instances {
-  id: "bridge-pillar11"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: 1.068811
-    z: -3.258836
-  }
-}
-instances {
-  id: "bridge-pillar12"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: -0.238518
-    z: -4.057858
-  }
-}
-instances {
-  id: "bridge-pillar13"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: 0.57276
-    z: -3.896505
-  }
-}
-instances {
-  id: "bridge-pillar14"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: -1.299411
-    z: -4.057858
-  }
-}
-instances {
-  id: "bridge-pillar15"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: -2.286104
-    z: -4.057858
-  }
-}
-instances {
-  id: "bridge-pillar16"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: -3.199508
-    z: -4.057858
-  }
-}
-instances {
-  id: "bridge-pillar17"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: -4.076533
-    z: -4.057858
-  }
-}
-instances {
-  id: "bridge-pillar18"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: -4.864707
-    z: -4.057858
-  }
-}
-instances {
-  id: "bridge-pillar19"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: -5.734122
-    z: -4.057858
-  }
-}
-instances {
-  id: "bridge-pillar20"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: -6.574934
-    z: -4.057858
-  }
-}
-instances {
-  id: "bridge-pillar21"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: -0.238518
-    z: -4.975595
-  }
-}
-instances {
-  id: "bridge-pillar22"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: -1.299411
-    z: -4.975595
-  }
-}
-instances {
-  id: "bridge-pillar23"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: -2.286104
-    z: -4.975595
-  }
-}
-instances {
-  id: "bridge-pillar24"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: -3.199508
-    z: -4.975595
-  }
-}
-instances {
-  id: "bridge-pillar25"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: -4.076533
-    z: -4.975595
-  }
-}
-instances {
-  id: "bridge-pillar26"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: -4.864707
-    z: -4.975595
-  }
-}
-instances {
-  id: "bridge-pillar27"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: -5.734122
-    z: -4.975595
-  }
-}
-instances {
-  id: "bridge-pillar28"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: -6.574934
-    z: -4.606628
-  }
-}
-instances {
-  id: "bridge-pillar29"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: 1.15257
-    z: -4.598335
-  }
-}
-instances {
-  id: "bridge-pillar30"
-  prototype: "/tiny-city/components/gameobjects/roads/bridge-pillar.go"
-  position {
-    x: 0.610251
-    z: -0.04776
+    x: -3.809316
+    z: -2.092306
   }
 }
 instances {
@@ -2789,6 +2200,591 @@ instances {
     x: 150.0
     y: 150.0
     z: 150.0
+  }
+}
+instances {
+  id: "game_camera"
+  prototype: "/tiny-city/components/gameobjects/game_camera.go"
+  rotation {
+    x: -0.18791018
+    y: 0.17045777
+    z: 0.033133633
+    w: 0.9667141
+  }
+  component_properties {
+    id: "game_camera"
+    properties {
+      id: "zoom"
+      value: "20.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "offset"
+      value: "-3.0, 0.0, 0.0"
+      type: PROPERTY_TYPE_VECTOR3
+    }
+  }
+}
+instances {
+  id: "ambulance"
+  prototype: "/tiny-city/components/gameobjects/vehicles/ambulance.go"
+  position {
+    x: -7.348428
+    z: 10.488715
+  }
+  rotation {
+    y: -0.6985187
+    w: 0.71559185
+  }
+}
+instances {
+  id: "suv"
+  prototype: "/tiny-city/components/gameobjects/vehicles/suv.go"
+  position {
+    x: -5.150236
+    z: 2.160231
+  }
+  rotation {
+    y: -0.3468598
+    w: 0.937917
+  }
+}
+instances {
+  id: "ground_dark3"
+  prototype: "/tiny-city/components/gameobjects/grounds/ground_dark.go"
+  position {
+    x: -3.0
+    z: -2.5
+  }
+  scale3 {
+    x: 8.0
+    y: 0.01
+    z: 3.0
+  }
+}
+instances {
+  id: "tree-large10"
+  prototype: "/tiny-city/components/gameobjects/suburban/tree-large.go"
+  position {
+    x: -5.917468
+    z: -1.276931
+  }
+}
+instances {
+  id: "road-straight52"
+  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
+  position {
+    x: -3.5
+    z: -4.5
+  }
+}
+instances {
+  id: "road-straight67"
+  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
+  position {
+    x: -4.5
+    z: -4.5
+  }
+}
+instances {
+  id: "road-straight68"
+  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
+  position {
+    x: -5.5
+    z: -4.5
+  }
+}
+instances {
+  id: "road-curve6"
+  prototype: "/tiny-city/components/gameobjects/roads/road-curve.go"
+  position {
+    x: 1.0
+    z: -4.0
+  }
+}
+instances {
+  id: "road-straight69"
+  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
+  position {
+    x: -7.5
+    z: -2.5
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight70"
+  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
+  position {
+    x: -7.5
+    z: -1.5
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-intersection-line11"
+  prototype: "/tiny-city/components/gameobjects/roads/road-intersection-line.go"
+  position {
+    x: -7.5
+    z: -0.5
+  }
+  rotation {
+    y: 1.0
+    w: 6.123234E-17
+  }
+}
+instances {
+  id: "road-straight-half10"
+  prototype: "/tiny-city/components/gameobjects/roads/road-straight-half.go"
+  position {
+    x: -6.75
+    z: -0.5
+  }
+}
+instances {
+  id: "road-straight-half11"
+  prototype: "/tiny-city/components/gameobjects/roads/road-straight-half.go"
+  position {
+    x: -8.25
+    z: -0.5
+  }
+}
+instances {
+  id: "planter8"
+  prototype: "/tiny-city/components/gameobjects/suburban/planter.go"
+  position {
+    x: -1.213267
+    z: -2.261382
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "planter9"
+  prototype: "/tiny-city/components/gameobjects/suburban/planter.go"
+  position {
+    x: 0.230556
+    z: -2.25076
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "building-skyscraper-d"
+  prototype: "/tiny-city/components/gameobjects/commercial/building-skyscraper-d.go"
+  position {
+    x: -2.8
+    z: -2.5
+  }
+  rotation {
+    y: 1.0
+    w: 6.123234E-17
+  }
+}
+instances {
+  id: "ground_green1"
+  prototype: "/tiny-city/components/gameobjects/grounds/ground_green.go"
+  position {
+    x: 0.5
+    z: 10.749511
+  }
+  scale3 {
+    x: 4.0
+    y: 0.01
+    z: 4.5
+  }
+}
+instances {
+  id: "road-straight46"
+  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
+  position {
+    x: -2.0
+    z: 9.0
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight73"
+  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
+  position {
+    x: -5.0
+    z: 11.5
+  }
+}
+instances {
+  id: "road-straight74"
+  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
+  position {
+    x: -4.0
+    z: 11.5
+  }
+}
+instances {
+  id: "road-curve-intersection2"
+  prototype: "/tiny-city/components/gameobjects/roads/road-curve-intersection.go"
+  position {
+    x: -2.5
+    z: 11.0
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-bend"
+  prototype: "/tiny-city/components/gameobjects/roads/road-bend.go"
+  position {
+    x: -2.0
+    z: 13.5
+  }
+  rotation {
+    y: 1.0
+    w: 6.123234E-17
+  }
+}
+instances {
+  id: "road-straight47"
+  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
+  position {
+    x: -2.0
+    z: 12.5
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight71"
+  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
+  position {
+    x: -1.0
+    z: 13.5
+  }
+}
+instances {
+  id: "road-straight75"
+  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
+  position {
+    z: 13.5
+  }
+}
+instances {
+  id: "road-straight77"
+  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
+  position {
+    x: 1.0
+    z: 13.5
+  }
+}
+instances {
+  id: "road-bend2"
+  prototype: "/tiny-city/components/gameobjects/roads/road-bend.go"
+  position {
+    x: 2.5
+    z: 13.5
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight78"
+  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
+  position {
+    x: 2.5
+    z: 12.5
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight79"
+  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
+  position {
+    x: 2.5
+    z: 9.0
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight85"
+  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
+  position {
+    x: 2.5
+    z: 11.5
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight86"
+  prototype: "/tiny-city/components/gameobjects/roads/road-straight.go"
+  position {
+    x: 2.5
+    z: 10.5
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight-half12"
+  prototype: "/tiny-city/components/gameobjects/roads/road-straight-half.go"
+  position {
+    x: 2.5
+    z: 9.75
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "road-straight-half13"
+  prototype: "/tiny-city/components/gameobjects/roads/road-straight-half.go"
+  position {
+    x: -2.0
+    z: 9.75
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "ground_light8"
+  prototype: "/tiny-city/components/gameobjects/grounds/ground_light.go"
+  position {
+    x: -3.980745
+    z: 9.8
+  }
+  scale3 {
+    x: 3.0
+    y: 0.01
+    z: 2.6
+  }
+}
+instances {
+  id: "road-intersection-line4"
+  prototype: "/tiny-city/components/gameobjects/roads/road-intersection-line.go"
+  position {
+    x: 2.5
+    z: 8.0
+  }
+}
+instances {
+  id: "road-straight-half14"
+  prototype: "/tiny-city/components/gameobjects/roads/road-straight-half.go"
+  position {
+    x: 1.75
+    z: 13.5
+  }
+}
+instances {
+  id: "road-intersection-line12"
+  prototype: "/tiny-city/components/gameobjects/roads/road-intersection-line.go"
+  position {
+    x: 1.5
+    z: 8.0
+  }
+  rotation {
+    y: 1.0
+    w: 6.123234E-17
+  }
+}
+instances {
+  id: "road-intersection-line13"
+  prototype: "/tiny-city/components/gameobjects/roads/road-intersection-line.go"
+  position {
+    x: -6.0
+    z: 11.5
+  }
+  rotation {
+    y: 1.0
+    w: 6.123234E-17
+  }
+}
+instances {
+  id: "fountain"
+  prototype: "/tiny-city/components/gameobjects/town/fountain.go"
+  position {
+    x: 0.2
+    z: 10.7
+  }
+}
+instances {
+  id: "hedge_corner"
+  prototype: "/tiny-city/components/gameobjects/town/hedge_corner.go"
+  position {
+    x: 1.483642
+    z: 8.997849
+  }
+}
+instances {
+  id: "hedge_corner1"
+  prototype: "/tiny-city/components/gameobjects/town/hedge_corner.go"
+  position {
+    x: -0.980894
+    z: 8.997849
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "hedge_corner2"
+  prototype: "/tiny-city/components/gameobjects/town/hedge_corner.go"
+  position {
+    x: 1.508341
+    z: 12.48737
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "hedge_corner3"
+  prototype: "/tiny-city/components/gameobjects/town/hedge_corner.go"
+  position {
+    x: -0.945828
+    z: 12.48737
+  }
+  rotation {
+    y: 1.0
+    w: 6.123234E-17
+  }
+}
+instances {
+  id: "hedge"
+  prototype: "/tiny-city/components/gameobjects/town/hedge.go"
+  position {
+    x: 1.463631
+    z: 10.654983
+  }
+}
+instances {
+  id: "hedge1"
+  prototype: "/tiny-city/components/gameobjects/town/hedge.go"
+  position {
+    x: -0.971051
+    z: 10.654983
+  }
+  rotation {
+    y: 1.0
+    w: 6.123234E-17
+  }
+}
+instances {
+  id: "hedge2"
+  prototype: "/tiny-city/components/gameobjects/town/hedge.go"
+  position {
+    x: 0.240827
+    z: 9.006827
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "hedge3"
+  prototype: "/tiny-city/components/gameobjects/town/hedge.go"
+  position {
+    x: 0.261471
+    z: 12.484355
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "lantern"
+  prototype: "/tiny-city/components/gameobjects/town/lantern.go"
+  position {
+    x: -0.347629
+    z: 12.896587
+  }
+}
+instances {
+  id: "lantern1"
+  prototype: "/tiny-city/components/gameobjects/town/lantern.go"
+  position {
+    x: 0.888648
+    z: 12.896587
+  }
+}
+instances {
+  id: "lantern2"
+  prototype: "/tiny-city/components/gameobjects/town/lantern.go"
+  position {
+    x: -0.347629
+    z: 8.657396
+  }
+}
+instances {
+  id: "lantern3"
+  prototype: "/tiny-city/components/gameobjects/town/lantern.go"
+  position {
+    x: 0.888648
+    z: 8.657396
+  }
+}
+instances {
+  id: "detail-parasol-a4"
+  prototype: "/tiny-city/components/gameobjects/commercial/detail-parasol-a.go"
+  position {
+    x: -0.89453
+    z: 12.240999
+  }
+}
+instances {
+  id: "detail-parasol-a5"
+  prototype: "/tiny-city/components/gameobjects/commercial/detail-parasol-a.go"
+  position {
+    x: 1.379975
+    z: 12.240999
+  }
+}
+instances {
+  id: "detail-parasol-a6"
+  prototype: "/tiny-city/components/gameobjects/commercial/detail-parasol-a.go"
+  position {
+    x: -0.89453
+    z: 9.235967
+  }
+}
+instances {
+  id: "detail-parasol-a7"
+  prototype: "/tiny-city/components/gameobjects/commercial/detail-parasol-a.go"
+  position {
+    x: 1.328532
+    z: 9.233657
   }
 }
 collection_instances {
@@ -2883,41 +2879,9 @@ embedded_instances {
 }
 embedded_instances {
   id: "roads"
-  children: "bridge-pillar"
-  children: "bridge-pillar1"
-  children: "bridge-pillar10"
-  children: "bridge-pillar11"
-  children: "bridge-pillar12"
-  children: "bridge-pillar13"
-  children: "bridge-pillar14"
-  children: "bridge-pillar15"
-  children: "bridge-pillar16"
-  children: "bridge-pillar17"
-  children: "bridge-pillar18"
-  children: "bridge-pillar19"
-  children: "bridge-pillar2"
-  children: "bridge-pillar20"
-  children: "bridge-pillar21"
-  children: "bridge-pillar22"
-  children: "bridge-pillar23"
-  children: "bridge-pillar24"
-  children: "bridge-pillar25"
-  children: "bridge-pillar26"
-  children: "bridge-pillar27"
-  children: "bridge-pillar28"
-  children: "bridge-pillar29"
-  children: "bridge-pillar3"
-  children: "bridge-pillar30"
-  children: "bridge-pillar4"
-  children: "bridge-pillar5"
-  children: "bridge-pillar6"
-  children: "bridge-pillar7"
-  children: "bridge-pillar8"
-  children: "bridge-pillar9"
   children: "road-bend"
   children: "road-bend1"
   children: "road-bend2"
-  children: "road-bend3"
   children: "road-crossroad-line"
   children: "road-crossroad-path"
   children: "road-crossroad-path2"
@@ -2925,18 +2889,20 @@ embedded_instances {
   children: "road-curve"
   children: "road-curve-intersection"
   children: "road-curve-intersection1"
+  children: "road-curve-intersection2"
   children: "road-curve1"
   children: "road-curve2"
   children: "road-curve3"
   children: "road-curve4"
   children: "road-curve5"
   children: "road-curve6"
-  children: "road-curve7"
   children: "road-end-round"
-  children: "road-end-round1"
   children: "road-intersection-line"
   children: "road-intersection-line1"
   children: "road-intersection-line10"
+  children: "road-intersection-line11"
+  children: "road-intersection-line12"
+  children: "road-intersection-line13"
   children: "road-intersection-line2"
   children: "road-intersection-line3"
   children: "road-intersection-line4"
@@ -2949,6 +2915,11 @@ embedded_instances {
   children: "road-straight"
   children: "road-straight-half"
   children: "road-straight-half1"
+  children: "road-straight-half10"
+  children: "road-straight-half11"
+  children: "road-straight-half12"
+  children: "road-straight-half13"
+  children: "road-straight-half14"
   children: "road-straight-half2"
   children: "road-straight-half3"
   children: "road-straight-half4"
@@ -2986,7 +2957,6 @@ embedded_instances {
   children: "road-straight33"
   children: "road-straight34"
   children: "road-straight35"
-  children: "road-straight36"
   children: "road-straight37"
   children: "road-straight38"
   children: "road-straight39"
@@ -3026,11 +2996,9 @@ embedded_instances {
   children: "road-straight7"
   children: "road-straight70"
   children: "road-straight71"
-  children: "road-straight72"
   children: "road-straight73"
   children: "road-straight74"
   children: "road-straight75"
-  children: "road-straight76"
   children: "road-straight77"
   children: "road-straight78"
   children: "road-straight79"
@@ -3049,10 +3017,7 @@ embedded_instances {
   id: "buildings"
   children: "building-a"
   children: "building-b"
-  children: "building-b1"
-  children: "building-c"
   children: "building-d"
-  children: "building-g"
   children: "building-j"
   children: "building-j1"
   children: "building-l"
@@ -3063,6 +3028,7 @@ embedded_instances {
   children: "building-s"
   children: "building-skyscraper-b"
   children: "building-skyscraper-c"
+  children: "building-skyscraper-d"
   children: "building-type-b"
   children: "building-type-c"
   children: "building-type-c1"
@@ -3091,6 +3057,10 @@ embedded_instances {
   children: "detail-parasol-a1"
   children: "detail-parasol-a2"
   children: "detail-parasol-a3"
+  children: "detail-parasol-a4"
+  children: "detail-parasol-a5"
+  children: "detail-parasol-a6"
+  children: "detail-parasol-a7"
   children: "detail-tank"
   children: "detail-tank1"
   children: "fence"
@@ -3114,8 +3084,11 @@ embedded_instances {
   children: "planter5"
   children: "planter6"
   children: "planter7"
+  children: "planter8"
+  children: "planter9"
   children: "tree-large"
   children: "tree-large1"
+  children: "tree-large10"
   children: "tree-large2"
   children: "tree-large3"
   children: "tree-large4"
@@ -3140,7 +3113,9 @@ embedded_instances {
   children: "ground_dark"
   children: "ground_dark1"
   children: "ground_dark2"
+  children: "ground_dark3"
   children: "ground_green"
+  children: "ground_green1"
   children: "ground_light"
   children: "ground_light1"
   children: "ground_light2"
@@ -3148,7 +3123,6 @@ embedded_instances {
   children: "ground_light4"
   children: "ground_light5"
   children: "ground_light6"
-  children: "ground_light7"
   children: "ground_light8"
   data: ""
 }
@@ -3166,5 +3140,324 @@ embedded_instances {
   data: ""
   position {
     y: 0.02
+  }
+}
+embedded_instances {
+  id: "police_camera"
+  children: "camera"
+  data: "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/tiny-city/assets/models/vehicles/police.glb\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"default\\\"\\n"
+  "  material: \\\"/light_and_shadows/materials/model/model_instanced.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"tex0\\\"\\n"
+  "    texture: \\\"/tiny-city/assets/textures/kenney_cars_colormap.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    z: -5.501106
+  }
+}
+embedded_instances {
+  id: "camera"
+  data: "components {\n"
+  "  id: \"game_camera\"\n"
+  "  component: \"/tiny-city/scripts/game_camera.script\"\n"
+  "  properties {\n"
+  "    id: \"zoom\"\n"
+  "    value: \"0.4\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"offset\"\n"
+  "    value: \"0.0, 0.4, 0.0\"\n"
+  "    type: PROPERTY_TYPE_VECTOR3\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"camera\"\n"
+  "  type: \"camera\"\n"
+  "  data: \"aspect_ratio: 1.777778\\n"
+  "fov: 1.3\\n"
+  "near_z: 0.1\\n"
+  "far_z: 20.0\\n"
+  "auto_aspect_ratio: 1\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    y: 0.345273
+    z: -0.315304
+  }
+  rotation {
+    y: 1.0
+    w: 6.123234E-17
+  }
+}
+embedded_instances {
+  id: "park"
+  children: "fountain"
+  children: "hedge"
+  children: "hedge1"
+  children: "hedge2"
+  children: "hedge3"
+  children: "hedge_corner"
+  children: "hedge_corner1"
+  children: "hedge_corner2"
+  children: "hedge_corner3"
+  children: "lantern"
+  children: "lantern1"
+  children: "lantern2"
+  children: "lantern3"
+  data: ""
+}
+embedded_instances {
+  id: "hills"
+  children: "go"
+  children: "go1"
+  children: "go2"
+  children: "go3"
+  children: "go4"
+  children: "go5"
+  data: ""
+}
+embedded_instances {
+  id: "go"
+  data: "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/tiny-city/assets/models/mountains/hill3.glb\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"default\\\"\\n"
+  "  material: \\\"/light_and_shadows/materials/model/model_instanced.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"tex0\\\"\\n"
+  "    texture: \\\"/tiny-city/assets/textures/ground_bluepng.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "create_go_bones: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 2.516166\n"
+  "    z: 1.672079\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: -16.393185
+    z: 2.04602
+  }
+  rotation {
+    y: 0.6898666
+    w: 0.72393656
+  }
+  scale3 {
+    x: 0.2
+    y: 0.3
+    z: 0.160456
+  }
+}
+embedded_instances {
+  id: "go1"
+  data: "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/tiny-city/assets/models/mountains/hill2.glb\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"default\\\"\\n"
+  "  material: \\\"/light_and_shadows/materials/model/model_instanced.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"tex0\\\"\\n"
+  "    texture: \\\"/tiny-city/assets/textures/ground_bluepng.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "create_go_bones: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 2.516166\n"
+  "    z: 1.672079\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: -13.200428
+    z: -1.839444
+  }
+  scale3 {
+    x: 0.3
+    y: 0.5
+    z: 0.3
+  }
+}
+embedded_instances {
+  id: "go2"
+  data: "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/tiny-city/assets/models/mountains/hill4.glb\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"default\\\"\\n"
+  "  material: \\\"/light_and_shadows/materials/model/model_instanced.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"tex0\\\"\\n"
+  "    texture: \\\"/tiny-city/assets/textures/ground_bluepng.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "create_go_bones: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 2.516166\n"
+  "    y: -0.175587\n"
+  "    z: 1.672079\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: -1.1352045E-16\n"
+  "    y: -0.3956871\n"
+  "    z: -1.3119564E-16\n"
+  "    w: 0.9183854\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: -9.217805
+    z: -4.784075
+  }
+  rotation {
+    y: 0.8829966
+    w: 0.4693793
+  }
+  scale3 {
+    x: 0.1
+    y: 0.3
+    z: 0.3
+  }
+}
+embedded_instances {
+  id: "go3"
+  data: "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/tiny-city/assets/models/mountains/hill2.glb\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"default\\\"\\n"
+  "  material: \\\"/light_and_shadows/materials/model/model_instanced.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"tex0\\\"\\n"
+  "    texture: \\\"/tiny-city/assets/textures/ground_bluepng.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "create_go_bones: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 2.516166\n"
+  "    z: 1.672079\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 3.278056
+    z: -2.413746
+  }
+  rotation {
+    y: 0.68397117
+    w: 0.729509
+  }
+  scale3 {
+    x: 0.13
+    y: 0.2
+    z: 0.13
+  }
+}
+embedded_instances {
+  id: "go5"
+  data: "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/tiny-city/assets/models/mountains/hill4.glb\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"default\\\"\\n"
+  "  material: \\\"/light_and_shadows/materials/model/model_instanced.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"tex0\\\"\\n"
+  "    texture: \\\"/tiny-city/assets/textures/ground_bluepng.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "create_go_bones: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 2.516166\n"
+  "    y: -0.175587\n"
+  "    z: 1.672079\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: -1.1352045E-16\n"
+  "    y: -0.3956871\n"
+  "    z: -1.3119564E-16\n"
+  "    w: 0.9183854\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 4.329106
+    z: 9.922658
+  }
+  rotation {
+    y: -0.20194174
+    w: 0.97939754
+  }
+  scale3 {
+    x: 0.095168
+    y: 0.1
+    z: 0.1
+  }
+}
+embedded_instances {
+  id: "go4"
+  data: "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/tiny-city/assets/models/mountains/hill2.glb\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"default\\\"\\n"
+  "  material: \\\"/light_and_shadows/materials/model/model_instanced.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"tex0\\\"\\n"
+  "    texture: \\\"/tiny-city/assets/textures/ground_bluepng.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "create_go_bones: false\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 2.516166\n"
+  "    z: 1.672079\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: -11.672055
+    y: -0.273853
+    z: 9.631968
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 0.1
+    y: 0.15
+    z: 0.17
   }
 }
