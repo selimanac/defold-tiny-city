@@ -44,7 +44,7 @@ end
 
 function editor.input(action_id, action)
 	if action.screen_x then
-		data.mouse_position = camera.screen_to_world(vmath.vector3(action.screen_x, action.screen_y, 20), const.VIEWPORT_CAMERA)
+		data.mouse_position = camera.screen_to_world(vmath.vector3(action.screen_x, action.screen_y, data.camera_zoom), const.VIEWPORT_CAMERA)
 		data.mouse_position.y = 0
 		go.set_position(data.mouse_position, const.MOUSE)
 	end

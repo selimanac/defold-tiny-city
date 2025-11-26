@@ -18,4 +18,6 @@ layers {
   name: "text"
 }
 material: "/builtins/materials/gui.material"
-adjust_reference: ADJUST_REFERENCE_PARENT
+adjust_reference: ADJUST_REFERENCE_DISABLED
+max_nodes: 4096
+max_dynamic_textures: 1024

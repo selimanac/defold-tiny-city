@@ -45,7 +45,7 @@ local function add(start_node_id, goal_node_id, vehicle_type)
 	local target_position              = vmath.vector3(path[2].x, 0, path[2].y)
 	local direction                    = target_position - vehicle_position
 	local initial_rotation             = vmath.quat_rotation_y(math.atan2(direction.x, direction.z))
-	local vehicle_instance             = msg.url("police_camera") --factory.create(vehicle_type.FACTORY, vehicle_position, initial_rotation)
+	local vehicle_instance             = factory.create(vehicle_type.FACTORY, vehicle_position, initial_rotation) --msg.url("police_camera") --factory.create(vehicle_type.FACTORY, vehicle_position, initial_rotation)
 	local aabb_id                      = collision.insert_gameobject(vehicle_instance, 0.4, 1, 0.4, collision.COLLISION_BITS.VEHICLE)
 	vehicles.count                     = vehicles.count + 1
 
@@ -88,7 +88,25 @@ local function add(start_node_id, goal_node_id, vehicle_type)
 end
 
 function vehicles.init()
-	add(83, 17, const.VEHICLE_TYPE.FIRE)
+	--add(83, 17, const.VEHICLE_TYPE.FIRE)
+
+	add(83, 17, const.VEHICLE_TYPE.VAN)
+	add(2, 29, const.VEHICLE_TYPE.AMBULANCE)
+	add(3, 20, const.VEHICLE_TYPE.POLICE)
+	add(86, 59, const.VEHICLE_TYPE.TAXI)
+	add(12, 53, const.VEHICLE_TYPE.FIRE)
+	add(65, 21, const.VEHICLE_TYPE.GARBAGE)
+	add(18, 63, const.VEHICLE_TYPE.SEDAN)
+	add(24, 21, const.VEHICLE_TYPE.SUV)
+	add(22, 89, const.VEHICLE_TYPE.SUV_CLASSIC)
+	add(57, 7, const.VEHICLE_TYPE.TRUCK)
+	add(25, 51, const.VEHICLE_TYPE.VAN)
+	add(81, 17, const.VEHICLE_TYPE.AMBULANCE)
+	add(77, 8, const.VEHICLE_TYPE.POLICE)
+	add(72, 80, const.VEHICLE_TYPE.TAXI)
+	add(17, 16, const.VEHICLE_TYPE.VAN)
+	add(51, 46, const.VEHICLE_TYPE.TAXI)
+	add(33, 18, const.VEHICLE_TYPE.SEDAN)
 end
 
 function vehicles.remove(vehicle_id, vehicle)

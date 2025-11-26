@@ -143,10 +143,10 @@ local function add_node(loaded_node)
 	end
 
 	local node_url = factory.create(const.FACTORIES.NODE, vmath.vector3(node_position.x, 0, node_position.z))
-	local label_url = msg.url(node_url)
-	label_url.fragment = "label"
+	--	local label_url = msg.url(node_url)
+	--	label_url.fragment = "label"
 
-	local screen_position = camera.world_to_screen(node_position, const.VIEWPORT_CAMERA)
+	--local screen_position = camera.world_to_screen(node_position, const.VIEWPORT_CAMERA)
 
 	local temp_node = {
 		position = node_position,
@@ -158,7 +158,7 @@ local function add_node(loaded_node)
 		uuid = (loaded_node and loaded_node.uuid) or uuid4.generate()
 	}
 
-	msg.post(label_url, "update_data", { text = temp_node.pathfinder_node_id, screen_position = vmath.vector3(screen_position.x, screen_position.y + 16, 0) })
+	--msg.post(label_url, "update_data", { text = temp_node.pathfinder_node_id, screen_position = vmath.vector3(screen_position.x, screen_position.y + 16, 0) })
 
 	data.nodes[temp_node.uuid] = temp_node
 	data.lookup.aabb_to_node[temp_node.aabb_id] = temp_node.uuid               -- AABB Reference

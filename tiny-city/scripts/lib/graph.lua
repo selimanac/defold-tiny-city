@@ -10,13 +10,13 @@ local function load()
 	local error = ""
 	local edges_json = ""
 	local nodes_json = ""
-	edges_json, error = sys.load_resource("/data/map1_edges.json")
+	edges_json, error = sys.load_resource("/data/map3_edges.json")
 	if error then
 		print("Error loading edges:", error)
 		return nil
 	end
 
-	nodes_json, error = sys.load_resource("/data/map1_nodes.json")
+	nodes_json, error = sys.load_resource("/data/map3_nodes.json")
 	if error then
 		print("Error loading nodes:", error)
 		return nil

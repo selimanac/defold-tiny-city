@@ -3172,12 +3172,12 @@ embedded_instances {
   "  component: \"/tiny-city/scripts/game_camera.script\"\n"
   "  properties {\n"
   "    id: \"zoom\"\n"
-  "    value: \"0.4\"\n"
+  "    value: \"1.2\"\n"
   "    type: PROPERTY_TYPE_NUMBER\n"
   "  }\n"
   "  properties {\n"
   "    id: \"offset\"\n"
-  "    value: \"0.0, 0.4, 0.0\"\n"
+  "    value: \"0.0, 0.6, 0.0\"\n"
   "    type: PROPERTY_TYPE_VECTOR3\n"
   "  }\n"
   "}\n"
@@ -3197,7 +3197,7 @@ embedded_instances {
     z: -0.315304
   }
   rotation {
-    y: 1.0
+    y: -1.0
     w: 6.123234E-17
   }
 }

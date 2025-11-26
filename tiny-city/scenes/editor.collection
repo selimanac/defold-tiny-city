@@ -9,6 +9,19 @@ instances {
     x: -0.70710677
     w: 0.70710677
   }
+  component_properties {
+    id: "editor_camera"
+    properties {
+      id: "zoom"
+      value: "25.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "offset"
+      value: "-3.0, 0.0, 4.0"
+      type: PROPERTY_TYPE_VECTOR3
+    }
+  }
 }
 collection_instances {
   id: "graph_editor"

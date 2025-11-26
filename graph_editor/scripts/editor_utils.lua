@@ -189,8 +189,8 @@ function utils.update_node(node_position)
 	go.set_position(node_position, data.selected_node.url)
 	pathfinder.move_node(data.selected_node.pathfinder_node_id, node_position.x, node_position.z)
 
-	local screen_position = camera.world_to_screen(node_position, const.VIEWPORT_CAMERA)
-	msg.post(data.selected_node.label_url, "update_data", { screen_position = vmath.vector3(screen_position.x, screen_position.y + 16, 0) })
+	--local screen_position = camera.world_to_screen(node_position, const.VIEWPORT_CAMERA)
+	--msg.post(data.selected_node.label_url, "update_data", { screen_position = vmath.vector3(screen_position.x, screen_position.y + 16, 0) })
 
 	update_collision_edges(data.selected_node)
 end

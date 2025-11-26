@@ -1,5 +1,5 @@
 [bootstrap]
-main_collection = /tiny-city/scenes/map.collectionc
+main_collection = /tiny-city/scenes/editor.collectionc
 render = /light_and_shadows/render/default.renderc
 
 [script]
@@ -37,7 +37,7 @@ bundle_identifier = com.defold.example.basic3d
 folder = data
 max_gameobject_nodes = 2048
 max_nodes = 2048
-files = test.json,map1.json
+files = test.json,map1.json,map3.json
 
 [sprite]
 max_count = 2048
@@ -72,4 +72,10 @@ exclude_gles_sm100 = 1
 
 [native_extension]
 app_manifest = /tiny-city/manifest/macos.appmanifest
+
+[graphics]
+max_font_batches = 1024
+
+[mesh]
+max_count = 1024
 
