@@ -97,8 +97,8 @@ instances {
   id: "intersection_1_group_1_light_1"
   prototype: "/tiny-city/components/gameobjects/traffic_light.go"
   position {
-    x: 0.868249
-    z: 4.452967
+    x: -0.603805
+    z: 0.4476
   }
   rotation {
     y: 0.70710677
@@ -109,8 +109,8 @@ instances {
   id: "intersection_1_group_1_light_2"
   prototype: "/tiny-city/components/gameobjects/traffic_light.go"
   position {
-    x: 2.122373
-    z: 3.554325
+    x: 0.623936
+    z: -0.428926
   }
   rotation {
     y: -0.70710677
@@ -121,34 +121,20 @@ instances {
   id: "intersection_1_group_2_light_1"
   prototype: "/tiny-city/components/gameobjects/traffic_light.go"
   position {
-    x: 1.054258
-    z: 3.263773
+    x: -0.450803
+    z: -0.736988
   }
 }
 instances {
   id: "intersection_1_group_2_light_2"
   prototype: "/tiny-city/components/gameobjects/traffic_light.go"
   position {
-    x: 1.93812
-    z: 4.503063
+    x: 0.448997
+    z: 0.51733
   }
   rotation {
     y: -1.0
     w: 6.123234E-17
-  }
-}
-instances {
-  id: "intersection_2_group_1_light_1"
-  prototype: "/tiny-city/components/gameobjects/traffic_light.go"
-  position {
-    x: -2.0
-  }
-}
-instances {
-  id: "intersection_2_group_2_light_2"
-  prototype: "/tiny-city/components/gameobjects/traffic_light.go"
-  position {
-    x: -4.0
   }
 }
 instances {
@@ -2787,6 +2773,94 @@ instances {
     z: 9.233657
   }
 }
+instances {
+  id: "intersection_2_group_1_light_1"
+  prototype: "/tiny-city/components/gameobjects/traffic_light.go"
+  position {
+    x: -0.450803
+    z: -0.736988
+  }
+}
+instances {
+  id: "intersection_2_group_1_light_2"
+  prototype: "/tiny-city/components/gameobjects/traffic_light.go"
+  position {
+    x: 0.448997
+    z: 0.51733
+  }
+  rotation {
+    y: -1.0
+    w: 6.123234E-17
+  }
+}
+instances {
+  id: "intersection_2_group_2_light_1"
+  prototype: "/tiny-city/components/gameobjects/traffic_light.go"
+  position {
+    x: 0.623936
+    z: -0.428926
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "intersection_2_group_2_light_2"
+  prototype: "/tiny-city/components/gameobjects/traffic_light.go"
+  position {
+    x: -0.603805
+    z: 0.4476
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "intersection_3_group_1_light_1"
+  prototype: "/tiny-city/components/gameobjects/traffic_light.go"
+  position {
+    x: -0.450803
+    z: -0.736988
+  }
+}
+instances {
+  id: "intersection_3_group_1_light_2"
+  prototype: "/tiny-city/components/gameobjects/traffic_light.go"
+  position {
+    x: 0.448997
+    z: 0.51733
+  }
+  rotation {
+    y: -1.0
+    w: 6.123234E-17
+  }
+}
+instances {
+  id: "intersection_3_group_2_light_1"
+  prototype: "/tiny-city/components/gameobjects/traffic_light.go"
+  position {
+    x: 0.623936
+    z: -0.428926
+  }
+  rotation {
+    y: -0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "intersection_3_group_2_light_2"
+  prototype: "/tiny-city/components/gameobjects/traffic_light.go"
+  position {
+    x: -0.603805
+    z: 0.4476
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
 collection_instances {
   id: "vehicles"
   collection: "/tiny-city/components/collections/vehicles.collection"
@@ -2838,6 +2912,7 @@ embedded_instances {
   id: "traffic_lights"
   children: "intersection1"
   children: "intersection2"
+  children: "intersection3"
   data: ""
 }
 embedded_instances {
@@ -2845,6 +2920,10 @@ embedded_instances {
   children: "intersection1_group1"
   children: "intersection1_group2"
   data: ""
+  position {
+    x: -2.0
+    z: 8.0
+  }
 }
 embedded_instances {
   id: "intersection1_group1"
@@ -2860,22 +2939,6 @@ embedded_instances {
   position {
     z: 0.120523
   }
-}
-embedded_instances {
-  id: "intersection2"
-  children: "intersection2_group1"
-  children: "intersection2_group2"
-  data: ""
-}
-embedded_instances {
-  id: "intersection2_group1"
-  children: "intersection_2_group_1_light_1"
-  data: ""
-}
-embedded_instances {
-  id: "intersection2_group2"
-  children: "intersection_2_group_2_light_2"
-  data: ""
 }
 embedded_instances {
   id: "roads"
@@ -3460,4 +3523,54 @@ embedded_instances {
     y: 0.15
     z: 0.17
   }
+}
+embedded_instances {
+  id: "intersection2"
+  children: "intersection2_group1"
+  children: "intersection2_group2"
+  data: ""
+  position {
+    x: 1.497898
+    z: 3.99661
+  }
+}
+embedded_instances {
+  id: "intersection2_group1"
+  children: "intersection_2_group_1_light_1"
+  children: "intersection_2_group_1_light_2"
+  data: ""
+  position {
+    z: 0.120523
+  }
+}
+embedded_instances {
+  id: "intersection2_group2"
+  children: "intersection_2_group_2_light_1"
+  children: "intersection_2_group_2_light_2"
+  data: ""
+}
+embedded_instances {
+  id: "intersection3"
+  children: "intersection3_group1"
+  children: "intersection3_group2"
+  data: ""
+  position {
+    x: 1.497898
+    z: -0.538874
+  }
+}
+embedded_instances {
+  id: "intersection3_group1"
+  children: "intersection_3_group_1_light_1"
+  children: "intersection_3_group_1_light_2"
+  data: ""
+  position {
+    z: 0.120523
+  }
+}
+embedded_instances {
+  id: "intersection3_group2"
+  children: "intersection_3_group_2_light_1"
+  children: "intersection_3_group_2_light_2"
+  data: ""
 }

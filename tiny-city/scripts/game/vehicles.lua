@@ -49,7 +49,7 @@ local function add(start_node_id, goal_node_id, vehicle_type)
 	local aabb_id                      = collision.insert_gameobject(vehicle_instance, 0.4, 1, 0.4, collision.COLLISION_BITS.VEHICLE)
 	vehicles.count                     = vehicles.count + 1
 
-	pprint(vehicle_type.MAX_SPEED)
+
 	local vehicle_agent                  = {
 		uuid                 = uuid4.generate(),
 		position             = vehicle_position,

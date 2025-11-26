@@ -15,22 +15,35 @@ local light_states  = {} -- Current state for each group
 local lights        = {
 	intersection1 = {
 		group1 = {
-			[84] = "/intersection_1_group_1_light_1",
-			[73] = "/intersection_1_group_1_light_2"
+			[115] = "/intersection_1_group_1_light_1",
+			[113] = "/intersection_1_group_1_light_2"
 		},
 		group2 = {
-			[14] = "/intersection_1_group_2_light_1",
-			[66] = "/intersection_1_group_2_light_2"
+			[120] = "/intersection_1_group_2_light_1",
+			[110] = "/intersection_1_group_2_light_2"
 		}
 	},
 	intersection2 = {
 		group1 = {
-			[59] = "/intersection_2_group_1_light_1",
+			[7] = "/intersection_2_group_1_light_1",
+			[167] = "/intersection_2_group_1_light_2"
 		},
 		group2 = {
-			[55] = "/intersection_2_group_2_light_2",
+			[67] = "/intersection_2_group_2_light_1",
+			[66] = "/intersection_2_group_2_light_2"
 		}
-	}
+	},
+	intersection3 = {
+		group1 = {
+			[20] = "/intersection_3_group_1_light_1",
+			[70] = "/intersection_3_group_1_light_2"
+		},
+		group2 = {
+			[24] = "/intersection_3_group_2_light_1",
+			[22] = "/intersection_3_group_2_light_2"
+		}
+	},
+
 }
 
 local function set_light_tint(light, state)

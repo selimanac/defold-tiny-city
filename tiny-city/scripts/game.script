@@ -7,6 +7,8 @@ function init(self)
 	profiler.set_ui_view_mode(profiler.VIEW_MODE_MINIMIZED)
 
 	game_manager.init()
+	particlefx.play("/chimney-large#smoke")
+	particlefx.play("/chimney-large1#smoke")
 end
 
 function update(self, dt)

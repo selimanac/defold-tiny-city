@@ -13,8 +13,8 @@ const.COLORS           = {
 }
 
 const.SMOOTHING_CONFIG = {
-	style                               = pathfinder.PathSmoothStyle.BEZIER_ADAPTIVE,
-	bezier_sample_segment               = 8, -- Number of segments per curve
+	style                               = pathfinder.PathSmoothStyle.BEZIER_QUADRATIC,
+	bezier_sample_segment               = 12, -- Number of segments per curve
 	bezier_control_point_offset         = 0.3, -- For bezier_cubic style
 	bezier_curve_radius                 = 0.6, -- For bezier_quadratic style (active)
 	bezier_adaptive_tightness           = 0.1, -- For bezier_adaptive style
@@ -45,8 +45,8 @@ const.VEHICLE_TYPE = {
 		MAX_SPEED         = 2.0,
 		FACTORY           = "/vehicles/factories#ambulance",
 		ROTATION_SPEED    = 5.0,
-		ACCELERATION_RATE = 0.4,
-		BRAKE_RATE        = 5.0, -- Increased from 4.0 for more
+		ACCELERATION_RATE = 0.3,
+		BRAKE_RATE        = 7.0,
 	},
 
 	POLICE = {
@@ -54,8 +54,8 @@ const.VEHICLE_TYPE = {
 		MAX_SPEED         = 2.2,
 		FACTORY           = "/vehicles/factories#police",
 		ROTATION_SPEED    = 5.0,
-		ACCELERATION_RATE = 0.4,
-		BRAKE_RATE        = 5.0, -- Increased from 4.0 for more
+		ACCELERATION_RATE = 0.3,
+		BRAKE_RATE        = 7.0,
 	},
 	TAXI = {
 		SPEED             = 0.1,
@@ -63,7 +63,7 @@ const.VEHICLE_TYPE = {
 		FACTORY           = "/vehicles/factories#taxi",
 		ROTATION_SPEED    = 5.0,
 		ACCELERATION_RATE = 0.4,
-		BRAKE_RATE        = 5.0, -- Increased from 4.0 for more
+		BRAKE_RATE        = 7.0,
 	},
 	VAN = {
 		SPEED             = 0.5,
@@ -71,7 +71,7 @@ const.VEHICLE_TYPE = {
 		FACTORY           = "/vehicles/factories#van",
 		ROTATION_SPEED    = 5.0,
 		ACCELERATION_RATE = 0.4,
-		BRAKE_RATE        = 5.0, -- Increased from 4.0 for more
+		BRAKE_RATE        = 7.0,
 
 	},
 	FIRE = {
@@ -80,7 +80,7 @@ const.VEHICLE_TYPE = {
 		FACTORY           = "/vehicles/factories#fire",
 		ROTATION_SPEED    = 5.0,
 		ACCELERATION_RATE = 0.4,
-		BRAKE_RATE        = 5.0, -- Increased from 4.0 for more
+		BRAKE_RATE        = 7.0,
 
 	},
 	GARBAGE = {
@@ -89,7 +89,7 @@ const.VEHICLE_TYPE = {
 		FACTORY           = "/vehicles/factories#garbage",
 		ROTATION_SPEED    = 5.0,
 		ACCELERATION_RATE = 0.4,
-		BRAKE_RATE        = 5.0, -- Increased from 4.0 for more
+		BRAKE_RATE        = 7.0,
 
 	},
 	SEDAN = {
@@ -97,8 +97,8 @@ const.VEHICLE_TYPE = {
 		MAX_SPEED         = 2.8,
 		FACTORY           = "/vehicles/factories#sedan",
 		ROTATION_SPEED    = 5.0,
-		ACCELERATION_RATE = 0.4,
-		BRAKE_RATE        = 5.0, -- Increased from 4.0 for more
+		ACCELERATION_RATE = 0.3,
+		BRAKE_RATE        = 7.0,
 
 	},
 	SUV = {
@@ -107,7 +107,7 @@ const.VEHICLE_TYPE = {
 		FACTORY           = "/vehicles/factories#suv",
 		ROTATION_SPEED    = 5.0,
 		ACCELERATION_RATE = 0.4,
-		BRAKE_RATE        = 5.0, -- Increased from 4.0 for more
+		BRAKE_RATE        = 7.0,
 
 	},
 	SUV_CLASSIC = {
@@ -116,7 +116,7 @@ const.VEHICLE_TYPE = {
 		FACTORY           = "/vehicles/factories#suv_classic",
 		ROTATION_SPEED    = 5.0,
 		ACCELERATION_RATE = 0.4,
-		BRAKE_RATE        = 5.0, -- Increased from 4.0 for more
+		BRAKE_RATE        = 7.0,
 
 	},
 	TRUCK = {
@@ -125,7 +125,7 @@ const.VEHICLE_TYPE = {
 		FACTORY           = "/vehicles/factories#truck",
 		ROTATION_SPEED    = 5.0,
 		ACCELERATION_RATE = 0.4,
-		BRAKE_RATE        = 5.0, -- Increased from 4.0 for more
+		BRAKE_RATE        = 7.0,
 
 	},
 }
@@ -140,30 +140,28 @@ const.TRAFFIC_LIGHT_STATE = {
 
 -- Vehicle control constants for brake and throttle system
 const.VEHICLE_CONTROL = {
-	-- Acceleration and braking rates (units per second^2)
-	ACCELERATION_RATE                  = 0.4,
-	BRAKE_RATE                         = 5.0, -- Increased from 4.0 for more responsive braking
+
 
 	-- Distance-based braking zones (in units)
 	-- These are base values - will be scaled based on vehicle speed
-	CRITICAL_DISTANCE                  = 0.4, -- Emergency stop zone (increased from 0.5)
-	NEAR_DISTANCE                      = 0.5, -- Heavy braking zone (increased from 1.0)
-	MEDIUM_DISTANCE                    = 1.2, -- Moderate braking zone (increased from 2.0)
+	CRITICAL_DISTANCE                  = 0.5, -- Emergency stop zone (increased from 0.5)
+	NEAR_DISTANCE                      = 1.0, -- Heavy braking zone (increased from 1.0)
+	MEDIUM_DISTANCE                    = 1.5, -- Moderate braking zone (increased from 2.0)
 	FAR_DISTANCE                       = 2.0, -- Light braking/coasting zone (increased from 3.0)
 
 	-- Crossing detection threshold
-	CROSSING_DOT_THRESHOLD             = 0.1, -- Dot product threshold for crossing detection
+	CROSSING_DOT_THRESHOLD             = 0.2, -- Dot product threshold for crossing detection
 	CROSSING_DISTANCE                  = 4.0, -- Max distance to consider crossing
 	CROSSING_BRAKE_MULTIPLIER          = 0.8, -- Reduce effective distance when crossing
 
 	-- Raycast offset (start raycast from front of vehicle, not center)
-	RAYCAST_FORWARD_OFFSET             = 0.3, -- Units ahead of vehicle center
+	RAYCAST_FORWARD_OFFSET             = 0.2, -- Units ahead of vehicle center
 
 	OPPOSITE_DIRECTION_THRESHOLD       = -0.2,
 	OPPOSITE_DIRECTION_BREAK_THRESHOLD = 0.4,
 
 	ROTATION_SPEED_THRESHOLD           = 0.01,
-	ARRIVAL_THRESHOLD                  = 0.2
+	ARRIVAL_THRESHOLD                  = 0.3
 }
 
 const.TRIGGERS =
