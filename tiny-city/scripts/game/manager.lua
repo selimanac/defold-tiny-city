@@ -19,7 +19,6 @@ local traffic   = require("tiny-city.scripts.game.traffic")
 -- MODULE
 -- =================================
 local manager   = {}
-
 -- =================================
 -- VARS
 -- =================================
@@ -35,6 +34,7 @@ function manager.update(dt)
 end
 
 function manager.input(action_id, action)
+	traffic.input(action_id, action)
 end
 
 return manager

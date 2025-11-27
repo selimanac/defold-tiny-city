@@ -30,6 +30,12 @@ local function add(start_node_id, goal_node_id, vehicle_type)
 	-- Get return path to create a loop
 	local second_path_size, second_path_status, second_path_status_text, second_path = pathfinder.find_node_to_node(goal_node_id, start_node_id, 32)
 
+
+	if second_path_status ~= pathfinder.PathStatus.SUCCESS then
+		print(path_status_text)
+		return
+	end
+
 	local total_path_size = path_size + second_path_size
 
 	-- Combine both paths for continuous looping
@@ -90,29 +96,32 @@ end
 function vehicles.init()
 	--add(83, 17, const.VEHICLE_TYPE.FIRE)
 
+
+
+
 	add(83, 17, const.VEHICLE_TYPE.VAN)
 	add(2, 29, const.VEHICLE_TYPE.AMBULANCE)
-	add(3, 20, const.VEHICLE_TYPE.POLICE)
+	add(3, 21, const.VEHICLE_TYPE.POLICE)
 	add(86, 59, const.VEHICLE_TYPE.TAXI)
 	add(12, 53, const.VEHICLE_TYPE.FIRE)
 	add(65, 21, const.VEHICLE_TYPE.GARBAGE)
 	add(18, 63, const.VEHICLE_TYPE.SEDAN)
-	add(24, 21, const.VEHICLE_TYPE.SUV)
-	add(22, 89, const.VEHICLE_TYPE.SUV_CLASSIC)
-	add(57, 7, const.VEHICLE_TYPE.TRUCK)
+	add(23, 21, const.VEHICLE_TYPE.SUV)
+	add(112, 89, const.VEHICLE_TYPE.SUV_CLASSIC)
+	add(57, 8, const.VEHICLE_TYPE.TRUCK)
 	add(25, 51, const.VEHICLE_TYPE.VAN)
 	add(81, 17, const.VEHICLE_TYPE.AMBULANCE)
 	add(77, 8, const.VEHICLE_TYPE.POLICE)
 	add(72, 80, const.VEHICLE_TYPE.TAXI)
 	add(17, 16, const.VEHICLE_TYPE.VAN)
 	add(51, 46, const.VEHICLE_TYPE.TAXI)
-	add(33, 18, const.VEHICLE_TYPE.SEDAN)
+	add(33, 103, const.VEHICLE_TYPE.SEDAN)
 end
 
 function vehicles.remove(vehicle_id, vehicle)
 	-- Release any node reservations before removing
 	vehicles.release_node_reservation(vehicle, vehicle_id)
-	vehicle.state = cons.VEHICLE_STATE.INACTIVE
+	vehicle.state = const.VEHICLE_STATE.INACTIVE
 	collision.remove(vehicle.aabb_id)
 	data.lookup.aabb_to_vehicle[vehicle.aabb_id] = nil
 

@@ -158,7 +158,7 @@ local function add_node(loaded_node)
 		edges = (loaded_node and loaded_node.edges) or {},
 		uuid = (loaded_node and loaded_node.uuid) or uuid4.generate()
 	}
-
+	print(temp_node.uuid, temp_node.pathfinder_node_id, node_position.x, node_position.z)
 	--msg.post(label_url, "update_data", { text = temp_node.pathfinder_node_id, screen_position = vmath.vector3(screen_position.x, screen_position.y + 16, 0) })
 	label.set_text(label_url, temp_node.pathfinder_node_id)
 	data.nodes[temp_node.uuid] = temp_node
@@ -272,6 +272,7 @@ function graph.load(loaded_data)
 		loaded_data.edges = nil
 
 		-- sort loaded nodes
+		pprint(loaded_data.nodes)
 		local nodes = loaded_data.nodes
 		local order = {}
 
@@ -283,6 +284,7 @@ function graph.load(loaded_data)
 		table.sort(order, function(a, b)
 			return nodes[a].pathfinder_node_id < nodes[b].pathfinder_node_id
 		end)
+
 
 		-- Add nodes
 		for _, uuid in ipairs(order) do

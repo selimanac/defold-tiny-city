@@ -20,5 +20,5 @@ data.lookup            = {
 	vehicle_list = {}
 }
 
-
+data.camera_zoom       = 20
 return data

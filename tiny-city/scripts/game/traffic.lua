@@ -23,6 +23,7 @@ local raycast                     = {
 }
 
 function traffic.init()
+	const.CAMERA = msg.url("/game_camera#camera")
 	traffic_lights.init()
 	vehicles.init()
 end
@@ -210,6 +211,7 @@ function traffic.update(dt)
 
 						vehicle.rotation       = vmath.slerp(t, current_rotation, target_rotation)
 						vehicle.rotation_angle = target_angle -- For reference
+						go.set_rotation(vehicle.rotation, vehicle.instance)
 					end
 
 					-- Calculate movement for this frame and clamp
@@ -222,18 +224,20 @@ function traffic.update(dt)
 					vehicle.previous_direction = direction * vehicle.speed
 
 					go.set_position(vehicle.position, vehicle.instance)
-					go.set_rotation(vehicle.rotation, vehicle.instance)
+
 
 					-- Check if we need to advance to next node
+
 					if vehicle.current_waypoint_id <= vehicle.path_size then
 						vehicles.get_raycast_target_position(vehicle, 0, next_node_position)
 
 						local node_distance = vmath.length(vehicle.position - next_node_position)
-
+						--	print(vehicle.current_waypoint_id, node_distance, next_node_position)
 						if node_distance <= const.VEHICLE_CONTROL.ARRIVAL_THRESHOLD then -- Close enough to node
 							-- Release reservation for the node we just reached
 							vehicles.release_node_reservation(vehicle, vehicle_id)
 							vehicle.current_waypoint_id = vehicle.current_waypoint_id + 1
+							--print(vehicle.current_waypoint_id)
 						end
 					end
 				end
@@ -247,6 +251,19 @@ function traffic.update(dt)
 			end
 		end
 	end
+end
+
+function traffic.input(action_id, action)
+	--[[	if action.screen_x then
+		local ipos = vmath.vector3(action.x, action.y, data.camera_zoom)
+		local screen_to_world = camera.screen_to_world(ipos, const.CAMERA)
+		local world_to_screen = camera.world_to_screen(ipos, const.CAMERA)
+		local screen_xy_to_world = camera.screen_xy_to_world(action.x, action.y, const.CAMERA)
+		local result, size = collision.query_aabb(screen_xy_to_world, 0.3, 0.3, 0.3, collision.COLLISION_BITS.VEHICLE)
+		if result then
+			pprint(result)
+		end
+	end]]
 end
 
 return traffic

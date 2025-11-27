@@ -266,6 +266,7 @@ local function node()
 
 	imgui.text("Pathfinder Node ID: " .. data.selected_node.pathfinder_node_id)
 	imgui.text("AABB ID: " .. data.selected_node.aabb_id)
+	imgui.text("UUDI: " .. data.selected_node.uuid)
 	imgui.text("URL: " .. data.selected_node.url)
 	imgui.set_next_item_width(250)
 
