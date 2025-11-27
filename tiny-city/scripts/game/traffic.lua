@@ -163,7 +163,11 @@ function traffic.update(dt)
 					local next_node_id = vehicles.get_node_id_at_waypoint(vehicle, 0)
 					if next_node_id and not vehicle.reserved_node_id then
 						-- Reserve the node immediately - no distance check needed
-						vehicles.reserve_node(vehicle, vehicle_id, next_node_id)
+
+						local traffic_light_state = traffic_lights.check_state(next_node_id)
+						if traffic_light_state == nil then
+							vehicles.reserve_node(vehicle, vehicle_id, next_node_id)
+						end
 					end
 				end
 
@@ -176,7 +180,6 @@ function traffic.update(dt)
 
 					if traffic_light_state == const.TRAFFIC_LIGHT_STATE.RED then
 						-- There's a red light ahead - calculate distance and treat as obstacle
-
 
 						vehicles.get_raycast_target_position(vehicle, 0, traffic_light_node_position)
 

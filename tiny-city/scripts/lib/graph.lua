@@ -42,6 +42,10 @@ function graph.init()
 
 
 	data.path_smoothing_id = pathfinder.add_path_smoothing(const.SMOOTHING_CONFIG)
+
+	-- !!!! IMPORTANT
+	-- This is not the reccomended way of loading nodes and edges. Pathfinder arrays are index based but still IDs might change.
+	-- UUID based importer might be a better solution
 	data.nodes = pathfinder.add_nodes(loaded_data.nodes)
 	data.edges = loaded_data.edges
 	pathfinder.add_edges(data.edges)

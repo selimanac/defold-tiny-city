@@ -21,4 +21,6 @@ data.lookup            = {
 }
 
 data.camera_zoom       = 20
+data.cameras           = {}
+data.current_camera    = "MAIN_CAMERA"
 return data

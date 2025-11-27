@@ -1,0 +1,60 @@
+name: "police_camera"
+scale_along_z: 0
+embedded_instances {
+  id: "container"
+  children: "camera"
+  data: "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/tiny-city/assets/models/vehicles/police.glb\\\"\\n"
+  "name: \\\"{{NAME}}\\\"\\n"
+  "materials {\\n"
+  "  name: \\\"default\\\"\\n"
+  "  material: \\\"/light_and_shadows/materials/model/model_instanced.material\\\"\\n"
+  "  textures {\\n"
+  "    sampler: \\\"tex0\\\"\\n"
+  "    texture: \\\"/tiny-city/assets/textures/kenney_cars_colormap.png\\\"\\n"
+  "  }\\n"
+  "}\\n"
+  "create_go_bones: false\\n"
+  "\"\n"
+  "}\n"
+  ""
+  position {
+    z: -0.125066
+  }
+}
+embedded_instances {
+  id: "camera"
+  data: "components {\n"
+  "  id: \"game_camera\"\n"
+  "  component: \"/tiny-city/scripts/game_camera.script\"\n"
+  "  properties {\n"
+  "    id: \"zoom\"\n"
+  "    value: \"1.1\"\n"
+  "    type: PROPERTY_TYPE_NUMBER\n"
+  "  }\n"
+  "  properties {\n"
+  "    id: \"offset\"\n"
+  "    value: \"0.0, 0.4, 0.0\"\n"
+  "    type: PROPERTY_TYPE_VECTOR3\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"camera\"\n"
+  "  type: \"camera\"\n"
+  "  data: \"aspect_ratio: 1.777778\\n"
+  "fov: 1.3\\n"
+  "near_z: 0.1\\n"
+  "far_z: 20.0\\n"
+  "auto_aspect_ratio: 1\\n"
+  "\"\n"
+  "}\n"
+  ""
+  rotation {
+    x: -4.619747E-18
+    y: -0.9971499
+    z: -0.075446196
+    w: 6.105782E-17
+  }
+}

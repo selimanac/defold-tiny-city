@@ -11,9 +11,11 @@ dof.set_focus(0.5, 0.5)
 dof.set_dof_mode(0)
 dof.set_gaussian_blur(3, 5)]]
 
+local const     = require("tiny-city.scripts.lib.const")
 local graph     = require("tiny-city.scripts.lib.graph")
 local collision = require("tiny-city.scripts.lib.collision")
 local traffic   = require("tiny-city.scripts.game.traffic")
+local data      = require("tiny-city.scripts.lib.data")
 
 -- =================================
 -- MODULE
@@ -24,6 +26,9 @@ local manager   = {}
 -- =================================
 
 function manager.init()
+	const.CAMERA = msg.url("/game_camera#camera")
+	data.cameras["MAIN_CAMERA"] = const.CAMERA
+	msg.post(data.cameras["MAIN_CAMERA"], "enable")
 	collision.init()
 	graph.init()
 	traffic.init()
@@ -34,6 +39,16 @@ function manager.update(dt)
 end
 
 function manager.input(action_id, action)
+	if action.pressed and action_id == const.TRIGGERS.KEY_1 then
+		msg.post(data.cameras[data.current_camera], "disable")
+		if data.current_camera == "MAIN_CAMERA" then
+			data.current_camera = "POLICE_CAMERA"
+		else
+			data.current_camera = "MAIN_CAMERA"
+		end
+
+		msg.post(data.cameras[data.current_camera], "enable")
+	end
 	traffic.input(action_id, action)
 end
 

@@ -13,7 +13,7 @@ local vehicles             = {}
 vehicles.count             = 0
 local target_node_position = vmath.vector3()
 
-local function add(start_node_id, goal_node_id, vehicle_type)
+local function add(start_node_id, goal_node_id, vehicle)
 	local path_size = 0
 	local path_status = 0
 	local path_status_text = ""
@@ -51,17 +51,35 @@ local function add(start_node_id, goal_node_id, vehicle_type)
 	local target_position              = vmath.vector3(path[2].x, 0, path[2].y)
 	local direction                    = target_position - vehicle_position
 	local initial_rotation             = vmath.quat_rotation_y(math.atan2(direction.x, direction.z))
-	local vehicle_instance             = factory.create(vehicle_type.FACTORY, vehicle_position, initial_rotation) --msg.url("police_camera") --factory.create(vehicle_type.FACTORY, vehicle_position, initial_rotation)
-	local aabb_id                      = collision.insert_gameobject(vehicle_instance, 0.4, 1, 0.4, collision.COLLISION_BITS.VEHICLE)
-	vehicles.count                     = vehicles.count + 1
+
+	local vehicle_instance
+
+	if vehicle.HAS_CAMERA then
+		local collection_instance = collectionfactory.create(vehicle.FACTORY, vehicle_position, initial_rotation)
+
+		pprint(collection_instance)
+		vehicle_instance = collection_instance[hash("/container")]
+
+		local police_camera = msg.url(collection_instance[hash("/camera")])
+		police_camera.fragment = "camera"
+		data.cameras["POLICE_CAMERA"] = police_camera
+		msg.post(data.cameras["POLICE_CAMERA"], "disable")
+		pprint(data.cameras)
+	else
+		vehicle_instance = factory.create(vehicle.FACTORY, vehicle_position, initial_rotation)
+	end
+
+
+	local aabb_id  = collision.insert_gameobject(vehicle_instance, 0.4, 1, 0.4, collision.COLLISION_BITS.VEHICLE)
+	vehicles.count = vehicles.count + 1
 
 
 	local vehicle_agent                  = {
 		uuid                 = uuid4.generate(),
 		position             = vehicle_position,
-		max_speed            = vehicle_type.MAX_SPEED,
-		rotation_speed       = vehicle_type.ROTATION_SPEED,
-		speed                = vehicle_type.SPEED,
+		max_speed            = vehicle.MAX_SPEED,
+		rotation_speed       = vehicle.ROTATION_SPEED,
+		speed                = vehicle.SPEED,
 		rotation             = initial_rotation,
 		rotation_angle       = 0,
 		-- Original path (unsmoothed) for raycasting to nodes
@@ -77,13 +95,13 @@ local function add(start_node_id, goal_node_id, vehicle_type)
 		instance             = vehicle_instance,
 		state                = const.VEHICLE_STATE.ACTIVE,
 		aabb_id              = aabb_id,
-		type                 = vehicle_type,
+		type                 = vehicle,
 		-- Brake and throttle system
 		throttle             = 0.0, -- 0.0 to 1.0
 		brake                = 0.0, -- 0.0 to 1.0
-		acceleration_rate    = vehicle_type.ACCELERATION_RATE,
-		brake_rate           = vehicle_type.BRAKE_RATE,
-		target_speed         = vehicle_type.SPEED,
+		acceleration_rate    = vehicle.ACCELERATION_RATE,
+		brake_rate           = vehicle.BRAKE_RATE,
+		target_speed         = vehicle.SPEED,
 		previous_direction   = vmath.vector3(),
 		-- Reservation system
 		reserved_node_id     = nil -- ID of the node this vehicle has reserved
@@ -94,28 +112,46 @@ local function add(start_node_id, goal_node_id, vehicle_type)
 end
 
 function vehicles.init()
-	--add(83, 17, const.VEHICLE_TYPE.FIRE)
+	-- !!!! IMPORTANT
+	-- ALL START AND GOAL IDs MUST BE UNIQUE
+	-- ALL START AND GOAL IDs MUST NOT BE THE TRAFFIC LIGHT
 
-
-
-
+	-- VAN
 	add(83, 17, const.VEHICLE_TYPE.VAN)
-	add(150, 125, const.VEHICLE_TYPE.AMBULANCE)
-	add(3, 21, const.VEHICLE_TYPE.POLICE)
-	add(86, 59, const.VEHICLE_TYPE.TAXI)
-	add(120, 73, const.VEHICLE_TYPE.FIRE)
-	add(165, 21, const.VEHICLE_TYPE.GARBAGE)
-	add(18, 63, const.VEHICLE_TYPE.SEDAN)
-	add(98, 131, const.VEHICLE_TYPE.SUV)
-	add(112, 89, const.VEHICLE_TYPE.SUV_CLASSIC)
-	add(57, 8, const.VEHICLE_TYPE.TRUCK)
-	add(25, 51, const.VEHICLE_TYPE.VAN)
-	add(81, 17, const.VEHICLE_TYPE.AMBULANCE)
-	add(77, 8, const.VEHICLE_TYPE.POLICE)
-	add(72, 80, const.VEHICLE_TYPE.TAXI)
 	add(143, 101, const.VEHICLE_TYPE.VAN)
-	add(141, 98, const.VEHICLE_TYPE.TAXI)
-	--add(33, 103, const.VEHICLE_TYPE.SEDAN)
+	add(25, 51, const.VEHICLE_TYPE.VAN)
+
+	-- TAXI
+	add(86, 59, const.VEHICLE_TYPE.TAXI)
+	add(160, 80, const.VEHICLE_TYPE.TAXI)
+	add(141, 126, const.VEHICLE_TYPE.TAXI)
+
+	-- AMBULANCE
+	add(150, 125, const.VEHICLE_TYPE.AMBULANCE)
+	add(81, 123, const.VEHICLE_TYPE.AMBULANCE)
+
+	-- POLICE
+	add(149, 172, const.VEHICLE_TYPE.POLICE)
+	--add(77, 38, const.VEHICLE_TYPE.POLICE)
+
+	-- SEDAN
+	add(18, 63, const.VEHICLE_TYPE.SEDAN)
+	add(33, 103, const.VEHICLE_TYPE.SEDAN)
+
+	-- FIRE
+	add(120, 73, const.VEHICLE_TYPE.FIRE)
+
+	-- GARBAGE
+	add(96, 21, const.VEHICLE_TYPE.GARBAGE)
+
+	-- SUV
+	add(98, 131, const.VEHICLE_TYPE.SUV)
+
+	-- SUV_CLASSIC
+	add(112, 89, const.VEHICLE_TYPE.SUV_CLASSIC)
+
+	-- TRUCK
+	add(57, 8, const.VEHICLE_TYPE.TRUCK)
 end
 
 function vehicles.remove(vehicle_id, vehicle)

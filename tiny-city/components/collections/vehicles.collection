@@ -42,5 +42,9 @@ embedded_instances {
   "  id: \"van\"\n"
   "  component: \"/tiny-city/components/factories/vehicles/van.factory\"\n"
   "}\n"
+  "components {\n"
+  "  id: \"police_camera\"\n"
+  "  component: \"/tiny-city/components/factories/vehicles/police_camera.collectionfactory\"\n"
+  "}\n"
   ""
 }

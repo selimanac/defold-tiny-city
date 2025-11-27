@@ -37,7 +37,7 @@ instances {
     }
     properties {
       id: "PROJECTION_RESOLUTION"
-      value: "200.0"
+      value: "100.0"
       type: PROPERTY_TYPE_NUMBER
     }
     properties {
@@ -47,7 +47,7 @@ instances {
     }
     properties {
       id: "fov"
-      value: "1.0"
+      value: "1.2"
       type: PROPERTY_TYPE_NUMBER
     }
     properties {
@@ -1755,65 +1755,6 @@ embedded_instances {
   data: ""
   position {
     y: 0.02
-  }
-}
-embedded_instances {
-  id: "police_camera"
-  children: "camera"
-  data: "embedded_components {\n"
-  "  id: \"model\"\n"
-  "  type: \"model\"\n"
-  "  data: \"mesh: \\\"/tiny-city/assets/models/vehicles/police.glb\\\"\\n"
-  "name: \\\"{{NAME}}\\\"\\n"
-  "materials {\\n"
-  "  name: \\\"default\\\"\\n"
-  "  material: \\\"/light_and_shadows/materials/model/model_instanced.material\\\"\\n"
-  "  textures {\\n"
-  "    sampler: \\\"tex0\\\"\\n"
-  "    texture: \\\"/tiny-city/assets/textures/kenney_cars_colormap.png\\\"\\n"
-  "  }\\n"
-  "}\\n"
-  "\"\n"
-  "}\n"
-  ""
-  position {
-    z: -5.501106
-  }
-}
-embedded_instances {
-  id: "camera"
-  data: "components {\n"
-  "  id: \"game_camera\"\n"
-  "  component: \"/tiny-city/scripts/game_camera.script\"\n"
-  "  properties {\n"
-  "    id: \"zoom\"\n"
-  "    value: \"1.2\"\n"
-  "    type: PROPERTY_TYPE_NUMBER\n"
-  "  }\n"
-  "  properties {\n"
-  "    id: \"offset\"\n"
-  "    value: \"0.0, 0.6, 0.0\"\n"
-  "    type: PROPERTY_TYPE_VECTOR3\n"
-  "  }\n"
-  "}\n"
-  "embedded_components {\n"
-  "  id: \"camera\"\n"
-  "  type: \"camera\"\n"
-  "  data: \"aspect_ratio: 1.777778\\n"
-  "fov: 1.3\\n"
-  "near_z: 0.1\\n"
-  "far_z: 20.0\\n"
-  "auto_aspect_ratio: 1\\n"
-  "\"\n"
-  "}\n"
-  ""
-  position {
-    y: 0.345273
-    z: -0.315304
-  }
-  rotation {
-    y: -1.0
-    w: 6.123234E-17
   }
 }
 embedded_instances {
