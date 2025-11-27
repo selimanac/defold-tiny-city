@@ -38,28 +38,28 @@ data.options              = {
 		is_active     = false,
 		start_node_id = 0,
 		goal_node_id  = 0,
-		max_path      = 32,
+		max_path      = 128,
 	},
 
 	-- Projected to Node
 	projected_to_node      = {
 		is_active    = false,
 		goal_node_id = 0,
-		max_path     = 32,
+		max_path     = 128,
 	},
 
 	-- Node to Projected
 	node_to_projected      = {
 		is_active     = false,
 		start_node_id = 0,
-		max_path      = 32,
+		max_path      = 128,
 	},
 
 	-- Projected to Projected
 	projected_to_projected = {
 		is_active      = false,
 		start_position = vmath.vector3(0, 0, 0),
-		max_path       = 32,
+		max_path       = 128,
 	},
 
 	-- Draw

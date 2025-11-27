@@ -158,7 +158,7 @@ local function add_node(loaded_node)
 		edges = (loaded_node and loaded_node.edges) or {},
 		uuid = (loaded_node and loaded_node.uuid) or uuid4.generate()
 	}
-	print(temp_node.uuid, temp_node.pathfinder_node_id, node_position.x, node_position.z)
+	--print("pathfinder_node_id:", temp_node.pathfinder_node_id, "uuid: ", temp_node.uuid, node_position.x, node_position.z)
 	--msg.post(label_url, "update_data", { text = temp_node.pathfinder_node_id, screen_position = vmath.vector3(screen_position.x, screen_position.y + 16, 0) })
 	label.set_text(label_url, temp_node.pathfinder_node_id)
 	data.nodes[temp_node.uuid] = temp_node
@@ -269,10 +269,9 @@ function graph.load(loaded_data)
 	-- Delay to prevent same frame ops
 	timer.delay(0.1, false, function()
 		data.edges = loaded_data.edges
-		loaded_data.edges = nil
+		--loaded_data.edges = nil
 
 		-- sort loaded nodes
-		pprint(loaded_data.nodes)
 		local nodes = loaded_data.nodes
 		local order = {}
 
@@ -292,6 +291,33 @@ function graph.load(loaded_data)
 			add_node(node)
 		end
 
+		-- After adding all nodes, build ID mapping
+		local id_map = {}
+		for uuid, node in pairs(data.nodes) do
+			id_map[loaded_data.nodes[uuid].pathfinder_node_id] = node.pathfinder_node_id
+		end
+
+		for _, edge in pairs(data.edges) do
+			edge.from_node_id = id_map[edge.from_node_id]
+			edge.to_node_id = id_map[edge.to_node_id]
+		end
+
+		--[[
+		print("ID Map:")
+		for old_id, new_id in pairs(id_map) do
+			print("  ", old_id, "->", new_id)
+		end
+
+		print("Edge remapping:")
+		for _, edge in pairs(data.edges) do
+			local new_from = id_map[edge.from_node_id]
+			local new_to = id_map[edge.to_node_id]
+			print("  ", edge.from_node_id, "->", new_from, "|", edge.to_node_id, "->", new_to)
+			if not new_from or not new_to then
+				print("  ERROR: Missing mapping!")
+			end
+		end
+]]
 		-- Add edges
 		local temp_edges = {}
 		for _, edge in pairs(data.edges) do
@@ -302,7 +328,20 @@ function graph.load(loaded_data)
 			table.insert(temp_edges, edge)
 		end
 
+
 		pathfinder.add_edges(temp_edges)
+
+		--[[print("Position verification:")
+		for uuid, node in pairs(data.nodes) do
+			local lib_pos = pathfinder.get_node_position(node.pathfinder_node_id)
+			print("Node", node.pathfinder_node_id,
+				"Lua:", node.position.x, node.position.z,
+				"Lib:", lib_pos.x, lib_pos.y)
+			if math.abs(node.position.x - lib_pos.x) > 0.01 or
+				math.abs(node.position.z - lib_pos.y) > 0.01 then
+				print("  MISMATCH!")
+			end
+		end]]
 	end)
 
 	data.action_status = const.EDITOR_STATUS.READY

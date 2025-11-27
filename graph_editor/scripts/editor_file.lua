@@ -147,7 +147,7 @@ function file.export_json()
 
 	for _, uuid in ipairs(order) do
 		local node = nodes[uuid]
-		local temp_node = { x = utils.round3(node.position.x), y = utils.round3(node.position.z) }
+		local temp_node = { id = node.pathfinder_node_id, x = utils.round3(node.position.x), y = utils.round3(node.position.z) }
 		table.insert(temp_nodes, temp_node)
 	end
 

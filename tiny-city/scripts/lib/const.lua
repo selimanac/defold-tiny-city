@@ -61,7 +61,7 @@ const.VEHICLE_TYPE = {
 		SPEED             = 0.1,
 		MAX_SPEED         = 2.9,
 		FACTORY           = "/vehicles/factories#taxi",
-		ROTATION_SPEED    = 5.0,
+		ROTATION_SPEED    = 10.0,
 		ACCELERATION_RATE = 0.4,
 		BRAKE_RATE        = 7.0,
 	},
@@ -144,10 +144,10 @@ const.VEHICLE_CONTROL = {
 
 	-- Distance-based braking zones (in units)
 	-- These are base values - will be scaled based on vehicle speed
-	CRITICAL_DISTANCE                  = 0.3, -- Emergency stop zone (increased from 0.5)
-	NEAR_DISTANCE                      = 0.5, -- Heavy braking zone (increased from 1.0)
-	MEDIUM_DISTANCE                    = 0.7, -- Moderate braking zone (increased from 2.0)
-	FAR_DISTANCE                       = 1.0, -- Light braking/coasting zone (increased from 3.0)
+	CRITICAL_DISTANCE                  = 0.5, -- Emergency stop zone (increased from 0.5)
+	NEAR_DISTANCE                      = 0.6, -- Heavy braking zone (increased from 1.0)
+	MEDIUM_DISTANCE                    = 0.8, -- Moderate braking zone (increased from 2.0)
+	FAR_DISTANCE                       = 1.2, -- Light braking/coasting zone (increased from 3.0)
 
 	-- Crossing detection threshold
 	CROSSING_DOT_THRESHOLD             = 0.2, -- Dot product threshold for crossing detection
@@ -158,10 +158,10 @@ const.VEHICLE_CONTROL = {
 	RAYCAST_FORWARD_OFFSET             = 0.3, -- Units ahead of vehicle center
 
 	OPPOSITE_DIRECTION_THRESHOLD       = -0.1,
-	OPPOSITE_DIRECTION_BREAK_THRESHOLD = 0.4,
+	OPPOSITE_DIRECTION_BREAK_THRESHOLD = 0.5,
 
 	ROTATION_SPEED_THRESHOLD           = 0.01,
-	ARRIVAL_THRESHOLD                  = 0.3
+	ARRIVAL_THRESHOLD                  = 0.4
 }
 
 const.TRIGGERS =

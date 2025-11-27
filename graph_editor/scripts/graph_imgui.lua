@@ -339,15 +339,16 @@ local function settings()
 		end
 
 		imgui.set_next_item_width(250)
-		changed, int_value = imgui.input_int("Goal Node Id##node_to_node", data.options.node_to_node.goal_node_id)
+		local changed, int_value = imgui.input_int("Goal Node Id##node_to_node", data.options.node_to_node.goal_node_id)
 		if changed then
 			data.options.node_to_node.goal_node_id = int_value
 		end
 
 		imgui.set_next_item_width(250)
-		changed, int_value = imgui.input_int("Max Path Lenght##node_to_node", data.options.node_to_node.max_path)
+		local changed, int_value = imgui.input_int("Max Path Lenght##node_to_node", data.options.node_to_node.max_path)
 		if changed then
 			data.options.node_to_node.max_path = int_value
+			print(data.options.node_to_node.max_path)
 		end
 
 		-- =======================================

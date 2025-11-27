@@ -38,11 +38,11 @@ const.FACTORIES       = {
 	DIRECTION = "/graph_editor/factories#direction",
 }
 const.GRAPH_EDITOR    = {
-	MAX_NODES             = sys.get_config_int("graph_editor.max_nodes", 32),
-	MAX_GAMEOBJECT_NODES  = sys.get_config_int("graph_editor.max_gameobject_nodes", 32),
+	MAX_NODES             = sys.get_config_int("graph_editor.max_nodes", 128),
+	MAX_GAMEOBJECT_NODES  = sys.get_config_int("graph_editor.max_gameobject_nodes", 128),
 	MAX_EDGES_PER_NODE    = sys.get_config_int("graph_editor.max_edges_per_node", 6),
-	HEAP_POOL_BLOCK_SIZE  = sys.get_config_int("graph_editor.heap_pool_block_size", 32),
-	MAX_CACHE_PATH_LENGTH = sys.get_config_int("graph_editor.max_cache_path_length", 32),
+	HEAP_POOL_BLOCK_SIZE  = sys.get_config_int("graph_editor.heap_pool_block_size", 128),
+	MAX_CACHE_PATH_LENGTH = sys.get_config_int("graph_editor.max_cache_path_length", 128),
 	FOLDER                = project_path.get() .. "/" .. sys.get_config_string("graph_editor.folder"),
 	FILES                 = split_csv(sys.get_config_string("graph_editor.files", "default.json"))
 }

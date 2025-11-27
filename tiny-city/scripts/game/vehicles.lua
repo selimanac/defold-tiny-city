@@ -20,7 +20,7 @@ local function add(start_node_id, goal_node_id, vehicle_type)
 	local path = {}
 
 	-- Get unsmoothed path (node-to-node) for raycasting and collision detection
-	path_size, path_status, path_status_text, path = pathfinder.find_node_to_node(start_node_id, goal_node_id, 32)
+	path_size, path_status, path_status_text, path = pathfinder.find_node_to_node(start_node_id, goal_node_id, 256)
 
 	if path_status ~= pathfinder.PathStatus.SUCCESS then
 		print(path_status_text)
@@ -28,7 +28,7 @@ local function add(start_node_id, goal_node_id, vehicle_type)
 	end
 
 	-- Get return path to create a loop
-	local second_path_size, second_path_status, second_path_status_text, second_path = pathfinder.find_node_to_node(goal_node_id, start_node_id, 32)
+	local second_path_size, second_path_status, second_path_status_text, second_path = pathfinder.find_node_to_node(goal_node_id, start_node_id, 256)
 
 
 	if second_path_status ~= pathfinder.PathStatus.SUCCESS then
@@ -100,22 +100,22 @@ function vehicles.init()
 
 
 	add(83, 17, const.VEHICLE_TYPE.VAN)
-	add(2, 29, const.VEHICLE_TYPE.AMBULANCE)
+	add(150, 125, const.VEHICLE_TYPE.AMBULANCE)
 	add(3, 21, const.VEHICLE_TYPE.POLICE)
 	add(86, 59, const.VEHICLE_TYPE.TAXI)
-	add(12, 53, const.VEHICLE_TYPE.FIRE)
-	add(65, 21, const.VEHICLE_TYPE.GARBAGE)
+	add(120, 73, const.VEHICLE_TYPE.FIRE)
+	add(165, 21, const.VEHICLE_TYPE.GARBAGE)
 	add(18, 63, const.VEHICLE_TYPE.SEDAN)
-	add(23, 21, const.VEHICLE_TYPE.SUV)
+	add(98, 131, const.VEHICLE_TYPE.SUV)
 	add(112, 89, const.VEHICLE_TYPE.SUV_CLASSIC)
 	add(57, 8, const.VEHICLE_TYPE.TRUCK)
 	add(25, 51, const.VEHICLE_TYPE.VAN)
 	add(81, 17, const.VEHICLE_TYPE.AMBULANCE)
 	add(77, 8, const.VEHICLE_TYPE.POLICE)
 	add(72, 80, const.VEHICLE_TYPE.TAXI)
-	add(17, 16, const.VEHICLE_TYPE.VAN)
-	add(51, 46, const.VEHICLE_TYPE.TAXI)
-	add(33, 103, const.VEHICLE_TYPE.SEDAN)
+	add(143, 101, const.VEHICLE_TYPE.VAN)
+	add(141, 98, const.VEHICLE_TYPE.TAXI)
+	--add(33, 103, const.VEHICLE_TYPE.SEDAN)
 end
 
 function vehicles.remove(vehicle_id, vehicle)

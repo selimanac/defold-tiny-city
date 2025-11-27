@@ -19,6 +19,8 @@ end
 function draw.node_to_node()
 	local smooth_path = data.options.draw.smooth_path and data.path_smoothing_id or nil
 
+
+
 	data.path.node_to_node.size,
 	data.path.node_to_node.status,
 	data.path.node_to_node.status_text,

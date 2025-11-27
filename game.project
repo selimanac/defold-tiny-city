@@ -1,5 +1,5 @@
 [bootstrap]
-main_collection = /tiny-city/scenes/map.collectionc
+main_collection = /tiny-city/scenes/editor.collectionc
 render = /light_and_shadows/render/default.renderc
 
 [script]
@@ -23,9 +23,9 @@ title = defold-tiny-city
 custom_resources = data
 dependencies#0 = https://github.com/selimanac/defold-random/archive/refs/heads/master.zip
 dependencies#1 = https://github.com/selimanac/defold-daabbcc3d/archive/refs/heads/main.zip
-dependencies#2 = https://github.com/selimanac/defold-graph-pathfinder/archive/refs/heads/main.zip
-dependencies#3 = https://github.com/selimanac/defold-uuid4/archive/refs/heads/master.zip
-dependencies#4 = https://github.com/britzl/extension-imgui/archive/refs/heads/master.zip
+dependencies#2 = https://github.com/selimanac/defold-uuid4/archive/refs/heads/master.zip
+dependencies#3 = https://github.com/britzl/extension-imgui/archive/refs/heads/master.zip
+dependencies#4 = https://github.com/selimanac/defold-graph-pathfinder/archive/refs/heads/main.zip
 
 [osx]
 bundle_identifier = com.defold.example.basic3d
@@ -37,7 +37,8 @@ bundle_identifier = com.defold.example.basic3d
 folder = data
 max_gameobject_nodes = 2048
 max_nodes = 2048
-files = test.json,map1.json,map3.json
+files = test.json,map1.json,map3.json,aa.json
+max_cache_path_length = 128
 
 [sprite]
 max_count = 2048
