@@ -1,9 +1,9 @@
-local const            = {}
+local const   = {}
 
-const.EPSILON          = 0.0001 -- Minimum distance for movement calculations
-const.HUGE             = math.huge
-const.CAMERA           = msg.url()
-const.COLORS           = {
+const.EPSILON = 0.0001 -- Minimum distance for movement calculations
+const.HUGE    = math.huge
+const.CAMERA  = msg.url()
+const.COLORS  = {
 	RED       = vmath.vector4(1, 0, 0, 1),
 	GREEN     = vmath.vector4(0, 1, 0, 1),
 	YELLOW    = vmath.vector4(1, 1, 0, 1),
@@ -12,8 +12,10 @@ const.COLORS           = {
 	DARK_GRAY = vmath.vector4(0.3, 0.3, 0.3, 1)
 }
 
+
+
 const.SMOOTHING_CONFIG = {
-	style                               = pathfinder.PathSmoothStyle.BEZIER_QUADRATIC,
+	style                               = pathfinder.PathSmoothStyle.BEZIER_CUBIC,
 	bezier_sample_segment               = 8, -- Number of segments per curve
 	bezier_control_point_offset         = 0.3, -- For bezier_cubic style
 	bezier_curve_radius                 = 0.8, -- For bezier_quadratic style (active)
