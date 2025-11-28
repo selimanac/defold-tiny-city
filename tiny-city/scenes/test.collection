@@ -8,19 +8,6 @@ instances {
     z: 0.06526052
     w: 0.92242783
   }
-  component_properties {
-    id: "game_camera"
-    properties {
-      id: "zoom"
-      value: "15.0"
-      type: PROPERTY_TYPE_NUMBER
-    }
-    properties {
-      id: "offset"
-      value: "0.0, 0.0, 4.0"
-      type: PROPERTY_TYPE_VECTOR3
-    }
-  }
 }
 instances {
   id: "sun"

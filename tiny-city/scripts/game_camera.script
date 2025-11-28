@@ -1,3 +1,4 @@
+local const = require "tiny-city.scripts.lib.const"
 -- The initial zoom level
 go.property("zoom", 3)
 -- The speed of the zoom
@@ -8,8 +9,7 @@ go.property("rotation_speed", 0.5)
 go.property("offset", vmath.vector3(0, 0, 0))
 
 
-local const    = require("graph_editor.scripts.editor_const")
-local data     = require("graph_editor.scripts.editor_data")
+local data = require "tiny-city.scripts.lib.data"
 
 local defaults = {}
 

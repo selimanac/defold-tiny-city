@@ -1,5 +1,5 @@
 name: "model_instanced"
-tags: "model"
+tags: "node"
 vertex_program: "/tiny-city/components/materials/unlit/model_unlit_instanced.vp"
 fragment_program: "/tiny-city/components/materials/unlit/model_unlit.fp"
 vertex_space: VERTEX_SPACE_LOCAL

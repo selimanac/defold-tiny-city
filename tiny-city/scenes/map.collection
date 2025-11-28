@@ -1172,7 +1172,7 @@ instances {
     id: "game_camera"
     properties {
       id: "zoom"
-      value: "20.0"
+      value: "15.0"
       type: PROPERTY_TYPE_NUMBER
     }
     properties {
@@ -1543,6 +1543,177 @@ instances {
   position {
     x: 2.295981
     z: 7.098542
+  }
+}
+instances {
+  id: "cloud_1"
+  prototype: "/tiny-city/components/gameobjects/clouds/cloud_1.go"
+  position {
+    y: 6.283569
+    z: -9.811793
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+}
+instances {
+  id: "cloud_2"
+  prototype: "/tiny-city/components/gameobjects/clouds/cloud_2.go"
+  position {
+    x: 1.25886
+    y: 6.236122
+    z: -9.610941
+  }
+  rotation {
+    y: 0.7954932
+    w: 0.6059625
+  }
+  scale3 {
+    x: 0.7
+    y: 0.7
+    z: 0.7
+  }
+}
+instances {
+  id: "cloud_3"
+  prototype: "/tiny-city/components/gameobjects/clouds/cloud_3.go"
+  position {
+    x: -4.071106
+    y: 8.082142
+    z: -13.871406
+  }
+  rotation {
+    y: 0.74373645
+    w: 0.66847295
+  }
+}
+instances {
+  id: "cloud_4"
+  prototype: "/tiny-city/components/gameobjects/clouds/cloud_4.go"
+  position {
+    x: -13.601823
+    y: 6.385656
+    z: -10.263847
+  }
+  rotation {
+    y: 0.68545777
+    w: 0.72811234
+  }
+  scale3 {
+    x: 0.7
+    y: 0.7
+    z: 0.7
+  }
+}
+instances {
+  id: "cloud_"
+  prototype: "/tiny-city/components/gameobjects/clouds/cloud_3.go"
+  position {
+    x: 3.164884
+    y: 5.879644
+    z: -10.306006
+  }
+  rotation {
+    x: -1.8875286E-14
+    y: 0.70719373
+    z: 1.5566862E-13
+    w: -0.7070198
+  }
+  scale3 {
+    x: 0.3
+    y: 0.3
+    z: 0.3
+  }
+}
+instances {
+  id: "cloud_5"
+  prototype: "/tiny-city/components/gameobjects/clouds/cloud_1.go"
+  position {
+    x: -12.401625
+    y: 6.386929
+    z: -10.029617
+  }
+  rotation {
+    y: 0.6659892
+    w: -0.74596137
+  }
+  scale3 {
+    x: 0.4
+    y: 0.4
+    z: 0.4
+  }
+}
+instances {
+  id: "birds"
+  prototype: "/tiny-city/components/gameobjects/birds.go"
+  position {
+    x: 22.0
+    y: 5.09006
+    z: 2.589717
+  }
+  rotation {
+    y: 0.70710677
+    w: 0.70710677
+  }
+  scale3 {
+    x: 0.7
+    y: 0.7
+    z: 0.7
+  }
+}
+instances {
+  id: "path_node_1"
+  prototype: "/tiny-city/components/gameobjects/path_node.go"
+  position {
+    x: 3.14303
+    y: 6.676012
+    z: 20.996698
+  }
+}
+instances {
+  id: "path_node_2"
+  prototype: "/tiny-city/components/gameobjects/path_node.go"
+  position {
+    x: -3.492712
+    y: 2.837345
+    z: 3.335156
+  }
+}
+instances {
+  id: "path_node_3"
+  prototype: "/tiny-city/components/gameobjects/path_node.go"
+  position {
+    x: -17.838852
+    y: 2.837345
+    z: 3.335156
+  }
+}
+instances {
+  id: "path_node_4"
+  prototype: "/tiny-city/components/gameobjects/path_node.go"
+  position {
+    x: -17.996878
+    y: 4.261368
+    z: 13.594868
+  }
+}
+instances {
+  id: "path_node_5"
+  prototype: "/tiny-city/components/gameobjects/path_node.go"
+  position {
+    x: 8.264512
+    y: 4.596157
+    z: 0.585649
+  }
+}
+instances {
+  id: "path_node_6"
+  prototype: "/tiny-city/components/gameobjects/path_node.go"
+  position {
+    x: 8.506181
+    y: 4.596157
+    z: 10.865365
   }
 }
 collection_instances {
@@ -2072,5 +2243,25 @@ embedded_instances {
   children: "ambulance"
   children: "sedan"
   children: "suv"
+  data: ""
+}
+embedded_instances {
+  id: "clouds"
+  children: "cloud_"
+  children: "cloud_1"
+  children: "cloud_2"
+  children: "cloud_3"
+  children: "cloud_4"
+  children: "cloud_5"
+  data: ""
+}
+embedded_instances {
+  id: "plane_path"
+  children: "path_node_1"
+  children: "path_node_2"
+  children: "path_node_3"
+  children: "path_node_4"
+  children: "path_node_5"
+  children: "path_node_6"
   data: ""
 }

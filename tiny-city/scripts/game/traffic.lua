@@ -3,6 +3,7 @@ local vehicles                    = require("tiny-city.scripts.game.vehicles")
 local const                       = require("tiny-city.scripts.lib.const")
 local data                        = require("tiny-city.scripts.lib.data")
 local collision                   = require("tiny-city.scripts.lib.collision")
+
 -- =================================
 -- MODULE
 -- =================================
@@ -113,7 +114,7 @@ function traffic.update(dt)
 										-- dot = 1: same direction, dot = -1: opposite, dot = 0: perpendicular
 										local dot_product = vmath.dot(vmath.normalize(vehicle.previous_direction), vmath.normalize(target_vehicle.previous_direction))
 
-										-- Check for opposite direction traffic (likely different lane)
+										-- Check for opposite direction traffic
 										if dot_product < const.VEHICLE_CONTROL.OPPOSITE_DIRECTION_THRESHOLD then
 											-- Vehicles moving in opposite directions
 											-- Only brake if very close (potential head-on collision)

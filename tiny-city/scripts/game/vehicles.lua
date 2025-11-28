@@ -57,14 +57,12 @@ local function add(start_node_id, goal_node_id, vehicle)
 	if vehicle.HAS_CAMERA then
 		local collection_instance = collectionfactory.create(vehicle.FACTORY, vehicle_position, initial_rotation)
 
-		pprint(collection_instance)
 		vehicle_instance = collection_instance[hash("/container")]
 
-		local police_camera = msg.url(collection_instance[hash("/camera")])
-		police_camera.fragment = "camera"
+		local police_camera = msg.url(collection_instance[hash("/police_camera")])
+		police_camera.fragment = "police_camera"
 		data.cameras["POLICE_CAMERA"] = police_camera
 		msg.post(data.cameras["POLICE_CAMERA"], "disable")
-		pprint(data.cameras)
 	else
 		vehicle_instance = factory.create(vehicle.FACTORY, vehicle_position, initial_rotation)
 	end

@@ -2,7 +2,7 @@ local const   = {}
 
 const.EPSILON = 0.0001 -- Minimum distance for movement calculations
 const.HUGE    = math.huge
-const.CAMERA  = msg.url()
+
 const.COLORS  = {
 	RED       = vmath.vector4(1, 0, 0, 1),
 	GREEN     = vmath.vector4(0, 1, 0, 1),
@@ -36,8 +36,8 @@ const.VEHICLE_STATE = {
 }
 
 const.SPEED_LIMITS = {
-	MID  = 0.7,
-	HIGH = 1.5
+	MID  = 0.4,
+	HIGH = 1.2
 }
 
 
@@ -62,11 +62,11 @@ const.VEHICLE_TYPE = {
 	},
 	TAXI = {
 		SPEED             = 0.1,
-		MAX_SPEED         = 2.9,
+		MAX_SPEED         = 2.3,
 		FACTORY           = "/vehicles/factories#taxi",
 		ROTATION_SPEED    = 10.0,
 		ACCELERATION_RATE = 0.4,
-		BRAKE_RATE        = 7.0,
+		BRAKE_RATE        = 8.0,
 	},
 	VAN = {
 		SPEED             = 0.5,
@@ -79,7 +79,7 @@ const.VEHICLE_TYPE = {
 	},
 	FIRE = {
 		SPEED             = 0.5,
-		MAX_SPEED         = 3.0,
+		MAX_SPEED         = 2.7,
 		FACTORY           = "/vehicles/factories#fire",
 		ROTATION_SPEED    = 5.0,
 		ACCELERATION_RATE = 0.3,
@@ -97,11 +97,11 @@ const.VEHICLE_TYPE = {
 	},
 	SEDAN = {
 		SPEED             = 1.5,
-		MAX_SPEED         = 2.8,
+		MAX_SPEED         = 2.5,
 		FACTORY           = "/vehicles/factories#sedan",
 		ROTATION_SPEED    = 5.0,
 		ACCELERATION_RATE = 0.5,
-		BRAKE_RATE        = 10.0,
+		BRAKE_RATE        = 5.0,
 
 	},
 	SUV = {
@@ -147,15 +147,15 @@ const.VEHICLE_CONTROL = {
 
 	-- Distance-based braking zones (in units)
 	-- These are base values - will be scaled based on vehicle speed
-	CRITICAL_DISTANCE                  = 0.5, -- Emergency stop zone (increased from 0.5)
-	NEAR_DISTANCE                      = 0.6, -- Heavy braking zone (increased from 1.0)
-	MEDIUM_DISTANCE                    = 0.8, -- Moderate braking zone (increased from 2.0)
+	CRITICAL_DISTANCE                  = 0.6, -- Emergency stop zone (increased from 0.5)
+	NEAR_DISTANCE                      = 0.8, -- Heavy braking zone (increased from 1.0)
+	MEDIUM_DISTANCE                    = 1.0, -- Moderate braking zone (increased from 2.0)
 	FAR_DISTANCE                       = 1.2, -- Light braking/coasting zone (increased from 3.0)
 
 	-- Crossing detection threshold
-	CROSSING_DOT_THRESHOLD             = 0.2, -- Dot product threshold for crossing detection
+	CROSSING_DOT_THRESHOLD             = 0.9, -- Dot product threshold for crossing detection
 	CROSSING_DISTANCE                  = 2.0, -- Max distance to consider crossing
-	CROSSING_BRAKE_MULTIPLIER          = 0.5, -- Reduce effective distance when crossing
+	CROSSING_BRAKE_MULTIPLIER          = 0.8, -- Reduce effective distance when crossing
 
 	-- Raycast offset (start raycast from front of vehicle, not center)
 	RAYCAST_FORWARD_OFFSET             = 0.2, -- Units ahead of vehicle center
