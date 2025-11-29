@@ -72,7 +72,7 @@ game_binding = /tiny-city/input/game.input_bindingc
 exclude_gles_sm100 = 1
 
 [native_extension]
-app_manifest = /tiny-city/manifest/release.appmanifest
+app_manifest = /tiny-city/manifest/macos.appmanifest
 
 [graphics]
 max_font_batches = 1024
