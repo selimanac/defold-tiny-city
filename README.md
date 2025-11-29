@@ -1,4 +1,6 @@
-This project is developed for [Defold Community Challenge: Tiny Worlds](https://forum.defold.com/t/community-challenge-tiny-worlds/81931).
+This project is developed for [Defold Community Challenge: Tiny Worlds](https://forum.defold.com/t/community-challenge-tiny-worlds/81931). 
+
+This is not an actual game, but instead it is a kind of demo. The solutions in this project are not production-ready and not supported, so use them at your own risk.
 
 ## Credits
 
@@ -11,3 +13,12 @@ This project is developed for [Defold Community Challenge: Tiny Worlds](https://
 
 * Light and Shadow by Dragosha  (https://github.com/Dragosha/defold-light-and-shadows)
 * Dear ImGUI for Defold by Björn Ritzl (https://github.com/britzl/extension-imgui)
+
+
+# Graph Editor
+
+The development version of the Graph Editor for the [Defold Graph Pathfinder](https://github.com/selimanac/defold-graph-pathfinder) is included in this project. It is still under development and not production ready. It may cause data loss, so use it at your own risk.
+
+- Graph Editor settings can be found under Graph Editor in the game.project file.
+- Set editor.collection to the Main Collection in the game.project file.
+- Load the map file from the editor.

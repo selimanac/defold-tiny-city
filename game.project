@@ -1,5 +1,5 @@
 [bootstrap]
-main_collection = /tiny-city/scenes/world.collectionc
+main_collection = /tiny-city/scenes/editor.collectionc
 render = /light_and_shadows/render/default.renderc
 
 [script]
@@ -37,7 +37,7 @@ bundle_identifier = com.defold.example.basic3d
 folder = data
 max_gameobject_nodes = 2048
 max_nodes = 2048
-files = test.json,map1.json,map3.json,aa.json
+files = map.json
 max_cache_path_length = 128
 
 [sprite]
@@ -47,7 +47,7 @@ max_count = 2048
 max_count = 2048
 
 [daabbcc]
-max_gameobject_count = 32
+max_gameobject_count = 1024
 
 [collection]
 max_instances = 2048
