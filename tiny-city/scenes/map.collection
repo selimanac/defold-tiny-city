@@ -1861,7 +1861,7 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "vegans"
+  id: "vegetation"
   children: "planter"
   children: "planter1"
   children: "planter2"

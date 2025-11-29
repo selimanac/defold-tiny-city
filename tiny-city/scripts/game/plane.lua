@@ -94,7 +94,6 @@ function plane.init()
 	smooth_path = build_smooth_path(control_points, SAMPLES_PER_SEGMENT)
 	path_length = #smooth_path
 
-	print("Plane: Pre-calculated " .. path_length .. " smooth path points")
 
 	-- Initial position and rotation
 	position = vmath.vector3(smooth_path[1])

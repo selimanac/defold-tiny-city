@@ -9,7 +9,7 @@ shared_state = 1
 width = 1920
 height = 1080
 high_dpi = 1
-samples = 4
+samples = 3
 
 [android]
 input_method = HiddenInputField
@@ -76,6 +76,7 @@ app_manifest = /tiny-city/manifest/macos.appmanifest
 
 [graphics]
 max_font_batches = 1024
+texture_profiles = /tiny-city/game.texture_profiles
 
 [mesh]
 max_count = 1024
