@@ -1121,6 +1121,11 @@ instances {
       type: PROPERTY_TYPE_NUMBER
     }
     properties {
+      id: "zoom_speed"
+      value: "0.001"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
       id: "offset"
       value: "-3.0, 0.0, 0.0"
       type: PROPERTY_TYPE_VECTOR3
@@ -1541,7 +1546,7 @@ instances {
   prototype: "/tiny-city/components/gameobjects/clouds/cloud_4.go"
   position {
     x: -13.601823
-    y: 6.385656
+    y: 4.129433
     z: -10.263847
   }
   rotation {
@@ -1578,7 +1583,7 @@ instances {
   prototype: "/tiny-city/components/gameobjects/clouds/cloud_1.go"
   position {
     x: -12.401625
-    y: 6.386929
+    y: 4.130706
     z: -10.029617
   }
   rotation {
@@ -2161,7 +2166,7 @@ embedded_instances {
   "  }\n"
   "  properties {\n"
   "    id: \"fog_min_max\"\n"
-  "    value: \"1.0, 60.0, 1.0, 1.0\"\n"
+  "    value: \"20.0, 60.0, 1.0, 1.0\"\n"
   "    type: PROPERTY_TYPE_VECTOR4\n"
   "  }\n"
   "  properties {\n"

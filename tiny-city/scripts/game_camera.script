@@ -59,8 +59,8 @@ function update(self, dt)
 		-- zoom
 		if self.camera_zoom > 15 then
 			self.zoom_offset = self.zoom_offset - 9 * dt
-			-- else
-			-- 	self.is_moving = false
+		else
+			self.is_moving = false
 		end
 
 		-- original pitch movement

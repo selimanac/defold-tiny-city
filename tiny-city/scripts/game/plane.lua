@@ -1,12 +1,20 @@
 local data                = require("tiny-city.scripts.lib.data")
 local const               = require("tiny-city.scripts.lib.const")
 local audio               = require("tiny-city.scripts.lib.audio")
+
+-- =================================
+-- MODULE
+-- =================================
 local plane               = {}
 
+-- =================================
+-- VARS
+-- =================================
 local container           = msg.url()
 local prop                = msg.url()
 
-local smooth_path         = {} -- Pre-calculated smooth path
+-- path
+local smooth_path         = {}
 local path_length         = 0
 local path_progress       = 0
 
@@ -22,11 +30,11 @@ local ROTATION_SPEED      = 10
 local BANK_SPEED          = 13.8
 local MAX_BANK_ANGLE      = math.rad(35)
 local BANK_SENSITIVITY    = 13.8
-local SAMPLES_PER_SEGMENT = 16  -- Adjust for smoothness vs memory
-local TURN_RATE_SMOOTHING = 0.8 -- Lower = smoother, higher = more responsive
+local SAMPLES_PER_SEGMENT = 32
+local TURN_RATE_SMOOTHING = 0.8
 
 
--- TODO: Cleanup this shit
+
 local function catmull_rom_point(p0, p1, p2, p3, t)
 	local t2 = t * t
 	local t3 = t2 * t
@@ -63,6 +71,7 @@ local function build_smooth_path(control_points, samples_per_segment)
 	return path
 end
 
+
 local function get_path_point(progress)
 	-- Get two surrounding points
 	local idx1 = math.floor(progress)
@@ -81,6 +90,7 @@ end
 -- 	return angle
 -- end
 
+-- TODO: Cleanup this shit
 function plane.init()
 	-- Load control points
 	local control_points = {}
@@ -115,7 +125,11 @@ function plane.init()
 	plane_fx.fragment = "plane_fx"
 	audio.fx["PLANE"] = plane_fx
 
-
+	--[[	
+	-- rotated particles are not working
+	local plane_particle = container
+	plane_particle.fragment = "plane"
+	particlefx.play(plane_particle)]]
 
 	path_progress = 0
 end

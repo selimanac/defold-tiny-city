@@ -247,7 +247,6 @@ function traffic.update(dt)
 				end
 			else
 				-- Vehicle reached destination, reset to loop the path
-				print("END")
 				vehicles.release_node_reservation(vehicle, vehicle_id)
 				vehicle.state = const.VEHICLE_STATE.ACTIVE
 				vehicle.current_waypoint_id = 1
@@ -255,19 +254,6 @@ function traffic.update(dt)
 			end
 		end
 	end
-end
-
-function traffic.input(action_id, action)
-	--[[	if action.screen_x then
-		local ipos = vmath.vector3(action.x, action.y, data.camera_zoom)
-		local screen_to_world = camera.screen_to_world(ipos, const.CAMERA)
-		local world_to_screen = camera.world_to_screen(ipos, const.CAMERA)
-		local screen_xy_to_world = camera.screen_xy_to_world(action.x, action.y, const.CAMERA)
-		local result, size = collision.query_aabb(screen_xy_to_world, 0.3, 0.3, 0.3, collision.COLLISION_BITS.VEHICLE)
-		if result then
-			pprint(result)
-		end
-	end]]
 end
 
 return traffic

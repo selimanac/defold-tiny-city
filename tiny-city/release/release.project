@@ -22,25 +22,26 @@ title = defold-tiny-city
 custom_resources = data
 dependencies#0 = https://github.com/selimanac/defold-daabbcc3d/archive/refs/heads/main.zip
 dependencies#1 = https://github.com/selimanac/defold-graph-pathfinder/archive/refs/heads/main.zip
+dependencies#2 = https://github.com/selimanac/defold-uuid4/archive/refs/heads/master.zip
 
 [native_extension]
-app_manifest = /release.appmanifest
+app_manifest = /tiny-city/manifest/release.appmanifest
 
-[graph_editor]
-folder = data
-max_gameobject_nodes = 2048
-max_nodes = 2048
-files = test.json,map1.json
+
 
 [daabbcc]
 max_gameobject_count = 32
 
 [input]
 use_accelerometer = 0
+game_binding = /tiny-city/input/game.input_bindingc
 
 [graphics]
 texture_profiles = /tiny-city/game.texture_profiles
 
 [shader]
 exclude_gles_sm100 = 1
+
+[model]
+max_count = 512
 

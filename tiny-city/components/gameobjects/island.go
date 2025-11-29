@@ -5,7 +5,7 @@ embedded_components {
   "name: \"{{NAME}}\"\n"
   "materials {\n"
   "  name: \"default\"\n"
-  "  material: \"/light_and_shadows/materials/model/model_instanced_nocast.material\"\n"
+  "  material: \"/tiny-city/components/materials/noshadow/model_instanced_noshadow.material\"\n"
   "  textures {\n"
   "    sampler: \"tex0\"\n"
   "    texture: \"/tiny-city/assets/textures/kenney_cars_colormap.png\"\n"

@@ -55,21 +55,24 @@ local function add(start_node_id, goal_node_id, vehicle)
 
 	local vehicle_instance
 
-	-- Temp for Police Car
+	-- Temp patch for Police Car
 	if vehicle.HAS_CAMERA then
 		local collection_instance = collectionfactory.create(vehicle.FACTORY, vehicle_position, initial_rotation)
-		pprint(collection_instance)
+
 		vehicle_instance = collection_instance[hash("/container")]
 
+		-- Camera
 		local police_camera = msg.url(collection_instance[hash("/police_camera")])
 		police_camera.fragment = "police_camera"
 		data.cameras["POLICE_CAMERA"] = police_camera
 		msg.post(data.cameras["POLICE_CAMERA"], "disable")
 
+		-- Sound FX
 		local police_fx = msg.url(vehicle_instance)
 		police_fx.fragment = "police"
 		audio.fx["POLICE"] = police_fx
 
+		-- Lights
 		local blue_light = msg.url(collection_instance[hash("/blue")])
 		blue_light.fragment = "bulb"
 
@@ -88,8 +91,6 @@ local function add(start_node_id, goal_node_id, vehicle)
 				is_red = true
 			end
 		end)
-
-		--msg.post(blue_light, "punch", { light = false })
 	else
 		vehicle_instance = factory.create(vehicle.FACTORY, vehicle_position, initial_rotation)
 	end
