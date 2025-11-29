@@ -1,5 +1,5 @@
 [bootstrap]
-main_collection = /tiny-city/scenes/map.collectionc
+main_collection = /tiny-city/scenes/world.collectionc
 render = /light_and_shadows/render/default.renderc
 
 [script]
@@ -47,7 +47,7 @@ max_count = 2048
 max_count = 2048
 
 [daabbcc]
-max_gameobject_count = 2048
+max_gameobject_count = 32
 
 [collection]
 max_instances = 2048
@@ -72,7 +72,7 @@ game_binding = /tiny-city/input/game.input_bindingc
 exclude_gles_sm100 = 1
 
 [native_extension]
-app_manifest = /tiny-city/manifest/macos.appmanifest
+app_manifest = /tiny-city/manifest/release.appmanifest
 
 [graphics]
 max_font_batches = 1024
@@ -80,4 +80,8 @@ texture_profiles = /tiny-city/game.texture_profiles
 
 [mesh]
 max_count = 1024
+
+[liveupdate]
+enabled = 0
+mount_on_start = 0
 

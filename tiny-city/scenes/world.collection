@@ -1,4 +1,4 @@
-name: "test"
+name: "world"
 instances {
   id: "sun"
   prototype: "/light_and_shadows/props/sun.go"
@@ -61,10 +61,6 @@ instances {
       type: PROPERTY_TYPE_NUMBER
     }
   }
-}
-instances {
-  id: "render_target_quad"
-  prototype: "/light_and_shadows/props/render_target_quad.go"
 }
 instances {
   id: "bulb"
@@ -1947,16 +1943,16 @@ embedded_instances {
 }
 embedded_instances {
   id: "hills"
-  children: "go"
-  children: "go1"
-  children: "go2"
-  children: "go3"
-  children: "go4"
-  children: "go5"
+  children: "hill_1"
+  children: "hill_2"
+  children: "hill_3"
+  children: "hill_4"
+  children: "hill_5"
+  children: "hill_6"
   data: ""
 }
 embedded_instances {
-  id: "go"
+  id: "hill_1"
   data: "embedded_components {\n"
   "  id: \"model\"\n"
   "  type: \"model\"\n"
@@ -1967,7 +1963,7 @@ embedded_instances {
   "  material: \\\"/light_and_shadows/materials/model/model_instanced.material\\\"\\n"
   "  textures {\\n"
   "    sampler: \\\"tex0\\\"\\n"
-  "    texture: \\\"/tiny-city/assets/textures/ground_bluepng.png\\\"\\n"
+  "    texture: \\\"/tiny-city/assets/textures/ground_blue.png\\\"\\n"
   "  }\\n"
   "}\\n"
   "create_go_bones: false\\n"
@@ -1993,7 +1989,7 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "go1"
+  id: "hill_2"
   data: "embedded_components {\n"
   "  id: \"model\"\n"
   "  type: \"model\"\n"
@@ -2004,7 +2000,7 @@ embedded_instances {
   "  material: \\\"/light_and_shadows/materials/model/model_instanced.material\\\"\\n"
   "  textures {\\n"
   "    sampler: \\\"tex0\\\"\\n"
-  "    texture: \\\"/tiny-city/assets/textures/ground_bluepng.png\\\"\\n"
+  "    texture: \\\"/tiny-city/assets/textures/ground_blue.png\\\"\\n"
   "  }\\n"
   "}\\n"
   "create_go_bones: false\\n"
@@ -2026,7 +2022,7 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "go2"
+  id: "hill_3"
   data: "embedded_components {\n"
   "  id: \"model\"\n"
   "  type: \"model\"\n"
@@ -2037,7 +2033,7 @@ embedded_instances {
   "  material: \\\"/light_and_shadows/materials/model/model_instanced.material\\\"\\n"
   "  textures {\\n"
   "    sampler: \\\"tex0\\\"\\n"
-  "    texture: \\\"/tiny-city/assets/textures/ground_bluepng.png\\\"\\n"
+  "    texture: \\\"/tiny-city/assets/textures/ground_blue.png\\\"\\n"
   "  }\\n"
   "}\\n"
   "create_go_bones: false\\n"
@@ -2070,7 +2066,7 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "go3"
+  id: "hill_4"
   data: "embedded_components {\n"
   "  id: \"model\"\n"
   "  type: \"model\"\n"
@@ -2081,7 +2077,7 @@ embedded_instances {
   "  material: \\\"/light_and_shadows/materials/model/model_instanced.material\\\"\\n"
   "  textures {\\n"
   "    sampler: \\\"tex0\\\"\\n"
-  "    texture: \\\"/tiny-city/assets/textures/ground_bluepng.png\\\"\\n"
+  "    texture: \\\"/tiny-city/assets/textures/ground_blue.png\\\"\\n"
   "  }\\n"
   "}\\n"
   "create_go_bones: false\\n"
@@ -2107,7 +2103,7 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "go5"
+  id: "hill_6"
   data: "embedded_components {\n"
   "  id: \"model\"\n"
   "  type: \"model\"\n"
@@ -2118,7 +2114,7 @@ embedded_instances {
   "  material: \\\"/light_and_shadows/materials/model/model_instanced.material\\\"\\n"
   "  textures {\\n"
   "    sampler: \\\"tex0\\\"\\n"
-  "    texture: \\\"/tiny-city/assets/textures/ground_bluepng.png\\\"\\n"
+  "    texture: \\\"/tiny-city/assets/textures/ground_blue.png\\\"\\n"
   "  }\\n"
   "}\\n"
   "create_go_bones: false\\n"
@@ -2151,7 +2147,7 @@ embedded_instances {
   }
 }
 embedded_instances {
-  id: "go4"
+  id: "hill_5"
   data: "embedded_components {\n"
   "  id: \"model\"\n"
   "  type: \"model\"\n"
@@ -2162,7 +2158,7 @@ embedded_instances {
   "  material: \\\"/light_and_shadows/materials/model/model_instanced.material\\\"\\n"
   "  textures {\\n"
   "    sampler: \\\"tex0\\\"\\n"
-  "    texture: \\\"/tiny-city/assets/textures/ground_bluepng.png\\\"\\n"
+  "    texture: \\\"/tiny-city/assets/textures/ground_blue.png\\\"\\n"
   "  }\\n"
   "}\\n"
   "create_go_bones: false\\n"
