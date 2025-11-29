@@ -2,13 +2,17 @@ name: "plane"
 scale_along_z: 0
 embedded_instances {
   id: "container"
-  children: "plane_boody"
+  children: "plane_body"
   children: "plane_camera"
   children: "plane_prop"
-  data: ""
+  data: "components {\n"
+  "  id: \"plane_fx\"\n"
+  "  component: \"/tiny-city/components/sounds/fxs/plane.sound\"\n"
+  "}\n"
+  ""
 }
 embedded_instances {
-  id: "plane_boody"
+  id: "plane_body"
   data: "embedded_components {\n"
   "  id: \"model\"\n"
   "  type: \"model\"\n"

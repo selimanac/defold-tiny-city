@@ -1,5 +1,5 @@
 [bootstrap]
-main_collection = /tiny-city/scenes/editor.collectionc
+main_collection = /tiny-city/scenes/world.collectionc
 render = /light_and_shadows/render/default.renderc
 
 [script]
@@ -84,4 +84,7 @@ max_count = 1024
 [liveupdate]
 enabled = 0
 mount_on_start = 0
+
+[engine]
+fixed_update_frequency = 72
 

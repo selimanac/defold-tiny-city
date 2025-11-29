@@ -1,0 +1,3 @@
+sound: "/tiny-city/assets/audio/fx/police.wav"
+looping: 1
+group: "police"

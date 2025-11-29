@@ -4,22 +4,22 @@
 -- MIT License
 -----------------------------------------------------------------
 
-local constants = require "light_and_shadows.constants"
-local light = {}
+local constants               = require "light_and_shadows.constants"
+local light                   = {}
 
-light.list = {}
-light.cam_look_at = vmath.vector3()
-light.cam_position = vmath.vector3()
-light.cam_view = vmath.quat()
-local top_v     = vmath.vector3(0, 1, 0)
-light.top_v = top_v
-light.cam_z = 100
+light.list                    = {}
+light.cam_look_at             = vmath.vector3()
+light.cam_position            = vmath.vector3()
+light.cam_view                = vmath.quat()
+local top_v                   = vmath.vector3(0, 1, 0)
+light.top_v                   = top_v
+light.cam_z                   = 100
 
 light.attenuation_coefficient = 1500
 
-local fog_default = vmath.vector4(0.1, 0.2, 0.5, 0.43)
-local fog = vmath.vector4(10, 100, 1, 0.4)
-local ambient_default = vmath.vector4(0.3, 0.2, 0.1, 3)
+local fog_default             = vmath.vector4(0.1, 0.2, 0.5, 0.43)
+local fog                     = vmath.vector4(10, 100, 1, 0.4)
+local ambient_default         = vmath.vector4(0.3, 0.2, 0.1, 3)
 
 ---Setup base light uniform constants
 ---@param fog_color vector4 RGB color
@@ -31,10 +31,10 @@ function light.set_color(fog_color, fog, ambient, clear_color)
     if fog_color then constants.fog_color = fog_color end
     if fog then constants.fog = fog end
     if clear_color then constants.clear_color = clear_color end
-    msg.post("@render:", "clear_color", {color = clear_color or fog_color})
+    msg.post("@render:", "clear_color", { color = clear_color or fog_color })
 end
 
----Setup the camera and the camera look at point positions 
+---Setup the camera and the camera look at point positions
 ---@param cam_rotation quaternion
 ---@param cam_look_at_position vector3
 ---@param cam_position vector3
@@ -54,7 +54,6 @@ end
 
 ---Prepare constants for the render script.
 function light.update(self, dt)
-
     local ind = 1
 
     constants.lights = {}
@@ -62,7 +61,6 @@ function light.update(self, dt)
 
     -- Sort all light sources by distance from a camera looks at point (usually, center of the screen).
     for id, obj in pairs(light.list) do
-
         obj.current_value = obj.current_value or vmath.vector4()
 
         if not obj.static then
@@ -88,13 +86,13 @@ function light.update(self, dt)
             n = 1
         else
             for i = ind, #lights do
-                if distance < lights[i].distance then 
+                if distance < lights[i].distance then
                     n = i
                     break
                 end
             end
         end
-        table.insert(lights, n, {position = obj.position, color = obj.current_value, direction = obj.direction, distance = distance, power = obj.value.w})
+        table.insert(lights, n, { position = obj.position, color = obj.current_value, direction = obj.direction, distance = distance, power = obj.value.w })
 
         -- rotate the light source (particle fx) to look to front of camera view if needed
         if obj.rotate then go.set_rotation(light.cam_view, id) end
@@ -104,10 +102,10 @@ function light.update(self, dt)
     -- Reduce power of light sources depends of distance from camera's look at point.
     -- You may remove this loop.
     for i = ind, #lights do
-        local a = lights[i]
-        local dist  = a.distance / light.attenuation_coefficient
-        dist = dist < 1 and 1 or dist
-        a.color.w = a.power * dist --* dist * dist * dist
+        local a    = lights[i]
+        local dist = a.distance / light.attenuation_coefficient
+        dist       = dist < 1 and 1 or dist
+        a.color.w  = a.power * dist --* dist * dist * dist
         -- print( i, a.color.w, dist )
     end
 
@@ -121,8 +119,6 @@ function light.update(self, dt)
     constants.cam_position.z = light.cam_position.z
 
     constants.cam_z = light.cam_z
-
 end
-
 
 return light

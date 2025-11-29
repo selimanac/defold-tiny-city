@@ -20,10 +20,8 @@ scale_mode = stretch
 [project]
 title = defold-tiny-city
 custom_resources = data
-dependencies#0 = https://github.com/selimanac/defold-random/archive/refs/heads/master.zip
-dependencies#1 = https://github.com/selimanac/defold-daabbcc3d/archive/refs/heads/main.zip
-dependencies#2 = https://github.com/selimanac/defold-graph-pathfinder/archive/refs/heads/main.zip
-dependencies#3 = https://github.com/selimanac/defold-uuid4/archive/refs/heads/master.zip
+dependencies#0 = https://github.com/selimanac/defold-daabbcc3d/archive/refs/heads/main.zip
+dependencies#1 = https://github.com/selimanac/defold-graph-pathfinder/archive/refs/heads/main.zip
 
 [native_extension]
 app_manifest = /release.appmanifest

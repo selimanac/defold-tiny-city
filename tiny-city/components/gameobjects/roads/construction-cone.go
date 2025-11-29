@@ -4,7 +4,7 @@ embedded_components {
   data: "mesh: \"/tiny-city/assets/models/roads/construction-cone.glb\"\n"
   "materials {\n"
   "  name: \"colormap\"\n"
-  "  material: \"/light_and_shadows/materials/model/model_instanced_nocast.material\"\n"
+  "  material: \"/light_and_shadows/materials/model/model_instanced.material\"\n"
   "  textures {\n"
   "    sampler: \"tex0\"\n"
   "    texture: \"/tiny-city/assets/textures/kenney_roads_colormap.png\"\n"

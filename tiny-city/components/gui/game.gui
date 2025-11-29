@@ -1,0 +1,54 @@
+fonts {
+  name: "ttf"
+  font: "/tiny-city/components/fonts/ttf.font"
+}
+nodes {
+  position {
+    x: 24.639704
+    y: 14.542446
+  }
+  size {
+    x: 200.0
+    y: 20.0
+  }
+  type: TYPE_TEXT
+  text: "- MOUSE WHEEL TO ZOOM IN OR OUT\n"
+  "- HOLD RIGHT MOUSE BUTTON TO ROTATE\n"
+  "- PRESS 1 TO MAIN / POLICE / PLANE CAMERA"
+  font: "ttf"
+  id: "text1"
+  xanchor: XANCHOR_LEFT
+  yanchor: YANCHOR_BOTTOM
+  pivot: PIVOT_SW
+  layer: "txt"
+  inherit_alpha: true
+  text_leading: 1.5
+}
+nodes {
+  size {
+    x: 500.0
+    y: 100.0
+  }
+  color {
+    x: 0.2
+    y: 0.302
+    z: 0.702
+  }
+  type: TYPE_BOX
+  id: "box"
+  xanchor: XANCHOR_LEFT
+  yanchor: YANCHOR_BOTTOM
+  pivot: PIVOT_SW
+  layer: "gfx"
+  inherit_alpha: true
+  alpha: 0.44
+  size_mode: SIZE_MODE_AUTO
+}
+layers {
+  name: "gfx"
+}
+layers {
+  name: "txt"
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT

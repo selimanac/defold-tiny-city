@@ -13,7 +13,4 @@ embedded_components {
   "}\n"
   "create_go_bones: false\n"
   ""
-  position {
-    z: -0.017109
-  }
 }

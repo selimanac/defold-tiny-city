@@ -1,9 +1,159 @@
 name: "police_camera"
+instances {
+  id: "red"
+  prototype: "/light_and_shadows/props/bulb.go"
+  position {
+    x: 0.040343
+    y: 0.299539
+    z: -0.119477
+  }
+  component_properties {
+    id: "bulb"
+    properties {
+      id: "color"
+      value: "1.0, 0.0, 1.0, 0.0"
+      type: PROPERTY_TYPE_VECTOR4
+    }
+    properties {
+      id: "power"
+      value: "50.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "light_on"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
+      id: "static"
+      value: "false"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
+      id: "direct"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
+      id: "angle"
+      value: "25.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "smoothness"
+      value: "0.3"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "static_spot"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
+      id: "startfx"
+      value: "false"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
+      id: "rotate"
+      value: "false"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
+      id: "num"
+      value: "1.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+    z: 0.01
+  }
+}
+instances {
+  id: "blue"
+  prototype: "/light_and_shadows/props/bulb.go"
+  position {
+    x: -0.059503
+    y: 0.297145
+    z: -0.124721
+  }
+  component_properties {
+    id: "bulb"
+    properties {
+      id: "color"
+      value: "0.0, 1.0, 0.0, 1.0"
+      type: PROPERTY_TYPE_VECTOR4
+    }
+    properties {
+      id: "power"
+      value: "50.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "light_on"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
+      id: "static"
+      value: "false"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
+      id: "direct"
+      value: "true"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
+      id: "angle"
+      value: "25.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "smoothness"
+      value: "0.3"
+      type: PROPERTY_TYPE_NUMBER
+    }
+    properties {
+      id: "static_spot"
+      value: "false"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
+      id: "startfx"
+      value: "false"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
+      id: "rotate"
+      value: "false"
+      type: PROPERTY_TYPE_BOOLEAN
+    }
+    properties {
+      id: "num"
+      value: "1.0"
+      type: PROPERTY_TYPE_NUMBER
+    }
+  }
+  scale3 {
+    x: 0.01
+    y: 0.01
+    z: 0.01
+  }
+}
 scale_along_z: 0
 embedded_instances {
   id: "container"
+  children: "blue"
   children: "police_camera"
-  data: "embedded_components {\n"
+  children: "red"
+  data: "components {\n"
+  "  id: \"police\"\n"
+  "  component: \"/tiny-city/components/sounds/fxs/police.sound\"\n"
+  "}\n"
+  "embedded_components {\n"
   "  id: \"model\"\n"
   "  type: \"model\"\n"
   "  data: \"mesh: \\\"/tiny-city/assets/models/vehicles/police.glb\\\"\\n"
@@ -46,7 +196,7 @@ embedded_instances {
   "  data: \"aspect_ratio: 1.777778\\n"
   "fov: 1.3\\n"
   "near_z: 0.1\\n"
-  "far_z: 20.0\\n"
+  "far_z: 40.0\\n"
   "auto_aspect_ratio: 1\\n"
   "\"\n"
   "}\n"

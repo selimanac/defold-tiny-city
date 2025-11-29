@@ -1,6 +1,7 @@
 local const                = require("tiny-city.scripts.lib.const")
 local data                 = require("tiny-city.scripts.lib.data")
 local collision            = require("tiny-city.scripts.lib.collision")
+local audio                = require("tiny-city.scripts.lib.audio")
 
 -- =================================
 -- MODULE
@@ -54,15 +55,41 @@ local function add(start_node_id, goal_node_id, vehicle)
 
 	local vehicle_instance
 
+	-- Temp for Police Car
 	if vehicle.HAS_CAMERA then
 		local collection_instance = collectionfactory.create(vehicle.FACTORY, vehicle_position, initial_rotation)
-
+		pprint(collection_instance)
 		vehicle_instance = collection_instance[hash("/container")]
 
 		local police_camera = msg.url(collection_instance[hash("/police_camera")])
 		police_camera.fragment = "police_camera"
 		data.cameras["POLICE_CAMERA"] = police_camera
 		msg.post(data.cameras["POLICE_CAMERA"], "disable")
+
+		local police_fx = msg.url(vehicle_instance)
+		police_fx.fragment = "police"
+		audio.fx["POLICE"] = police_fx
+
+		local blue_light = msg.url(collection_instance[hash("/blue")])
+		blue_light.fragment = "bulb"
+
+		local red_light = msg.url(collection_instance[hash("/red")])
+		red_light.fragment = "bulb"
+
+		local is_red = false
+		timer.delay(1, true, function()
+			if is_red then
+				msg.post(blue_light, "punch", { light = vmath.vector3(0, 0, 0) })
+				msg.post(red_light, "punch", { light = vmath.vector3(0.5, 0.0, 0.2) })
+				is_red = false
+			else
+				msg.post(red_light, "punch", { light = vmath.vector3(0, 0, 0) })
+				msg.post(blue_light, "punch", { light = vmath.vector3(0.5, 0.5, 1) })
+				is_red = true
+			end
+		end)
+
+		--msg.post(blue_light, "punch", { light = false })
 	else
 		vehicle_instance = factory.create(vehicle.FACTORY, vehicle_position, initial_rotation)
 	end

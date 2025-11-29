@@ -34,13 +34,14 @@ function init(self)
 	defaults.current_zoom = self.zoom_offset
 	defaults.camera_zoom = self.zoom
 
+	self.camera_zoom = self.zoom
 	self.pitch_up = true
-	self.is_moving = false
+	self.is_moving = true
 end
 
 function update(self, dt)
-	if self.is_moving then
-		if data.camera_zoom > 17 then
+	--[[if self.is_moving then
+		if self.camera_zoom > 15 then
 			self.zoom_offset = self.zoom_offset - 5 * dt
 		end
 
@@ -51,22 +52,42 @@ function update(self, dt)
 			self.pitch_up = false
 			self.pitch = self.pitch + 2 * dt
 		end
+	end]]
+
+
+	if self.is_moving then
+		-- zoom
+		if self.camera_zoom > 15 then
+			self.zoom_offset = self.zoom_offset - 9 * dt
+			-- else
+			-- 	self.is_moving = false
+		end
+
+		-- original pitch movement
+		local raw_pitch = self.pitch
+
+		if raw_pitch > -30 and self.pitch_up then
+			raw_pitch = raw_pitch - 12 * dt
+		elseif raw_pitch < -20 then
+			self.pitch_up = false
+			raw_pitch = raw_pitch + 12 * dt
+		end
+
+		-- smooth ONLY the final pitch
+		self.pitch = vmath.lerp(0.2, self.pitch, raw_pitch)
 	end
 
 	-- Animate camera rotation and zoom
 	self.current_yaw = vmath.lerp(0.15, self.current_yaw, self.yaw)
 	self.current_pitch = vmath.lerp(0.15, self.current_pitch, self.pitch)
 	self.current_zoom = vmath.lerp(0.15, self.current_zoom, self.zoom_offset)
-	data.camera_zoom = self.zoom + self.current_zoom
-
+	self.camera_zoom = self.zoom + self.current_zoom
 
 	-- Calculate rotation and position
 	local camera_yaw = vmath.quat_rotation_y(math.rad(self.current_yaw))
 	local camera_pitch = vmath.quat_rotation_x(math.rad(self.current_pitch))
 	local camera_rotation = camera_yaw * camera_pitch
 	local camera_position = self.offset + vmath.rotate(camera_rotation, vmath.vector3(0, 0, self.zoom + self.current_zoom))
-
-
 
 	-- Set camera position and rotation
 	go.set_position(camera_position)
