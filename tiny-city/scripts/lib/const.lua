@@ -51,7 +51,7 @@ const.VEHICLE_TYPE        = {
 		SPEED             = 1.5,
 		MAX_SPEED         = 3.8,
 		FACTORY           = "/vehicles/factories#police_camera",
-		ROTATION_SPEED    = 10.0,
+		ROTATION_SPEED    = 13.0,
 		ACCELERATION_RATE = 1.7,
 		BRAKE_RATE        = 7.0,
 	},
@@ -67,7 +67,7 @@ const.VEHICLE_TYPE        = {
 		SPEED             = 0.5,
 		MAX_SPEED         = 1.2,
 		FACTORY           = "/vehicles/factories#van",
-		ROTATION_SPEED    = 5.0,
+		ROTATION_SPEED    = 3.0,
 		ACCELERATION_RATE = 0.4,
 		BRAKE_RATE        = 7.0,
 
@@ -76,7 +76,7 @@ const.VEHICLE_TYPE        = {
 		SPEED             = 0.5,
 		MAX_SPEED         = 2.7,
 		FACTORY           = "/vehicles/factories#fire",
-		ROTATION_SPEED    = 5.0,
+		ROTATION_SPEED    = 8.0,
 		ACCELERATION_RATE = 0.3,
 		BRAKE_RATE        = 7.0,
 
@@ -85,7 +85,7 @@ const.VEHICLE_TYPE        = {
 		SPEED             = 0.5,
 		MAX_SPEED         = 0.7,
 		FACTORY           = "/vehicles/factories#garbage",
-		ROTATION_SPEED    = 5.0,
+		ROTATION_SPEED    = 2.0,
 		ACCELERATION_RATE = 0.4,
 		BRAKE_RATE        = 7.0,
 
@@ -94,7 +94,7 @@ const.VEHICLE_TYPE        = {
 		SPEED             = 1.5,
 		MAX_SPEED         = 2.5,
 		FACTORY           = "/vehicles/factories#sedan",
-		ROTATION_SPEED    = 5.0,
+		ROTATION_SPEED    = 8.0,
 		ACCELERATION_RATE = 0.5,
 		BRAKE_RATE        = 5.0,
 
@@ -149,7 +149,7 @@ const.VEHICLE_CONTROL     = {
 	OPPOSITE_DIRECTION_THRESHOLD       = -0.1,
 	OPPOSITE_DIRECTION_BREAK_THRESHOLD = 0.5,
 
-	ROTATION_SPEED_THRESHOLD           = 0.005,
+	ROTATION_SPEED_THRESHOLD           = 0.01,
 	ARRIVAL_THRESHOLD                  = 0.2
 }
 

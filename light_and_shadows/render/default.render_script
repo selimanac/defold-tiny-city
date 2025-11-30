@@ -224,6 +224,12 @@ function update(self)
         end
     end
 
+    --=============================================
+    -- DoF Update
+    --=============================================
+    dof.render_update(self)
+    --=============================================
+
     -- L_S Injection
     light_and_shadows.update(self)
     --
@@ -246,7 +252,6 @@ function update(self)
 
     render.set_viewport(0, 0, state.window_width, state.window_height)
 
-
     -- set states used for all the world predicates
     render.set_blend_func(graphics.BLEND_FACTOR_SRC_ALPHA, graphics.BLEND_FACTOR_ONE_MINUS_SRC_ALPHA)
     render.enable_state(graphics.STATE_DEPTH_TEST)
@@ -256,7 +261,6 @@ function update(self)
     render.clear(state.clear_buffers)
 
     render.enable_texture("tex1", self.shadowmap_buffer, graphics.BUFFER_TYPE_COLOR0_BIT) -- enable shadowmap texture
-
 
     -- render `skybox`
     -- https://www.ogldev.org/www/tutorial25/tutorial25.html
@@ -270,16 +274,11 @@ function update(self)
     render.set_cull_face(graphics.FACE_TYPE_BACK)
     render.disable_state(graphics.STATE_CULL_FACE)
 
-
     -- render `model` predicate for default 3D material
     --
     render.enable_state(graphics.STATE_CULL_FACE)
     render.draw(predicates.model, draw_options_world)
     render.set_depth_mask(false)
-    render.enable_state(graphics.STATE_BLEND) -- Enable Alpha Blending for semi-transparent materials
-    -- render.set_blend_func(render.BLEND_ONE, render.BLEND_ONE) -- Enable this if wants to ADD blending
-    --  render.draw(predicates.model_alpha_blend, draw_options_world)
-    -- render.set_blend_func(graphics.BLEND_FACTOR_SRC_ALPHA, graphics.BLEND_FACTOR_ONE_MINUS_SRC_ALPHA) -- reset blend function
     render.disable_state(graphics.STATE_CULL_FACE)
 
     -- render the other components: sprites, tilemaps, particles etc
@@ -291,17 +290,9 @@ function update(self)
 
     render.disable_texture("tex1")
 
-    --=============================================
-    -- DoF Update
-    --=============================================
-    dof.render_update(self, state, predicates, draw_options_world)
-    --=============================================
-
-
     render.draw_debug3d()
 
     reset_camera_world(state)
-
 
     --=============================================
     -- DoF Render

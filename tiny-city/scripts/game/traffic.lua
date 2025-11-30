@@ -201,7 +201,7 @@ function traffic.update(dt)
 						local target_angle     = math.atan2(direction.x, direction.z)
 						local target_rotation  = vmath.quat_rotation_y(target_angle)
 						local current_rotation = vehicle.rotation
-						local t                = math.min(1.0, vehicle.rotation_speed * dt)
+						local t                = math.min(0.5, vehicle.rotation_speed * dt)
 
 						vehicle.rotation       = vmath.slerp(t, current_rotation, target_rotation)
 						vehicle.rotation_angle = target_angle -- For reference

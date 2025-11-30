@@ -22,8 +22,8 @@ local function set_dof()
 		dof.set_focus(0.5, 0.45)
 	elseif data.current_camera == "POLICE_CAMERA" then
 		--dof.set_dof_mode(1, 50)
-		dof.set_dof_mode(1, 50)
-		dof.set_distance(0.3, 30.0)
+		dof.set_dof_mode(1, 20)
+		dof.set_distance(1.0, 30.0)
 		dof.set_focus(0.5, 0.45)
 	elseif data.current_camera == "PLANE_CAMERA" then
 		dof.set_dof_mode(1, 10)

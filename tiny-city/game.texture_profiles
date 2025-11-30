@@ -9,7 +9,7 @@ profiles {
     formats {
       format: TEXTURE_FORMAT_RGBA
       compressor: "BasisU"
-      compressor_preset: "BASISU_MEDIUM"
+      compressor_preset: "BASISU_HIGH"
     }
     mipmaps: true
   }
