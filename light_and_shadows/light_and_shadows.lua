@@ -65,54 +65,6 @@ local BUFFER_RESOLUTION = 4096 -- Size of shadow map. Select value from: 1024/20
 -- This value also depends on camera zoom. Feel free to adjust it.
 local PROJECTION_RESOLUTION = 400
 
-local rt_list = {}
-light_and_shadows.rt_list = rt_list
-
-function light_and_shadows.render_target(name, w, h, no_depth)
-    local already_rt = rt_list[name]
-    if already_rt and already_rt.w == w and already_rt.h == h then
-        -- nothing changed
-        return already_rt
-    elseif already_rt then
-        -- rt is already created, but size is changing. Fix it.
-        already_rt.w = w
-        already_rt.h = h
-        render.set_render_target_size(already_rt.rt, w, h)
-        -- pprint(already_rt)
-        return already_rt
-    end
-
-    --otherwise create a new RT
-
-    local color_params = {
-        format     = graphics.TEXTURE_FORMAT_RGBA,
-        width      = w,
-        height     = h,
-        min_filter = graphics.TEXTURE_FILTER_LINEAR,
-        mag_filter = graphics.TEXTURE_FILTER_LINEAR,
-        u_wrap     = graphics.TEXTURE_WRAP_CLAMP_TO_EDGE,
-        v_wrap     = graphics.TEXTURE_WRAP_CLAMP_TO_EDGE
-    }
-
-    local rt
-    if not no_depth then
-        local depth_params = {
-            flags  = render.TEXTURE_BIT,        -- this will create the depth buffer as a texture
-            format = graphics.TEXTURE_FORMAT_DEPTH,
-            width  = w,
-            height = h,
-            u_wrap = graphics.TEXTURE_WRAP_CLAMP_TO_EDGE,
-            v_wrap = graphics.TEXTURE_WRAP_CLAMP_TO_EDGE
-        }
-
-        rt = render.render_target(name, { [graphics.BUFFER_TYPE_COLOR0_BIT] = color_params, [graphics.BUFFER_TYPE_DEPTH_BIT] = depth_params })
-    else
-        rt = render.render_target(name, { [graphics.BUFFER_TYPE_COLOR0_BIT] = color_params })
-    end
-    local new_rt = { rt = rt, w = w, h = h }
-    rt_list[name] = new_rt
-    return new_rt
-end
 
 -- special vector4 for transfer our settings to the shader program
 local param = vmath.vector4(0, 0, 0, 0)
@@ -132,7 +84,36 @@ end
 
 function light_and_shadows.init(self)
     -- self.shadowmap_buffer = light_and_shadows.create_depth_buffer(BUFFER_RESOLUTION, BUFFER_RESOLUTION)
-    self.shadowmap_buffer = "shadowmap"
+
+    local color_params = {
+        format = graphics.TEXTURE_FORMAT_RGBA,
+        width = 4096,
+        height = 4096,
+        min_filter = graphics.TEXTURE_FILTER_LINEAR,
+        mag_filter = graphics.TEXTURE_FILTER_LINEAR,
+        u_wrap = graphics.TEXTURE_WRAP_CLAMP_TO_EDGE,
+        v_wrap = graphics.TEXTURE_WRAP_CLAMP_TO_EDGE
+    }
+
+    local depth_params = {
+        format     = graphics.TEXTURE_FORMAT_DEPTH,
+        width      = 4096,
+        height     = 4096,
+        min_filter = graphics.TEXTURE_FILTER_NEAREST,
+        mag_filter = graphics.TEXTURE_FILTER_NEAREST,
+        u_wrap     = graphics.TEXTURE_WRAP_CLAMP_TO_EDGE,
+        v_wrap     = graphics.TEXTURE_WRAP_CLAMP_TO_EDGE,
+        flags      = render.TEXTURE_BIT
+    }
+
+    self.shadowmap_buffer = render.render_target(
+        "shadowmap_buffer",
+        {
+            [graphics.BUFFER_TYPE_COLOR0_BIT] = color_params,
+            [graphics.BUFFER_TYPE_DEPTH_BIT] = depth_params
+        })
+
+    -- self.shadowmap_buffer = "shadowmap"
 
     -- Use this for directional lights
     light_and_shadows.set_orthographic_projection(PROJECTION_RESOLUTION, PROJECTION_RESOLUTION, -500, 500)
@@ -291,123 +272,13 @@ function light_and_shadows.render_shadows(self)
     render.set_render_target(render.RENDER_TARGET_DEFAULT)
 end
 
---
--- local common    = require 'helper.common'
 light_and_shadows.zoom = 1
-local resolution = vmath.vector4()
-local dof = vmath.vector4()
+
+
 function light_and_shadows.update(self)
     light_and_shadows.update_light(self)
-    if light_and_shadows.shadow then
-        light_and_shadows.render_shadows(self)
-    end
-
-    if light_and_shadows.upscale then
-        local window_width = render.get_window_width()
-        local window_height = render.get_window_height()
-        local zoom = math.max(window_width / render.get_width(), window_height / render.get_height())
-        light_and_shadows.zoom = zoom
-        local w = window_width / zoom
-        local h = window_height / zoom
-        self.main_rt = light_and_shadows.render_target('main_rt', w, h)
-    end
-
-    if light_and_shadows.mix or light_and_shadows.blur then
-        local window_width = render.get_window_width()
-        local window_height = render.get_window_height()
-        if not light_and_shadows.upscale then
-            -- if we don't use upscale then create RT in the full window resolution
-            local w = window_width
-            local h = window_height
-            self.main_rt = light_and_shadows.render_target('main_rt', w, h)
-        end
-
-        -- Blur RT resolution
-        local zoom                = math.max(window_width / render.get_width(), window_height / render.get_height())
-        zoom                      = math.max(light_and_shadows.blur_resolution, zoom)
-        local w                   = window_width / zoom
-        local h                   = window_height / zoom
-        resolution.x              = w
-        resolution.y              = h
-        resolution.w              = light_and_shadows.blur_power
-        self.constants.resolution = resolution
-
-        dof.x                     = constants.near_z
-        dof.y                     = constants.far_z
-        dof.z                     = constants.cam_z
-        dof.w                     = constants.focus_range
-        self.constants.dof        = dof
-        -- local coef = dof.z / ((dof.y - dof.x));
-        -- print(self.constants.dof, coef)
-
-        self.blur_rt              = light_and_shadows.render_target("blur_rt", w, h, true)
-        self.blur_final           = light_and_shadows.render_target("blur_final", w, h, true)
-    else
-        -- common.zoom = 1
-        light_and_shadows.zoom = 1
-    end
-end
-
-local IDENTITY = vmath.matrix4()
--- Draw our RT to Default render surface
-function light_and_shadows.draw_upscaled(self)
-    local window_width = render.get_window_width()
-    local window_height = render.get_window_height()
-
-    if light_and_shadows.mix or light_and_shadows.blur then
-        -- Blur the render target in 2 passes
-        render.disable_state(graphics.STATE_BLEND)
-        render.disable_state(graphics.STATE_DEPTH_TEST)
-        render.set_depth_mask(false)
-        render.set_view(IDENTITY)
-        render.set_projection(IDENTITY)
-        render.set_viewport(0, 0, self.blur_rt.w, self.blur_rt.h)
-        -- PASS 1 main_rt -> blur_rt
-        render.set_render_target(self.blur_rt.rt)
-        render.enable_material("blur_horizontal")
-        render.enable_texture(0, self.main_rt.rt, graphics.BUFFER_TYPE_COLOR0_BIT)
-        render.draw(self.predicates.upscale, { constants = self.constants })
-        render.disable_texture(0)
-        render.disable_material()
-        -- PASS 2 blur_rt -> blur_final
-        render.set_render_target(self.blur_final.rt)
-        render.enable_material("blur_vertical")
-        render.enable_texture(0, self.blur_rt.rt, graphics.BUFFER_TYPE_COLOR0_BIT)
-        render.draw(self.predicates.upscale, { constants = self.constants })
-        render.disable_texture(0)
-        render.disable_material()
-        render.set_render_target(render.RENDER_TARGET_DEFAULT)
-    end
-
-    -- draw `main_rt` to default RT
-    -- render.disable_state(graphics.STATE_BLEND)
-    render.set_viewport(0, 0, window_width, window_height)
-    render.set_view(IDENTITY)
-    render.set_projection(IDENTITY)
-    if light_and_shadows.mix and self.blur_final then
-        render.enable_material("mix")
-        render.enable_texture("tex0", self.main_rt.rt, graphics.BUFFER_TYPE_COLOR0_BIT)
-        render.enable_texture("tex1", self.blur_final.rt, graphics.BUFFER_TYPE_COLOR0_BIT)
-        render.enable_texture("depth", self.main_rt.rt, graphics.BUFFER_TYPE_DEPTH_BIT)
-        render.draw(self.predicates.upscale, { constants = self.constants })
-        render.disable_texture("tex0")
-        render.disable_texture("tex1")
-        render.disable_texture("depth")
-        render.disable_material()
-    elseif light_and_shadows.blur then
-        render.enable_material("copy")
-        render.enable_texture("tex0", self.blur_final.rt, graphics.BUFFER_TYPE_COLOR0_BIT)
-        render.draw(self.predicates.upscale)
-        render.disable_texture("tex0")
-        render.disable_material()
-    else
-        render.enable_material("copy")
-        render.enable_texture("tex0", self.main_rt.rt, graphics.BUFFER_TYPE_COLOR0_BIT)
-        render.draw(self.predicates.upscale)
-        render.disable_texture("tex0")
-        render.disable_material()
-    end
-    render.enable_state(graphics.STATE_BLEND)
+    light_and_shadows.render_shadows(self)
+    light_and_shadows.zoom = 1
 end
 
 return light_and_shadows

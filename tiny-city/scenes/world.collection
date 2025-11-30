@@ -2135,6 +2135,10 @@ instances {
     z: 3.0
   }
 }
+instances {
+  id: "render_target"
+  prototype: "/dof/render_target.go"
+}
 collection_instances {
   id: "vehicles"
   collection: "/tiny-city/components/collections/vehicles.collection"

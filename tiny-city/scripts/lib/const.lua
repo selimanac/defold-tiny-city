@@ -48,11 +48,11 @@ const.VEHICLE_TYPE        = {
 
 	POLICE = {
 		HAS_CAMERA        = true,
-		SPEED             = 0.5,
-		MAX_SPEED         = 2.2,
+		SPEED             = 1.5,
+		MAX_SPEED         = 3.8,
 		FACTORY           = "/vehicles/factories#police_camera",
-		ROTATION_SPEED    = 6.0,
-		ACCELERATION_RATE = 0.3,
+		ROTATION_SPEED    = 10.0,
+		ACCELERATION_RATE = 1.7,
 		BRAKE_RATE        = 7.0,
 	},
 	TAXI = {

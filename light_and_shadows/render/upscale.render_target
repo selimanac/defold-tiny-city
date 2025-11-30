@@ -2,6 +2,10 @@ color_attachments {
   width: 1600
   height: 900
 }
+color_attachments {
+  width: 128
+  height: 128
+}
 depth_stencil_attachment {
   width: 1600
   height: 900

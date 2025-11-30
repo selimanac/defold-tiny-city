@@ -78,7 +78,7 @@ local function add(start_node_id, goal_node_id, vehicle)
 		red_light.fragment = "bulb"
 
 		local is_red = false
-		timer.delay(1, true, function()
+		timer.delay(0.5, true, function()
 			if is_red then
 				msg.post(blue_light, "punch", { light = vmath.vector3(0, 0, 0) })
 				msg.post(red_light, "punch", { light = vmath.vector3(0.5, 0.0, 0.2) })

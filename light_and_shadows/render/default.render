@@ -4,10 +4,6 @@ render_resources {
   path: "/light_and_shadows/materials/shadow/shadow.material"
 }
 render_resources {
-  name: "shadowmap"
-  path: "/light_and_shadows/render/shadowmap.render_target"
-}
-render_resources {
   name: "shadow_local"
   path: "/light_and_shadows/materials/shadow/shadow_local.material"
 }
@@ -24,18 +20,6 @@ render_resources {
   path: "/light_and_shadows/materials/shadow/skinned/shadow_skinned.material"
 }
 render_resources {
-  name: "blur_horizontal"
-  path: "/light_and_shadows/materials/post/blur_horizontal/blur_horizontal.material"
-}
-render_resources {
-  name: "blur_vertical"
-  path: "/light_and_shadows/materials/post/blur_horizontal/blur_vertical.material"
-}
-render_resources {
-  name: "copy"
-  path: "/light_and_shadows/materials/copy/copy.material"
-}
-render_resources {
   name: "shadow_instanced_billboard"
   path: "/light_and_shadows/materials/shadow/shadow_instanced_billboard.material"
 }
@@ -44,6 +28,14 @@ render_resources {
   path: "/light_and_shadows/materials/shadow/shadow_instanced_textured.material"
 }
 render_resources {
-  name: "mix"
-  path: "/light_and_shadows/materials/post/mix/mix.material"
+  name: "dof_gaussian_blur_v"
+  path: "/dof/materials/gaussian_blur/gaussian_blur_v.material"
+}
+render_resources {
+  name: "dof_gaussian_blur_h"
+  path: "/dof/materials/gaussian_blur/gaussian_blur_h.material"
+}
+render_resources {
+  name: "dof"
+  path: "/dof/materials/dof.material"
 }

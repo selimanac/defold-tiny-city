@@ -325,7 +325,7 @@ function dof.render_update(self, state, predicates, draw_options_world)
 	self.dof_constant_buffer.camera_params = camera_params
 	-- self.dof_constant_buffer.blur_params = blur_params  - uncomment to use box blur instead
 
-	-- ==================================================================
+	--[[-- ==================================================================
 	-- DOF - Draw Models to Scene Render Target with Depth
 	-- ==================================================================
 
@@ -337,7 +337,7 @@ function dof.render_update(self, state, predicates, draw_options_world)
 	--render.set_depth_mask(false)
 	render.disable_state(graphics.STATE_CULL_FACE)
 	-- ==================================================================
-	render.set_render_target(render.RENDER_TARGET_DEFAULT)
+	render.set_render_target(render.RENDER_TARGET_DEFAULT)]]
 end
 
 --- Apply blur and composite the final DoF result.
@@ -398,30 +398,16 @@ function dof.render(self, state, predicates)
 	render.disable_material()
 	-- ==================================================================
 
-	--[[
-	-- ==================================================================
-	-- DOF - Box blur
-	-- Alternative to gaussian blur - uncomment to use box blur instead, and comment out Gaussian blur above)
-	-- ==================================================================
-	render.set_render_target(self.dof_blur_rt, { transient = { graphics.BUFFER_TYPE_DEPTH_BIT } })
-	render.set_render_target_size(self.dof_blur_rt, state.window_width, state.window_height)
-	render.enable_material("box_blur")
-	render.enable_texture("tex0", self.scene_rt, graphics.BUFFER_TYPE_COLOR0_BIT)
-	render.draw(predicates.dof_rt, { constants = self.dof_constant_buffer })
-	render.disable_texture("tex0")
-	render.disable_material()
-	-- ==================================================================
-]]
 
 	-- ==================================================================
 	-- DOF - Render Final Result
 	-- ==================================================================
 	render.set_render_target(render.RENDER_TARGET_DEFAULT)
 	render.enable_material("dof")
-	render.enable_texture("tex0", self.upscale_rt.rt, graphics.BUFFER_TYPE_COLOR0_BIT)
+	render.enable_texture("tex0", self.scene_rt, graphics.BUFFER_TYPE_COLOR0_BIT)
 	render.enable_texture("tex_blur", self.dof_blur_rt, graphics.BUFFER_TYPE_COLOR0_BIT)
 	render.enable_texture("tex_depth", self.scene_rt, graphics.BUFFER_TYPE_DEPTH_BIT)
-	render.draw(predicates.upscale, { constants = self.dof_constant_buffer })
+	render.draw(predicates.dof_rt, { constants = self.dof_constant_buffer })
 	render.disable_texture("tex0")
 	render.disable_texture("tex_blur")
 	render.disable_texture("tex_depth")
