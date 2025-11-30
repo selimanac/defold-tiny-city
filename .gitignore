@@ -18,3 +18,5 @@ RELEASE-NOTES.md
 .luarc.json
 /.cache
 _codeql_detected_source_root
+/tiny-city/release/bundle
+bob.jar
