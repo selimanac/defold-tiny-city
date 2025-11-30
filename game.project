@@ -13,6 +13,7 @@ samples = 3
 
 [android]
 input_method = HiddenInputField
+package = com.defold.tinycity
 
 [html5]
 scale_mode = stretch
@@ -28,10 +29,10 @@ dependencies#3 = https://github.com/britzl/extension-imgui/archive/refs/heads/ma
 dependencies#4 = https://github.com/selimanac/defold-graph-pathfinder/archive/refs/heads/main.zip
 
 [osx]
-bundle_identifier = com.defold.example.basic3d
+bundle_identifier = com.defold.tinycity
 
 [ios]
-bundle_identifier = com.defold.example.basic3d
+bundle_identifier = com.defold.tinycity
 
 [graph_editor]
 folder = data

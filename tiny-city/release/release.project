@@ -13,6 +13,13 @@ samples = 3
 
 [android]
 input_method = HiddenInputField
+package = com.defold.tinycity
+
+[osx]
+bundle_identifier = com.defold.tinycity
+
+[ios]
+bundle_identifier = com.defold.tinycity
 
 [html5]
 scale_mode = stretch
@@ -26,8 +33,6 @@ dependencies#2 = https://github.com/selimanac/defold-uuid4/archive/refs/heads/ma
 
 [native_extension]
 app_manifest = /tiny-city/manifest/release.appmanifest
-
-
 
 [daabbcc]
 max_gameobject_count = 32
