@@ -4,7 +4,7 @@ local pathfinder_debug = require("tiny-city.scripts.lib.pathfinder_debug")
 function init(self)
 	msg.post(".", "acquire_input_focus")
 
-	--	profiler.enable_ui(true)
+	--profiler.enable_ui(true)
 	-- profiler.set_ui_view_mode(profiler.VIEW_MODE_MINIMIZED)
 
 	game_manager.init()

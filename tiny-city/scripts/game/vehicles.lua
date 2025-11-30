@@ -20,7 +20,7 @@ local function add(start_node_id, goal_node_id, vehicle)
 	local path_status_text = ""
 	local path = {}
 
-	-- Get unsmoothed path (node-to-node) for raycasting and collision detection
+	-- Get unsmoothed path
 	path_size, path_status, path_status_text, path = pathfinder.find_node_to_node(start_node_id, goal_node_id, 256)
 
 	if path_status ~= pathfinder.PathStatus.SUCCESS then
@@ -31,7 +31,6 @@ local function add(start_node_id, goal_node_id, vehicle)
 	-- Get return path to create a loop
 	local second_path_size, second_path_status, second_path_status_text, second_path = pathfinder.find_node_to_node(goal_node_id, start_node_id, 256)
 
-
 	if second_path_status ~= pathfinder.PathStatus.SUCCESS then
 		print(path_status_text)
 		return
@@ -39,7 +38,7 @@ local function add(start_node_id, goal_node_id, vehicle)
 
 	local total_path_size = path_size + second_path_size
 
-	-- Combine both paths for continuous looping
+	-- Combine both paths
 	for _, v in ipairs(second_path) do
 		path[#path + 1] = v
 	end
@@ -47,12 +46,11 @@ local function add(start_node_id, goal_node_id, vehicle)
 	-- Generate smoothed path
 	local smoothed_size, smoothed_path = pathfinder.smooth_path(data.path_smoothing_id, path)
 
-	-- Calculate initial position and rotation
+	-- Calculate initials
 	local vehicle_position             = vmath.vector3(path[1].x, 0, path[1].y)
 	local target_position              = vmath.vector3(path[2].x, 0, path[2].y)
 	local direction                    = target_position - vehicle_position
 	local initial_rotation             = vmath.quat_rotation_y(math.atan2(direction.x, direction.z))
-
 	local vehicle_instance
 
 	-- Temp patch for Police Car
@@ -95,10 +93,9 @@ local function add(start_node_id, goal_node_id, vehicle)
 		vehicle_instance = factory.create(vehicle.FACTORY, vehicle_position, initial_rotation)
 	end
 
-
-	local aabb_id  = collision.insert_gameobject(vehicle_instance, 0.4, 1, 0.4, collision.COLLISION_BITS.VEHICLE)
-	vehicles.count = vehicles.count + 1
-
+	-- Add aabb
+	local aabb_id                        = collision.insert_gameobject(vehicle_instance, 0.4, 1, 0.4, collision.COLLISION_BITS.VEHICLE)
+	vehicles.count                       = vehicles.count + 1
 
 	local vehicle_agent                  = {
 		uuid                 = uuid4.generate(),
@@ -212,11 +209,10 @@ function vehicles.set_speed(vehicle, dt)
 	-- Update speed
 	vehicle.speed = vehicle.speed + speed_change
 
-	-- Clamp speed to valid range [0, max_speed]
+	-- Clamp speed
 	vehicle.speed = math.max(0, math.min(vehicle.speed, vehicle.max_speed))
 end
 
--- Determine appropriate throttle/brake based on target speed and distance to obstacle
 function vehicles.calculate_throttle_brake(vehicle, distance_to_obstacle, target_vehicle_speed)
 	-- Reset
 	vehicle.throttle = 0
@@ -241,13 +237,13 @@ function vehicles.calculate_throttle_brake(vehicle, distance_to_obstacle, target
 		local adjusted_medium = medium_distance * speed_scale
 		local adjusted_far = far_distance * speed_scale
 
-		-- There's an obstacle ahead
+		-- Obstacle ahead
 		if distance_to_obstacle < adjusted_critical then
 			-- Emergency braking
 			vehicle.brake = 1.0
 			vehicle.target_speed = 0
 		elseif distance_to_obstacle < adjusted_near then
-			-- Heavy braking - match or slightly slower than vehicle ahead
+			-- Heavy braking
 			vehicle.brake = 0.8
 			vehicle.target_speed = math.max(0, target_vehicle_speed * 0.8)
 		elseif distance_to_obstacle < adjusted_medium then
@@ -261,22 +257,22 @@ function vehicles.calculate_throttle_brake(vehicle, distance_to_obstacle, target
 			end
 			vehicle.target_speed = target_vehicle_speed
 		else
-			-- Far enough - maintain speed or accelerate to max
+			-- Far enough, accelerate to max
 			vehicle.target_speed = vehicle.max_speed
 		end
 	else
-		-- No obstacle - accelerate to max speed
+		-- No obstacle, accelerate to max
 		vehicle.target_speed = vehicle.max_speed
 	end
 
-	-- Apply throttle if current speed is below target speed and not braking
+	-- Apply throttle
 	if vehicle.brake == 0 and vehicle.speed < vehicle.target_speed then
 		local speed_difference = vehicle.target_speed - vehicle.speed
 		vehicle.throttle = math.min(1.0, speed_difference / vehicle.max_speed)
 	end
 end
 
--- Release the reservation on a node
+-- Release the reservation
 function vehicles.release_node_reservation(vehicle, vehicle_id)
 	if vehicle.reserved_node_id then
 		-- Only release if we are the one who reserved it
@@ -287,8 +283,7 @@ function vehicles.release_node_reservation(vehicle, vehicle_id)
 	end
 end
 
--- Try to reserve the next node for this vehicle
--- Returns true if reservation successful, false if node already reserved
+-- Reserve the next node
 function vehicles.reserve_node(vehicle, vehicle_id, node_id)
 	if not node_id then
 		return false
@@ -296,11 +291,9 @@ function vehicles.reserve_node(vehicle, vehicle_id, node_id)
 
 	-- Check if node is already reserved
 	if data.node_reservations[node_id] then
-		-- Node is reserved by another vehicle
 		if data.node_reservations[node_id] ~= vehicle_id then
 			return false
 		end
-		-- Already reserved by this vehicle
 		return true
 	end
 
@@ -310,8 +303,7 @@ function vehicles.reserve_node(vehicle, vehicle_id, node_id)
 	return true
 end
 
--- Get the node ID from the path at a given waypoint index
--- Returns the pathfinder node ID (not the position)
+-- Get the node ID
 function vehicles.get_node_id_at_waypoint(vehicle, waypoint_offset)
 	waypoint_offset = waypoint_offset or 0
 	local target_id = vehicle.current_waypoint_id + waypoint_offset
@@ -323,8 +315,7 @@ function vehicles.get_node_id_at_waypoint(vehicle, waypoint_offset)
 	return vehicle.path[target_id].id
 end
 
--- Check if the next node is reserved by another vehicle
--- Returns true if blocked, along with the distance to the reserved node
+-- Check if the next node is reserved
 function vehicles.is_next_node_reserved(vehicle, vehicle_id)
 	-- Get the next node we're heading to
 	local next_node_id = vehicles.get_node_id_at_waypoint(vehicle, 0)
@@ -333,11 +324,9 @@ function vehicles.is_next_node_reserved(vehicle, vehicle_id)
 		return false, nil
 	end
 
-	-- Check if it's reserved by someone else
 	local reserving_vehicle_id = data.node_reservations[next_node_id]
-	if reserving_vehicle_id and reserving_vehicle_id ~= vehicle_id then
-		-- Calculate distance to this node
 
+	if reserving_vehicle_id and reserving_vehicle_id ~= vehicle_id then
 		vehicles.get_raycast_target_position(vehicle, 0, target_node_position)
 
 		if target_node_position then
@@ -355,7 +344,7 @@ function vehicles.get_vehicle_from_aabb(aabb_id)
 	return data.vehicles[vehicle_id]
 end
 
--- Get waypoint position from original (unsmoothed) path for raycasting
+-- Get waypoint position
 function vehicles.get_raycast_target_position(vehicle, waypoint_offset, waypoint_position)
 	waypoint_offset = waypoint_offset or 0
 	local target_id = vehicle.current_waypoint_id + waypoint_offset
@@ -372,7 +361,7 @@ function vehicles.get_raycast_target_position(vehicle, waypoint_offset, waypoint
 	--return vmath.vector3(node.x, 0, node.y)
 end
 
--- Get waypoint position from smoothed path for vehicle movement
+-- Get waypoint position from smoothed path
 function vehicles.get_current_waypoint_position(vehicle, waypoint_position)
 	if vehicle.smoothed_waypoint_id > vehicle.smoothed_path_size then
 		return vehicle.position -- No waypoint, stay in place
@@ -394,9 +383,9 @@ function vehicles.check_waypoint(vehicle)
 	vehicles.get_current_waypoint_position(vehicle, waypoint_position)
 	local waypoint_distance = vmath.length(vehicle.position - waypoint_position)
 
-	-- Simple arrival threshold - very tight for point-to-point movement
+	--  arrival threshold
 	if waypoint_distance <= const.VEHICLE_CONTROL.ARRIVAL_THRESHOLD then
-		-- Reached waypoint, advance to next
+		-- Reached waypoint, to next
 		vehicle.smoothed_waypoint_id = vehicle.smoothed_waypoint_id + 1
 
 		if vehicle.smoothed_waypoint_id > vehicle.smoothed_path_size then
@@ -404,10 +393,10 @@ function vehicles.check_waypoint(vehicle)
 			return true
 		end
 
-		return true -- Advanced to next waypoint
+		return true
 	end
 
-	return false -- Not yet arrived
+	return false
 end
 
 return vehicles

@@ -1,9 +1,9 @@
-local const   = {}
+local const               = {}
 
-const.EPSILON = 0.0001 -- Minimum distance for movement calculations
-const.HUGE    = math.huge
+const.EPSILON             = 0.0001 -- Minimum distance for movement calculations
+const.HUGE                = math.huge
 
-const.COLORS  = {
+const.COLORS              = {
 	RED       = vmath.vector4(1, 0, 0, 1),
 	GREEN     = vmath.vector4(0, 1, 0, 1),
 	YELLOW    = vmath.vector4(1, 1, 0, 1),
@@ -12,9 +12,7 @@ const.COLORS  = {
 	DARK_GRAY = vmath.vector4(0.3, 0.3, 0.3, 1)
 }
 
-
-
-const.SMOOTHING_CONFIG = {
+const.SMOOTHING_CONFIG    = {
 	style                               = pathfinder.PathSmoothStyle.BEZIER_CUBIC,
 	bezier_sample_segment               = 12, -- Number of segments per curve
 	bezier_control_point_offset         = 0.3, -- For bezier_cubic style
@@ -25,8 +23,7 @@ const.SMOOTHING_CONFIG = {
 	bezier_arc_radius                   = 0.3, -- For circular_arc style
 }
 
-
-const.VEHICLE_STATE = {
+const.VEHICLE_STATE       = {
 	INACTIVE       = 0, -- Not in navigation system
 	ACTIVE         = 1, -- Following path
 	PAUSED         = 2, -- Paused by application
@@ -34,14 +31,12 @@ const.VEHICLE_STATE = {
 	ARRIVED        = 4, -- Reached goal,
 	WAITTING_ORDER = 5
 }
-
-const.SPEED_LIMITS = {
+const.SPEED_LIMITS        = {
 	MID  = 0.4,
 	HIGH = 1.2
 }
 
-
-const.VEHICLE_TYPE = {
+const.VEHICLE_TYPE        = {
 	AMBULANCE = {
 		SPEED             = 0.5,
 		MAX_SPEED         = 2.0,
@@ -133,32 +128,23 @@ const.VEHICLE_TYPE = {
 	},
 }
 
-
-
 const.TRAFFIC_LIGHT_STATE = {
 	RED = 0,
 	YELLOW = 1,
 	GREEN = 2,
 }
 
--- Vehicle control constants for brake and throttle system
-const.VEHICLE_CONTROL = {
-
-
-	-- Distance-based braking zones (in units)
-	-- These are base values - will be scaled based on vehicle speed
-	CRITICAL_DISTANCE                  = 0.6, -- Emergency stop zone (increased from 0.5)
-	NEAR_DISTANCE                      = 0.8, -- Heavy braking zone (increased from 1.0)
-	MEDIUM_DISTANCE                    = 1.0, -- Moderate braking zone (increased from 2.0)
-	FAR_DISTANCE                       = 1.2, -- Light braking/coasting zone (increased from 3.0)
-
-	-- Crossing detection threshold
-	CROSSING_DOT_THRESHOLD             = 0.9, -- Dot product threshold for crossing detection
-	CROSSING_DISTANCE                  = 2.0, -- Max distance to consider crossing
-	CROSSING_BRAKE_MULTIPLIER          = 0.8, -- Reduce effective distance when crossing
-
-	-- Raycast offset (start raycast from front of vehicle, not center)
-	RAYCAST_FORWARD_OFFSET             = 0.2, -- Units ahead of vehicle center
+const.VEHICLE_CONTROL     = {
+	CRITICAL_DISTANCE                  = 0.6,
+	NEAR_DISTANCE                      = 0.8, -- Heavy braking
+	MEDIUM_DISTANCE                    = 1.0, -- Moderate braking
+	FAR_DISTANCE                       = 1.2, -- Light braking
+	-- Crossing detection
+	CROSSING_DOT_THRESHOLD             = 0.9,
+	CROSSING_DISTANCE                  = 2.0,
+	CROSSING_BRAKE_MULTIPLIER          = 0.8,
+	-- Raycast offset
+	RAYCAST_FORWARD_OFFSET             = 0.2,
 
 	OPPOSITE_DIRECTION_THRESHOLD       = -0.1,
 	OPPOSITE_DIRECTION_BREAK_THRESHOLD = 0.5,
@@ -167,7 +153,7 @@ const.VEHICLE_CONTROL = {
 	ARRIVAL_THRESHOLD                  = 0.2
 }
 
-const.TRIGGERS =
+const.TRIGGERS            =
 {
 	KEY_1 = hash("KEY_1"),
 	MOUSE_BUTTON_LEFT = hash("mouse_button_left"),

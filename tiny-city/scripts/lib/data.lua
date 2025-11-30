@@ -20,7 +20,7 @@ data.lookup            = {
 	vehicle_list = {}
 }
 
-data.camera_zoom       = 20
+--data.camera_zoom       = 20
 data.cameras           = {}
 data.current_camera    = "MAIN_CAMERA"
 return data

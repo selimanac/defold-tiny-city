@@ -35,6 +35,7 @@ local TURN_RATE_SMOOTHING = 0.8
 
 
 
+-- Lua version based on https://github.com/SeanTyson/luaSplineGeometry/blob/2e3b495158635d3cf26b98ded310d74f1d5bd85e/spline_geometry.lua#L123
 local function catmull_rom_point(p0, p1, p2, p3, t)
 	local t2 = t * t
 	local t3 = t2 * t

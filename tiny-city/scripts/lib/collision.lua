@@ -7,8 +7,7 @@ collision.COLLISION_BITS = {
 	ALL            = bit.bnot(0) -- -1 for all results
 }
 
-
-local aabb_group_id = 0
+local aabb_group_id      = 0
 
 function collision.init()
 	aabb_group_id = daabbcc3d.new_group(daabbcc3d.UPDATE_PARTIALREBUILD)

@@ -2,8 +2,9 @@ local birds     = {}
 
 local container = msg.url()
 local to        = vmath.vector3(-37.0, 3, 15)
-local from      = vmath.vector3(-37.0, 3, 15)
+local from      = vmath.vector3()
 
+-- Lazy birds
 function birds.stop()
 	msg.post(container, "disable")
 	timer.delay(5, false, function()

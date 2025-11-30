@@ -97,8 +97,6 @@ function traffic_lights.add_group(group_id, nodes, initial_state)
 			red = red
 		}
 
-
-
 		-- Initialize all lights to dark (off)
 		set_light_tint(light, nil)
 
@@ -160,7 +158,6 @@ function traffic_lights.add_intersection(intersection_id, group1_nodes, group2_n
 				set_light_tint(light, const.TRAFFIC_LIGHT_STATE.YELLOW)
 			end
 
-			-- After brief yellow, change to RED and switch group 2 to YELLOW, then GREEN
 			timer.delay(1.0, false, function()
 				light_states[group1_id] = const.TRAFFIC_LIGHT_STATE.RED
 				light_groups[group1_id].state = const.TRAFFIC_LIGHT_STATE.RED
@@ -177,7 +174,6 @@ function traffic_lights.add_intersection(intersection_id, group1_nodes, group2_n
 					set_light_tint(light, const.TRAFFIC_LIGHT_STATE.YELLOW)
 				end
 
-				-- After brief yellow, change group 2 to GREEN
 				timer.delay(1.0, false, function()
 					light_states[group2_id] = const.TRAFFIC_LIGHT_STATE.GREEN
 					light_groups[group2_id].state = const.TRAFFIC_LIGHT_STATE.GREEN
@@ -199,7 +195,6 @@ function traffic_lights.add_intersection(intersection_id, group1_nodes, group2_n
 				set_light_tint(light, const.TRAFFIC_LIGHT_STATE.YELLOW)
 			end
 
-			-- After brief yellow, change to RED and switch group 1 to YELLOW, then GREEN
 			timer.delay(1.0, false, function()
 				light_states[group2_id] = const.TRAFFIC_LIGHT_STATE.RED
 				light_groups[group2_id].state = const.TRAFFIC_LIGHT_STATE.RED
@@ -216,7 +211,6 @@ function traffic_lights.add_intersection(intersection_id, group1_nodes, group2_n
 					set_light_tint(light, const.TRAFFIC_LIGHT_STATE.YELLOW)
 				end
 
-				-- After brief yellow, change group 1 to GREEN
 				timer.delay(1.0, false, function()
 					light_states[group1_id] = const.TRAFFIC_LIGHT_STATE.GREEN
 					light_groups[group1_id].state = const.TRAFFIC_LIGHT_STATE.GREEN
@@ -233,7 +227,6 @@ function traffic_lights.add_intersection(intersection_id, group1_nodes, group2_n
 end
 
 function traffic_lights.add_t_intersection(intersection_id, single_node_ids, pair_node_ids, cycle_time)
-	-- T-intersections work the same as regular intersections
 	traffic_lights.add_intersection(intersection_id, single_node_ids, pair_node_ids, cycle_time)
 end
 
@@ -246,12 +239,12 @@ function traffic_lights.check_state(node_id)
 	return light_states[group_id]
 end
 
--- Get all light groups (for debugging)
+-- Get all light groups
 function traffic_lights.get_groups()
 	return light_groups
 end
 
--- Get current states (for debugging)
+-- Get current states
 function traffic_lights.get_states()
 	return light_states
 end

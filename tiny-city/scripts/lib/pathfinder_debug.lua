@@ -4,9 +4,7 @@ local data             = require("tiny-city.scripts.lib.data")
 -- =================================
 -- MODULE
 -- =================================
-
 local pathfinder_debug = {}
-
 
 local function get_edge_positions(from_node_id, to_node_id)
 	local from_v2 = pathfinder.get_node_position(from_node_id)

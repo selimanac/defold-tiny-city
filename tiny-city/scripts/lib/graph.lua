@@ -28,18 +28,15 @@ local function load()
 	return { nodes = nodes_data, edges = edges_data }
 end
 
-
 function graph.init()
-	local loaded_data = load()
-
-	local max_nodes = #loaded_data.nodes
-	local max_gameobject_nodes = nil
-	local max_edges_per_node = 16
-	local heap_pool_block_size = 32
+	local loaded_data           = load()
+	local max_nodes             = #loaded_data.nodes
+	local max_gameobject_nodes  = nil
+	local max_edges_per_node    = 16
+	local heap_pool_block_size  = 32
 	local max_cache_path_length = 256
 
 	pathfinder.init(max_nodes, max_gameobject_nodes, max_edges_per_node, heap_pool_block_size, max_cache_path_length)
-
 
 	data.path_smoothing_id = pathfinder.add_path_smoothing(const.SMOOTHING_CONFIG)
 
@@ -55,7 +52,6 @@ function graph.init()
 		local temp_node = {
 			position = node_position,
 			pathfinder_node_id = v,
-
 		}
 
 		data.nodes[i] = temp_node

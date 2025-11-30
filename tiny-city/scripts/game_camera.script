@@ -1,4 +1,5 @@
-local const = require "tiny-city.scripts.lib.const"
+-- FROM: https://defold.com/examples/render/orbit_camera/
+
 -- The initial zoom level
 go.property("zoom", 3)
 -- The speed of the zoom
@@ -8,13 +9,12 @@ go.property("rotation_speed", 0.5)
 -- The offset of the camera from the origin
 go.property("offset", vmath.vector3(0, 0, 0))
 
-
 local data = require "tiny-city.scripts.lib.data"
+local const = require "tiny-city.scripts.lib.const"
 
 local defaults = {}
 
 function init(self)
-	-- Acquire input focus to receive input events
 	msg.post(".", "acquire_input_focus")
 
 	-- Initialize start values
@@ -40,21 +40,6 @@ function init(self)
 end
 
 function update(self, dt)
-	--[[if self.is_moving then
-		if self.camera_zoom > 15 then
-			self.zoom_offset = self.zoom_offset - 5 * dt
-		end
-
-		--	pprint(self.pitch)
-		if self.pitch > -30 and self.pitch_up then
-			self.pitch = self.pitch - 2 * dt
-		elseif self.pitch < -20 then
-			self.pitch_up = false
-			self.pitch = self.pitch + 2 * dt
-		end
-	end]]
-
-
 	if self.is_moving then
 		-- zoom
 		if self.camera_zoom > 15 then
@@ -63,7 +48,6 @@ function update(self, dt)
 			self.is_moving = false
 		end
 
-		-- original pitch movement
 		local raw_pitch = self.pitch
 
 		if raw_pitch > -30 and self.pitch_up then
@@ -73,7 +57,6 @@ function update(self, dt)
 			raw_pitch = raw_pitch + 12 * dt
 		end
 
-		-- smooth ONLY the final pitch
 		self.pitch = vmath.lerp(0.2, self.pitch, raw_pitch)
 	end
 

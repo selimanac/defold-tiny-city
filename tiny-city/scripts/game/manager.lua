@@ -35,8 +35,6 @@ function manager.init()
 	collision.init()
 	graph.init()
 	traffic.init()
-
-
 	audio.init()
 end
 
@@ -50,7 +48,6 @@ end
 
 function manager.input(action_id, action)
 	game_camera.input(action_id, action)
-	--	traffic.input(action_id, action)
 end
 
 return manager
