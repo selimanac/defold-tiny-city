@@ -1,0 +1,91 @@
+[bootstrap]
+main_collection = /tiny-city/scenes/world.collectionc
+render = /light_and_shadows/render/default.renderc
+
+[script]
+shared_state = 1
+
+[display]
+width = 1920
+height = 1080
+high_dpi = 1
+samples = 3
+
+[android]
+input_method = HiddenInputField
+package = com.defold.tinycity
+
+[html5]
+scale_mode = stretch
+scale_mode = stretch
+
+[project]
+title = defold-tiny-city
+custom_resources = data
+dependencies#0 = https://github.com/selimanac/defold-random/archive/refs/heads/master.zip
+dependencies#1 = https://github.com/selimanac/defold-daabbcc3d/archive/refs/heads/main.zip
+dependencies#2 = https://github.com/selimanac/defold-uuid4/archive/refs/heads/master.zip
+dependencies#3 = https://github.com/britzl/extension-imgui/archive/refs/heads/master.zip
+dependencies#4 = https://github.com/selimanac/defold-graph-pathfinder/archive/refs/heads/main.zip
+
+[osx]
+bundle_identifier = com.defold.tinycity
+
+[ios]
+bundle_identifier = com.defold.tinycity
+
+[graph_editor]
+folder = data
+max_gameobject_nodes = 2048
+max_nodes = 2048
+files = map.json
+max_cache_path_length = 128
+
+[sprite]
+max_count = 2048
+
+[factory]
+max_count = 2048
+
+[daabbcc]
+max_gameobject_count = 1024
+
+[collection]
+max_instances = 2048
+
+[collectionfactory]
+max_count = 2048
+
+[label]
+max_count = 2048
+
+[model]
+max_count = 4096
+
+[gui]
+max_count = 4096
+
+[input]
+use_accelerometer = 0
+game_binding = /tiny-city/input/game.input_bindingc
+
+[shader]
+exclude_gles_sm100 = 1
+
+[native_extension]
+app_manifest = /tiny-city/manifest/macos.appmanifest
+
+[graphics]
+max_font_batches = 1024
+texture_profiles = /tiny-city/game.texture_profiles
+
+[mesh]
+max_count = 1024
+
+[liveupdate]
+enabled = 0
+mount_on_start = 0
+
+[engine]
+fixed_update_frequency = 72
+
