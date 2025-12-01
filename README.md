@@ -28,7 +28,7 @@ The development version of the Graph Editor for the [Defold Graph Pathfinder](ht
 
 - Graph Editor settings can be found under Graph Editor in the game.project file.
 - Set `editor.collection` to the `Main Collection` in the `game.project` file.
-- Set default.render` to the `Render` in the `game.project` file.
+- Set `default.render` to the `Render` in the `game.project` file.
 - Load the map file from the editor.
 
 
