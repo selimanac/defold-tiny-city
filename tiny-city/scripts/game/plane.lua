@@ -82,11 +82,11 @@ local function get_path_point(progress)
 	return vmath.lerp(t, smooth_path[idx1], smooth_path[idx2])
 end
 
--- local function normalize_angle(angle)
--- 	while angle > math.pi do angle = angle - 2 * math.pi end
--- 	while angle < -math.pi do angle = angle + 2 * math.pi end
--- 	return angle
--- end
+local function normalize_angle(angle)
+	while angle > math.pi do angle = angle - 2 * math.pi end
+	while angle < -math.pi do angle = angle + 2 * math.pi end
+	return angle
+end
 
 -- TODO: Cleanup this shit
 function plane.init()
@@ -123,11 +123,11 @@ function plane.init()
 	plane_fx.fragment = "plane_fx"
 	audio.fx["PLANE"] = plane_fx
 
-	--[[	
-	-- rotated particles are not working
-	local plane_particle = container
-	plane_particle.fragment = "plane"
-	particlefx.play(plane_particle)]]
+	--[[
+    -- rotated particles are not working
+    local plane_particle = container
+    plane_particle.fragment = "plane"
+    particlefx.play(plane_particle)]]
 
 	path_progress = 0
 end
@@ -151,34 +151,26 @@ function plane.update(dt)
 	end
 	local next_pos = get_path_point(next_progress)
 
-	-- Calculate direction
+	-- direction
 	local direction = next_pos - current_pos
 	local dir_len = vmath.length(direction)
 
 	if dir_len > const.EPSILON then
 		direction = direction / dir_len
 
-		-- Calculate target yaw
+		-- target yaw
 		local target_yaw = math.atan2(direction.x, direction.z)
-
-		-- Calculate angular velocity
-		--local yaw_delta = normalize_angle(target_yaw - previous_yaw)
-		local yaw_delta = target_yaw - previous_yaw
-		local instantaneous_turn_rate = yaw_delta / dt
-
-		-- Smooth the turn
+		local yaw_delta = normalize_angle(target_yaw - previous_yaw)
 		local turn_rate_t = math.min(1.0, TURN_RATE_SMOOTHING * dt)
-		smoothed_turn_rate = smoothed_turn_rate + (instantaneous_turn_rate - smoothed_turn_rate) * turn_rate_t
+		smoothed_turn_rate = smoothed_turn_rate + (yaw_delta - smoothed_turn_rate) * turn_rate_t
 
-		-- Calculate target bank
-		local target_bank = -smoothed_turn_rate * BANK_SENSITIVITY * dt * 1.0
+		-- banking
+		local target_bank = -smoothed_turn_rate * BANK_SENSITIVITY
 		target_bank = math.max(-MAX_BANK_ANGLE, math.min(MAX_BANK_ANGLE, target_bank))
 
-		-- Smooth banking
 		local bank_t = math.min(1.0, BANK_SPEED * dt)
 		current_bank = current_bank + (target_bank - current_bank) * bank_t
 
-		-- Apply rotation
 		local target_quat = vmath.quat_rotation_y(target_yaw)
 		local t = math.min(1.0, ROTATION_SPEED * dt)
 		local base_rotation = vmath.slerp(t, rotation, target_quat)
