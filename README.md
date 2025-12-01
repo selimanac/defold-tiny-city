@@ -27,7 +27,8 @@ Web build: https://selimanac.github.io/defold-tiny-city/
 The development version of the Graph Editor for the [Defold Graph Pathfinder](https://github.com/selimanac/defold-graph-pathfinder) is included in this project. It is still under development and not production ready. It may cause data loss, so use it at your own risk.
 
 - Graph Editor settings can be found under Graph Editor in the game.project file.
-- Set editor.collection to the Main Collection in the game.project file.
+- Set ´editor.collection´ to the ´Main Collection´ in the ´game.project´ file.
+- Set ´default.render´ to the ´Render´ in the ´game.projectfile.
 - Load the map file from the editor.
 
 
