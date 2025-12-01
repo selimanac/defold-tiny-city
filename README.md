@@ -1,3 +1,5 @@
+![Tiny City](/.github/tiny_city.png?raw=true)
+
 This project is developed for [Defold Community Challenge: Tiny Worlds](https://forum.defold.com/t/community-challenge-tiny-worlds/81931). 
 
 This is not an actual game, but instead it is a kind of demo. The solutions in this project are not production-ready and not supported, so use them at your own risk. 
