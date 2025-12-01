@@ -8,7 +8,7 @@ embedded_components {
   "  material: \"/light_and_shadows/materials/model/model_instanced.material\"\n"
   "  textures {\n"
   "    sampler: \"tex0\"\n"
-  "    texture: \"/tiny-city/assets/textures/kenney_cars_colormap.png\"\n"
+  "    texture: \"/tiny-city/assets/textures/kenny/kenney_cars_colormap.png\"\n"
   "  }\n"
   "}\n"
   ""

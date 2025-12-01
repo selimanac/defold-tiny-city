@@ -7,7 +7,7 @@ embedded_components {
   "  material: \"/light_and_shadows/materials/model/model_instanced.material\"\n"
   "  textures {\n"
   "    sampler: \"tex0\"\n"
-  "    texture: \"/tiny-city/assets/textures/kennny_commercial_colormap.png\"\n"
+  "    texture: \"/tiny-city/assets/textures/kenny/kennny_commercial_colormap.png\"\n"
   "  }\n"
   "}\n"
   "create_go_bones: false\n"

@@ -260,8 +260,6 @@ function update(self)
     render.set_render_target_size(self.scene_rt, state.window_width, state.window_height)
     render.clear(state.clear_buffers)
 
-    render.enable_texture("tex1", self.shadowmap_buffer, graphics.BUFFER_TYPE_COLOR0_BIT) -- enable shadowmap texture
-
     -- render `skybox`
     -- https://www.ogldev.org/www/tutorial25/tutorial25.html
     --
@@ -269,10 +267,12 @@ function update(self)
     render.set_cull_face(graphics.FACE_TYPE_FRONT)
     render.set_depth_func(graphics.COMPARE_FUNC_LEQUAL)
     render.draw(predicates.skybox, draw_options_world)
-
     render.set_depth_func(graphics.COMPARE_FUNC_LESS)
     render.set_cull_face(graphics.FACE_TYPE_BACK)
     render.disable_state(graphics.STATE_CULL_FACE)
+
+    render.enable_texture("tex1", self.shadowmap_buffer, graphics.BUFFER_TYPE_COLOR0_BIT) -- enable shadowmap texture
+
 
     -- render `model` predicate for default 3D material
     --

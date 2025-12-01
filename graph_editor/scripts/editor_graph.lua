@@ -291,7 +291,7 @@ function graph.load(loaded_data)
 			add_node(node)
 		end
 
-		-- After adding all nodes, build ID mapping
+		-- remapping
 		local id_map = {}
 		for uuid, node in pairs(data.nodes) do
 			id_map[loaded_data.nodes[uuid].pathfinder_node_id] = node.pathfinder_node_id
@@ -302,22 +302,7 @@ function graph.load(loaded_data)
 			edge.to_node_id = id_map[edge.to_node_id]
 		end
 
-		--[[
-		print("ID Map:")
-		for old_id, new_id in pairs(id_map) do
-			print("  ", old_id, "->", new_id)
-		end
 
-		print("Edge remapping:")
-		for _, edge in pairs(data.edges) do
-			local new_from = id_map[edge.from_node_id]
-			local new_to = id_map[edge.to_node_id]
-			print("  ", edge.from_node_id, "->", new_from, "|", edge.to_node_id, "->", new_to)
-			if not new_from or not new_to then
-				print("  ERROR: Missing mapping!")
-			end
-		end
-]]
 		-- Add edges
 		local temp_edges = {}
 		for _, edge in pairs(data.edges) do
@@ -330,18 +315,6 @@ function graph.load(loaded_data)
 
 
 		pathfinder.add_edges(temp_edges)
-
-		--[[print("Position verification:")
-		for uuid, node in pairs(data.nodes) do
-			local lib_pos = pathfinder.get_node_position(node.pathfinder_node_id)
-			print("Node", node.pathfinder_node_id,
-				"Lua:", node.position.x, node.position.z,
-				"Lib:", lib_pos.x, lib_pos.y)
-			if math.abs(node.position.x - lib_pos.x) > 0.01 or
-				math.abs(node.position.z - lib_pos.y) > 0.01 then
-				print("  MISMATCH!")
-			end
-		end]]
 	end)
 
 	data.action_status = const.EDITOR_STATUS.READY

@@ -8,7 +8,7 @@ embedded_components {
   "  material: \"/light_and_shadows/materials/model/model_instanced.material\"\n"
   "  textures {\n"
   "    sampler: \"tex0\"\n"
-  "    texture: \"/tiny-city/assets/textures/white.png\"\n"
+  "    texture: \"/tiny-city/assets/textures/generic/white.png\"\n"
   "  }\n"
   "}\n"
   "create_go_bones: false\n"

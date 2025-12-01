@@ -9,7 +9,7 @@ shared_state = 1
 width = 1920
 height = 1080
 high_dpi = 1
-samples = 3
+samples = 4
 
 [android]
 input_method = HiddenInputField
@@ -85,7 +85,4 @@ max_count = 1024
 [liveupdate]
 enabled = 0
 mount_on_start = 0
-
-[engine]
-fixed_update_frequency = 72
 

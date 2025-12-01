@@ -1,5 +1,13 @@
 path_settings {
-  path: "**"
+  path: "**/textures/generic/*"
+  profile: "Default"
+}
+path_settings {
+  path: "**/textures/kenny/*"
+  profile: "Default"
+}
+path_settings {
+  path: "**/textures/plane/*"
   profile: "Default"
 }
 profiles {

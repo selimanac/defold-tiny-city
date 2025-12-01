@@ -8,7 +8,7 @@ embedded_components {
   "  material: \"/tiny-city/components/materials/node.material\"\n"
   "  textures {\n"
   "    sampler: \"tex0\"\n"
-  "    texture: \"/tiny-city/assets/textures/white.png\"\n"
+  "    texture: \"/tiny-city/assets/textures/generic/white.png\"\n"
   "  }\n"
   "}\n"
   ""

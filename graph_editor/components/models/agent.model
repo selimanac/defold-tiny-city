@@ -5,7 +5,7 @@ materials {
   material: "/light_and_shadows/materials/model/model_instanced.material"
   textures {
     sampler: "tex0"
-    texture: "/tiny-city/assets/textures/kenney_cars_colormap.png"
+    texture: "/tiny-city/assets/textures/kenny/kenney_cars_colormap.png"
   }
 }
 create_go_bones: false

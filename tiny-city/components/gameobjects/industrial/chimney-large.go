@@ -14,7 +14,7 @@ embedded_components {
   "  material: \"/light_and_shadows/materials/model/model_instanced.material\"\n"
   "  textures {\n"
   "    sampler: \"tex0\"\n"
-  "    texture: \"/tiny-city/assets/textures/kenny_industrial_colormap.png\"\n"
+  "    texture: \"/tiny-city/assets/textures/kenny/kenny_industrial_colormap.png\"\n"
   "  }\n"
   "}\n"
   "create_go_bones: false\n"
