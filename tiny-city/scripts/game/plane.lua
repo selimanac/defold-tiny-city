@@ -24,7 +24,7 @@ local current_bank        = 0
 local previous_yaw        = 0
 local smoothed_turn_rate  = 0
 
--- Configuration
+-- Settings
 local MAX_SPEED           = 0.3
 local ROTATION_SPEED      = 10
 local BANK_SPEED          = 13.8
@@ -32,8 +32,6 @@ local MAX_BANK_ANGLE      = math.rad(35)
 local BANK_SENSITIVITY    = 13.8
 local SAMPLES_PER_SEGMENT = 32
 local TURN_RATE_SMOOTHING = 0.8
-
-
 
 -- Lua version based on https://github.com/SeanTyson/luaSplineGeometry/blob/2e3b495158635d3cf26b98ded310d74f1d5bd85e/spline_geometry.lua#L123
 local function catmull_rom_point(p0, p1, p2, p3, t)
@@ -71,7 +69,6 @@ local function build_smooth_path(control_points, samples_per_segment)
 
 	return path
 end
-
 
 local function get_path_point(progress)
 	-- Get two surrounding points

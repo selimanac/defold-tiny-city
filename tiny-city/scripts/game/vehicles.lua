@@ -114,20 +114,20 @@ local function add(start_node_id, goal_node_id, vehicle)
 		-- Smoothed path for vehicle movement
 		smoothed_path        = smoothed_path,
 		smoothed_path_size   = smoothed_size,
-		smoothed_waypoint_id = 1, -- For smooth movement
+		smoothed_waypoint_id = 1,
 		instance             = vehicle_instance,
 		state                = const.VEHICLE_STATE.ACTIVE,
 		aabb_id              = aabb_id,
 		type                 = vehicle,
 		-- Brake and throttle system
-		throttle             = 0.0, -- 0.0 to 1.0
-		brake                = 0.0, -- 0.0 to 1.0
+		throttle             = 0.0,
+		brake                = 0.0,
 		acceleration_rate    = vehicle.ACCELERATION_RATE,
 		brake_rate           = vehicle.BRAKE_RATE,
 		target_speed         = vehicle.SPEED,
 		previous_direction   = vmath.vector3(),
 		-- Reservation system
-		reserved_node_id     = nil -- ID of the node this vehicle has reserved
+		reserved_node_id     = nil
 	}
 	data.vehicles[vehicle_agent.uuid]    = vehicle_agent
 	data.lookup.aabb_to_vehicle[aabb_id] = vehicle_agent.uuid

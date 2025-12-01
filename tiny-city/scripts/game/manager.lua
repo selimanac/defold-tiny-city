@@ -6,14 +6,10 @@ local birds       = require("tiny-city.scripts.game.birds")
 local plane       = require("tiny-city.scripts.game.plane")
 local audio       = require("tiny-city.scripts.lib.audio")
 
-
 -- =================================
 -- MODULE
 -- =================================
-local manager = {}
--- =================================
--- VARS
--- =================================
+local manager     = {}
 
 function manager.init()
 	game_camera.init()

@@ -1,18 +1,17 @@
-local const = require("tiny-city.scripts.lib.const")
+local const          = require("tiny-city.scripts.lib.const")
 
 -- =================================
 -- MODULE
 -- =================================
 local traffic_lights = {}
 
-
 -- =================================
 -- VARS
 -- =================================
-local light_groups  = {} -- Array of light group configurations
-local node_to_group = {} -- Maps node_id -> group_id for quick lookup
-local light_states  = {} -- Current state for each group
-local lights        = {
+local light_groups   = {} -- Array of light group configurations
+local node_to_group  = {} -- Maps node_id -> group_id for quick lookup
+local light_states   = {} -- Current state for each group
+local lights         = {
 	intersection1 = {
 		group1 = {
 			[113] = "/intersection_1_group_1_light_1",
@@ -43,7 +42,6 @@ local lights        = {
 			[20] = "/intersection_3_group_2_light_2"
 		}
 	},
-
 }
 
 local function set_light_tint(light, state)
