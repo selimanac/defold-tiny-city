@@ -2,6 +2,7 @@ local const                = require("tiny-city.scripts.lib.const")
 local data                 = require("tiny-city.scripts.lib.data")
 local collision            = require("tiny-city.scripts.lib.collision")
 local audio                = require("tiny-city.scripts.lib.audio")
+local game_camera          = require("tiny-city.scripts.lib.game_camera")
 
 -- =================================
 -- MODULE
@@ -53,7 +54,7 @@ local function add(start_node_id, goal_node_id, vehicle)
 	local initial_rotation             = vmath.quat_rotation_y(math.atan2(direction.x, direction.z))
 	local vehicle_instance
 
-	-- Temp patch for Police Car
+	-- Ugly patch for Police Car
 	if vehicle.HAS_CAMERA then
 		local collection_instance = collectionfactory.create(vehicle.FACTORY, vehicle_position, initial_rotation)
 
@@ -62,8 +63,11 @@ local function add(start_node_id, goal_node_id, vehicle)
 		-- Camera
 		local police_camera = msg.url(collection_instance[hash("/police_camera")])
 		police_camera.fragment = "police_camera"
-		data.cameras["POLICE_CAMERA"] = police_camera
-		msg.post(data.cameras["POLICE_CAMERA"], "disable")
+
+		local police_script = msg.url(collection_instance[hash("/police_camera")])
+		police_script.fragment = "game_camera"
+
+		game_camera.add(const.CAMERA.POLICE, police_camera, police_script, "disable")
 
 		-- Sound FX
 		local police_fx = msg.url(vehicle_instance)

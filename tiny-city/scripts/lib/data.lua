@@ -1,3 +1,4 @@
+local const            = require "tiny-city.scripts.lib.const"
 -- =================================
 -- MODULE
 -- =================================
@@ -22,5 +23,5 @@ data.lookup            = {
 
 --data.camera_zoom       = 20
 data.cameras           = {}
-data.current_camera    = "MAIN_CAMERA"
+data.current_camera    = const.CAMERA.MAIN
 return data

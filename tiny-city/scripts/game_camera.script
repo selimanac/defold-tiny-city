@@ -15,7 +15,7 @@ local const = require "tiny-city.scripts.lib.const"
 local defaults = {}
 
 function init(self)
-	msg.post(".", "acquire_input_focus")
+	--msg.post(".", "acquire_input_focus")
 
 	-- Initialize start values
 	self.yaw = go.get(".", "euler.y")
@@ -97,5 +97,11 @@ function on_message(self, message_id, message, sender)
 		self.current_pitch = defaults.current_pitch
 		self.current_zoom = defaults.current_zoom
 		data.camera_zoom = defaults.camera_zoom
+	end
+
+	if message_id == hash("enable_input") then
+		msg.post(".", "acquire_input_focus")
+	elseif message_id == hash("disable_input") then
+		msg.post(".", "release_input_focus")
 	end
 end

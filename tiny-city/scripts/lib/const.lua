@@ -2,7 +2,11 @@ local const               = {}
 
 const.EPSILON             = 0.0001 -- Minimum distance for movement calculations
 const.HUGE                = math.huge
-
+const.CAMERA              = {
+	MAIN   = 0,
+	PLANE  = 1,
+	POLICE = 2
+}
 const.COLORS              = {
 	RED       = vmath.vector4(1, 0, 0, 1),
 	GREEN     = vmath.vector4(0, 1, 0, 1),

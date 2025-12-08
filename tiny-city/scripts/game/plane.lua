@@ -1,6 +1,7 @@
 local data                = require("tiny-city.scripts.lib.data")
 local const               = require("tiny-city.scripts.lib.const")
 local audio               = require("tiny-city.scripts.lib.audio")
+local game_camera         = require("tiny-city.scripts.lib.game_camera")
 
 -- =================================
 -- MODULE
@@ -115,9 +116,11 @@ function plane.init()
 
 	local plane_camera = msg.url(plane_urls[hash("/plane_camera")])
 	plane_camera.fragment = "plane_camera"
-	data.cameras["PLANE_CAMERA"] = plane_camera
-	msg.post(data.cameras["PLANE_CAMERA"], "disable")
 
+	local plane_script = msg.url(plane_urls[hash("/plane_camera")])
+	plane_script.fragment = "game_camera"
+
+	game_camera.add(const.CAMERA.PLANE, plane_camera, plane_script, "disable")
 
 	local plane_fx = container
 	plane_fx.fragment = "plane_fx"
