@@ -27,6 +27,7 @@ dependencies#1 = https://github.com/selimanac/defold-daabbcc3d/archive/refs/head
 dependencies#2 = https://github.com/selimanac/defold-uuid4/archive/refs/heads/master.zip
 dependencies#3 = https://github.com/britzl/extension-imgui/archive/refs/heads/master.zip
 dependencies#4 = https://github.com/selimanac/defold-graph-pathfinder/archive/refs/heads/main.zip
+dependencies#5 = https://github.com/selimanac/defold-graph-pathfinder-editor/archive/refs/heads/main.zip
 
 [osx]
 bundle_identifier = com.defold.tinycity

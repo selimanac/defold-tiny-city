@@ -1,34 +1,10 @@
 name: "editor"
-instances {
-  id: "editor_camera"
-  prototype: "/graph_editor/components/gameobjects/editor_camera.go"
-  position {
-    y: 23.0
-  }
-  rotation {
-    x: -0.70710677
-    w: 0.70710677
-  }
-  component_properties {
-    id: "editor_camera"
-    properties {
-      id: "zoom"
-      value: "25.0"
-      type: PROPERTY_TYPE_NUMBER
-    }
-    properties {
-      id: "offset"
-      value: "-3.0, 0.0, 4.0"
-      type: PROPERTY_TYPE_VECTOR3
-    }
-  }
-}
-collection_instances {
-  id: "graph_editor"
-  collection: "/graph_editor/graph_editor.collection"
-}
 collection_instances {
   id: "roads"
   collection: "/tiny-city/components/collections/roads.collection"
+}
+collection_instances {
+  id: "graph_editor"
+  collection: "/graph_editor/graph_editor_3D.collection"
 }
 scale_along_z: 0

@@ -1,7 +1,7 @@
 embedded_components {
   id: "model"
   type: "model"
-  data: "mesh: \"/graph_editor/components/gameobjects/node.glb\"\n"
+  data: "mesh: \"/graph_editor/assets/models/node.glb\"\n"
   "name: \"{{NAME}}\"\n"
   "materials {\n"
   "  name: \"default\"\n"

@@ -20,18 +20,16 @@ Web build: https://selimanac.github.io/defold-tiny-city/
 
 * Light and Shadow by Dragosha  (https://github.com/Dragosha/defold-light-and-shadows)
 * Dear ImGUI for Defold by Björn Ritzl (https://github.com/britzl/extension-imgui)
+* Graph Pathfinder (https://github.com/selimanac/defold-graph-pathfinder)
+* Graph Pathfinder Editor (https://github.com/selimanac/defold-graph-pathfinder-editor)
 
 
 # Graph Editor
-
-The development version of the Graph Editor for the [Defold Graph Pathfinder](https://github.com/selimanac/defold-graph-pathfinder) is included in this project. It is still under development and not production ready. It may cause data loss, so use it at your own risk.
 
 - Graph Editor settings can be found under Graph Editor in the game.project file.
 - Set `editor.collection` to the `Main Collection` in the `game.project` file.
 - Set `default.render` to the `Render` in the `game.project` file.
 - Load the map file from the editor.
-
-
 
 ---
 

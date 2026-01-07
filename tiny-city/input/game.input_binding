@@ -130,6 +130,14 @@ key_trigger {
   input: KEY_B
   action: "key_b"
 }
+key_trigger {
+  input: KEY_W
+  action: "key_w"
+}
+key_trigger {
+  input: KEY_D
+  action: "key_d"
+}
 mouse_trigger {
   input: MOUSE_WHEEL_UP
   action: "mouse_wheel_up"
